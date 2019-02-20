@@ -16,7 +16,7 @@ int main()
 
 	while(true)
 	{
-
+		
 	}
 
 	printf("%d\n", );
