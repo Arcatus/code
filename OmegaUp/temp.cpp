@@ -14,6 +14,11 @@ int main()
 		printf("%d\n",i);
 	}
 
+	while(true)
+	{
+
+	}
+
 	printf("%d\n", );
 
 	return 0;	
