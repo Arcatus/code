@@ -8,5 +8,5 @@ int main()
 
 	std::cout << "something" << n << '\n';
 
-	
+	return 0;	
 }
