@@ -16,11 +16,8 @@ int main()
 
 	while(true)
 	{
-<<<<<<< HEAD
-		
-=======
+
 		printf("zzz");
->>>>>>> otraRama
 	}
 
 	printf("%d\n", );
