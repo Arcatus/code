@@ -1,0 +1,6 @@
+{
+	do 
+	map = false;
+	while( bueno != malo);
+}
+

@@ -1,0 +1,55 @@
+{
+
+	num[15] identi;
+	num tmp;
+	bool[2] bolean;
+
+	a = 3;
+	b = -4;
+
+	identi = true == false;
+
+	a[ a[true] ] = false;
+
+	identi = (5 && 7);
+
+	while( a > 0 )
+	set = 2;
+
+	do 
+	map = false;
+	while( bueno != malo);
+
+	a[(50 && true)] = (15);
+
+	a[(10)]=true;
+
+
+	a = (2 + 3) * b;
+	i = 0;
+	while(i < 10)
+	{
+	i = i + 1;
+	}
+	j = 0;
+	if(i == 10)
+	{
+	j = true;
+	}
+	else
+	{
+	j = false;
+	}
+
+	if ( a == 5 )
+	{
+	x = y;
+	}
+	else
+	{
+	y = x;
+	}
+
+	if(  B || ( 5 < 10) < ( hola > 10) )
+	valor = valor + 1;
+}

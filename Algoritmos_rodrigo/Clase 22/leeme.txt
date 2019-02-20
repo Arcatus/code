@@ -1,0 +1,10 @@
+Las versiones no feas de Dijkstra y Prim compilan en C++17.
+Las versiones feas de Dijkstra y Prim compilan en C++11.
+
+Para habilitar C++17 sin CodeBlocks (compilando desde terminal), agreguen la bandera -std=c++17 a sus banderas de compilación.
+Para habilitar C++17 en CodeBlocks, vayan a 
+   Settings -> 
+   Compiler -> 
+   Compiler Settings [Other options] 
+y escriban -std=c++17 en el campo de texto.
+Su compilador debe ser suficientemente moderno para compilar en modo C++17. En Windows puede bajar https://sourceforge.net/projects/mingw-w64/

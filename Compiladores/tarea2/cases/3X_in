@@ -1,0 +1,18 @@
+
+
+num main()
+{
+   num x = 14;
+   if ( x > 0){
+   	x++;
+   } else {
+	x--;     @
+   }
+   num z = x * 10;
+   num q = z;
+	num a[15];
+   a[0] = q;
+   if(a[0]==15)x--;
+   else x+2;
+   return 0;
+}

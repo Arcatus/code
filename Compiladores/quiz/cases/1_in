@@ -1,0 +1,95 @@
+{
+	num[15] identi;
+	bool[2] bolean;
+	num[-1] olo;
+	bool[-10] eefe;
+
+	if (true)
+	  if ( true) 
+	    if (false)
+	    	break;
+	{
+	  num[1] id1;
+	 {
+	   bool[2] id2;
+	    {
+	      num[1] id3;
+	      num id;
+	      {
+		 if ( true > 5)
+		 {
+		    l = 5;
+		 }
+	      }
+	    }
+	 }
+	}
+
+	ele[ele[ele]] = 1;	
+
+	a = 3;
+	b = -4;
+
+	if (false) break;
+
+	identi = true == false;
+	identi = true < false;
+	identi = true + false;
+	identi = true * false;
+
+	identi = 2;
+	identi = true;
+	identi = false;
+	identi = identi2;
+
+	algo[false == true] = (6 == 5);
+	algo[false == true] = (6 > 5);
+	algo[false == true] = 6 && false;
+	algo[false == true] = 6 > false;
+
+	arr[1] = false;
+
+	identi = (5 && 7);
+
+	if ( ( true) > false ) l = 2;
+
+	while( a > 0 )
+	set = 2;
+
+	do 
+	map = false;
+	while( bueno != malo);
+
+	a[(50 && true)] = (15);
+
+	a[(10)]=true;
+
+
+	a = (2 + 3) * b;
+	i = 0;
+	while(i < 10)
+	{
+	i = i + 1;
+	}
+	j = 0;
+	if(i == 10)
+	{
+	j = true;
+	}
+	else
+	{
+	j = false;
+	}
+
+	if ( a == 5 )
+	{
+	x = y;
+	}
+	else
+	{
+	y = x;
+	}
+
+	if(  B || ( 5 < 10) < ( hola > 10) )
+	valor = valor + 1;
+}

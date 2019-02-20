@@ -1,0 +1,24 @@
+
+int main(){
+     num x = 18;
+     if (x > 19){
+     num++;
+     }
+     nueva_funcion(num a num b)
+     {
+     	return 0;
+     }
+     auto lambda = [](num x num y) {
+	num = x+y;
+     }
+
+     num otro = -12;
+     num otro2 = -12.5;
+     num otro3 = -15.5e15;
+     num otro4 = otro + otro2 + otro3;
+     num otro4 = otro-otro2-otro3;
+     num otro4 = 12.5-14.5-12.5;
+     num otro4 = -12.5-14.5-12.5;
+     num otro4 = -12.5--14.5--12.5;
+     return 0;
+}

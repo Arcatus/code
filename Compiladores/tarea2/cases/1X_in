@@ -1,0 +1,19 @@
+num base = 5;
+bool siete = true;
+num area = 7*7;
+	   
+numbase=5;
+bool siete=true;
+num area=7*7;
+
+if ( n == 1 ) cambio = 1;
+else { t = -1; } 
+
+if(n==1)cambio=1;
+else{t=-1;} 
+
+if(n > 1) cambio = 1;
+else { t = - 1 ; } 
+
+if(n>1)cambio=1;
+else{t=-1;} 

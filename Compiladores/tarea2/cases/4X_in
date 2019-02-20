@@ -1,0 +1,42 @@
+__kernel__(num x)
+{
+	tread_id_x = 10;
+}
+
+int main()
+{
+   num = 2;	()*-
+   num = -5;
+   num = 3.14;
+   num = 2.54e-24;
+   num = 0.03;
+   num = 1.16e27;
+   num = 5e28;
+   
+   num=2;
+   num=-5;
+   num=3.14;
+   num=2.54e-24;
+   num=0.03;
+   num=1.16e27;
+   num=5e28;		_________
+
+   if(<);-arbol;;;;
+   if(>);+bebe****
+   if(<=);*beta***
+   if(>=);/bono>>>
+   if(==);%bool
+   
+   if(<);
+   if(>);
+   if(<=);
+   if(>=);
+   if(==);@
+
+	if((a > 8) && (b == c))
+	{
+		saludar;
+	} else if ( b == z || n > 8);*889.00
+
+   return 0;
+}	

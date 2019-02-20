@@ -1,0 +1,15 @@
+-2-var<= else< 5%5
+-2+var>= if> 5+5
+-2*var< while<= 5-1
+-2%var> do>= 5&&1
+-2/var= break> 5||8
+2-var== true<
+2+var== if<<
+2*var== else<=>
+2%var== do <==<
+2/var while
+-3.14-var break
+-3.14+varwhile
+-3.14*varif 
+-3.14%varbreak
+-3.14/varelse

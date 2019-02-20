@@ -1,0 +1,6 @@
+{
+  ele[ a[1] ] = 1;
+  ele[ a && a[ false ] ] = 0;
+  ele[ a == a[ false ] ] = 0;
+  ele[ a + b[10]] = false;
+}
