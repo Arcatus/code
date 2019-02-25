@@ -1,0 +1,104 @@
+iniciar-programa
+    define-nueva-instruccion gira(x) como inicio
+        repetir x veces gira-izquierda;
+    fin;
+
+    define-nueva-instruccion avanza-hasta-beeper como inicio
+        mientras no-junto-a-zumbador hacer avanza;
+        coge-zumbador;
+        si junto-a-zumbador entonces inicio
+            deja-zumbador;
+            avanza;
+            avanza-hasta-beeper;
+        fin sino inicio
+            deja-zumbador;
+            gira(2);
+            avanza;
+            gira(2);
+        fin;
+    fin;
+
+    define-nueva-instruccion buscainicio como
+    inicio
+        mientras no-orientado-al-norte hacer gira-izquierda;
+        avanza-hasta-beeper;
+        gira-izquierda;
+        avanza-hasta-beeper;
+        gira(3);
+        avanza-hasta-beeper;
+    fin;
+
+    define-nueva-instruccion rodea(puntos) como inicio
+        mientras no-junto-a-zumbador hacer avanza;
+        coge-zumbador;
+        si junto-a-zumbador entonces inicio
+            coge-zumbador;
+            avanza;
+            rodea(puntos);
+            repetir puntos veces deja-zumbador;
+        fin sino inicio
+            deja-zumbador;
+            gira(2);
+            avanza;
+            gira(3);
+            si no-orientado-al-sur entonces rodea(puntos)
+            sino inicio
+                avanza;
+                avanza;
+                gira-izquierda;
+                avanza;
+                avanza;
+                avanza;
+                si junto-a-zumbador entonces inicio
+                    coge-zumbador;
+                    si no-junto-a-zumbador entonces inicio
+                        deja-zumbador;
+                        gira(2);
+                        avanza;
+                        si junto-a-zumbador entonces
+                        inicio
+                            coge-zumbador;
+                            coge-zumbador;
+                            repetir puntos veces deja-zumbador;
+                        fin;
+                        sal-de-instruccion;
+                    fin sino inicio
+                        deja-zumbador;
+                    fin;
+                fin;
+                gira(2);
+                avanza;
+                gira-izquierda;
+                rodea(puntos);
+            fin;
+        fin;
+
+    fin;
+
+    define-nueva-instruccion validacasoinicio como inicio
+        avanza;
+        si junto-a-zumbador entonces inicio
+            coge-zumbador;
+            si no-junto-a-zumbador entonces inicio
+                deja-zumbador;
+                gira(2);
+                avanza;
+                si junto-a-zumbador entonces coge-zumbador;
+                apagate;
+            fin sino inicio
+                deja-zumbador;
+            fin;
+        fin;
+        gira(2);
+        avanza;
+        gira(2);
+    fin;
+
+    inicia-ejecucion
+        buscainicio;
+        gira(2);
+        validacasoinicio;
+        rodea(1);
+        apagate;
+    termina-ejecucion
+finalizar-programa

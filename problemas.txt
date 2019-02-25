@@ -39,10 +39,10 @@ Problemas de ciclos
 17. OK
 18. OK
 19. OK
-20. omegaup.com/arena/problem/Fer-escapando#problems (m)
+20. OK
 21. OK
 22. OK
-23. omegaup.com/arena/problem/La-secuencia-infinita/#problems (?)
+23. OK
 24. OK
 25. OK
 
@@ -55,18 +55,18 @@ Problemas de arreglos y matrices
 6. OK
 7. OK
 8. OK
-9. omegaup.com/arena/problem/Saltando-por-el-arreglo/#problems (m)
-10. omegaup.com/arena/problem/Demostrando-con-matrices#problems (f)
-11. omegaup.com/arena/problem/La-moda-y-sus-signos/#problems (f)
+9. OK
+10. OK
+11. OK
 12. omegaup.com/arena/problem/Los-cuadrados-semimagicos/#problems (m)
-13. omegaup.com/arena/problem/mee/#problems (f)
-14. omegaup.com/arena/problem/Modificando-un-arreglo#problems (f)
+13. OK
+14. OK
 15. OK
-16. omegaup.com/arena/problem/Omitiendo-el-entero-mas-grande/#problems (f)
+16. OK
 17. omegaup.com/arena/problem/Saltando-por-el-arreglo-reloaded/#problems (m)
 
 Problemas de cadenas
-1. omegaup.com/arena/problem/Ordenando-las-letras-de-la-linea/#problems (f)
+1. OK
 
 Problemas de entrada/salida
 1. omegaup.com/arena/problem/Contando-los-enteros-de-la-linea/#problems (m)
