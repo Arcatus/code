@@ -12,6 +12,11 @@ void match(std::string& l,std::string l2);
 
 queue<string> token;
 
+/*
+    S -> P S 
+    P -> ↑ S ↓
+*/
+
 int main()
 {
     string token;

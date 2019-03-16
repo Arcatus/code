@@ -155,9 +155,9 @@ GLuint createTeteraUtah
 
     Vector3 controlPoints[16*bezierLayer] = { };
 
-    std::ifstream iFile("cp_indices.txt",std::ios::in);
-    std::ifstream pFile("control_points.txt",std::ios::in);
-    std::ifstream bFile("bottom.txt",std::ios::in);
+    std::ifstream iFile("cp_indices.txt");
+    std::ifstream pFile("control_points.txt");
+    std::ifstream bFile("bottom.txt");
 
     unsigned int control;
     GLfloat getx, gety, getz;

@@ -20,23 +20,6 @@ int main()
 	glewInit();
 
 	glewExperimental = GL_TRUE;
-
-	GLfloat vertices[] = 
-	{
-		-0.5f, -0.5f, 0.0f,
-		 0.5f, -0.5f, 0.0f,
-		 0.0f,  0.5f, 0.0f
-	};
-
-	GLuint vbo;
-
-	glGenBuffers(1, &vbo);
-
-	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-	
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	
 	glViewport(0, 0, 512, 512);
 

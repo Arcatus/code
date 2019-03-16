@@ -34,14 +34,14 @@ int main()
 	glViewport(0, 0, W, H);
 	
 	glClearColor(0.0f,0.0f,0.2f,1.0f);
+
+	glUseProgram(shaderProgram);
 	
 	while(!glfwWindowShouldClose(window))
 	{
 		glfwPollEvents();
 		
 		glClear(GL_COLOR_BUFFER_BIT);
-
-		glUseProgram(shaderProgram);
 
 		glBindVertexArray(vao);
 		glDrawArrays(GL_TRIANGLES,0,3);
