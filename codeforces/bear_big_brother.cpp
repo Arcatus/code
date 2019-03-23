@@ -3,19 +3,19 @@
 //#include <string>
 //#include <algorithm>
 //#include <string>
-//#include <cmath>
 
 int main()
 {
 	int n, m;
-
 	scanf("%d %d",&n,&m);
 
-	for (int i = n; i <= m ; ++i )
+	int tiempo = 0;
+
+	while( n <= m)
 	{
-		if (i % 2 == 0)
-		{
-			printf("%d\n",i);
-		}
-	}
+		n *= 3;
+		m *= 2;
+		tiempo++;
+	}	
+	printf("%d\n",tiempo);
 }

@@ -1,11 +1,12 @@
-//#include <iostream>
+#include <iostream>
 //#include <cstdio>
 //#include <string>
 //#include <algorithm>
-//#include <string>
+#include <string>
 
 using std::string;
 using std::cin;
+using std::cout;
 
 string borra_ceros(string s){
 	while(s.length() > 0 && s[0]=='0' )
@@ -36,16 +37,41 @@ int main()
 {
 	string a, b;
 
-	cin >> a, b;
+	cin >> a >> b;
 
-	int n = a.length(); 
-	int m = b.length(); 
-
-	for (int i = m - 1; i >= 0; i--)
+	for(auto& i : a)
 	{
-		for(int j = n - 1; j >= 0; j-- )
+		if ( i == '6' )
 		{
-			
+			i = '5';
 		}
 	}
+
+	for(auto& i : b)
+	{
+		if ( i == '6' )
+		{
+			i = '5';
+		}
+	}
+
+	std::cout << suma(a,b) << ' ';
+
+	for(auto& i : a)
+	{
+		if ( i == '5' )
+		{
+			i = '6';
+		}
+	}
+
+	for(auto& i : b)
+	{
+		if ( i == '5' )
+		{
+			i = '6';
+		}
+	}	
+
+	std::cout << suma(a,b) << '\n';
 }
