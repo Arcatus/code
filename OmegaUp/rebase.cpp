@@ -1,19 +1,28 @@
 //#include <iostream>
 #include <cstdio>
 //#include <string>
-//#include <algorithm>
+#include <algorithm>
 //#include <string>
-
-int autos[1000 + 1]{};
 
 int main()
 {
 	int n, t;
+
+	scanf("%d",&n);
+
+	int arr[n];
+
 	for (int i=0; i < n; ++i)
 	{
-		scanf("%d",&t);
-		autos[t]++;
+		scanf("%d",&arr[i]);
 	}
 
+	std::sort( arr, arr + n );
+
+	int rebases = 0;
 	
+	
+
+	printf("%d\n",rebases);
+
 }

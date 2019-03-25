@@ -1,11 +1,7 @@
 #include <iostream>
 #include <string>
 
-using std::string;
-using std::cin;
-using std::cout;
-
-int cuenta_acarr = 0;
+using namespace std;
 
 string borra_ceros(string s){
 	while(s.length() > 0 && s[0]=='0' )
@@ -28,22 +24,14 @@ string suma (string a, string b)
 		sum = ( a[i] - '0' ) + ( b[i] - '0') + ac;
 		c[i] = (sum % 10) + '0';
 		ac = sum / 10;
-
-		if (ac > 0)
-		{
-			cuenta_acarr++;
-		}
 	}
 	return ((c=borra_ceros(c))=="" ? "0":c);
 }
 
 int main()
 {
-	string a, b;
+	string a = "15";
+	string b = "4";
 
-	cin >> a >> b;
-
-	suma(a,b);
-
-	cout << cuenta_acarr;
+	cout << suma(a,b) << '\n';
 }
