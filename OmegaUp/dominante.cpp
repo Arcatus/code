@@ -10,7 +10,7 @@ int main()
 
 	dom = a;
 
-	while((scanf("%d",&a))==1)
+	while( (scanf("%d",&a)) == 1 )
 	{	
 		if(cdom==0)
 		{

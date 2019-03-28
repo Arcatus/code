@@ -1,5 +1,9 @@
-#include <cmath>
 #include <iostream>
+//#include <cstdio>
+//#include <string>
+//#include <algorithm>
+#include <string>
+#include <cmath>
 
 typedef long long ll;
 
@@ -15,6 +19,9 @@ int main()
 
 	cin >> n;
 
+	n++;
+
 	ll res = ( pow(phi,n) - pow(( 1 - phi),n) )/sqrt(5);
 	cout << res << '\n';
+
 }

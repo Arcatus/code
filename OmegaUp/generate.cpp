@@ -7,7 +7,7 @@
 #include <ctime>
 
 #define m 999
-#define n 999
+#define n 3000
 #define MAX_AI 1245
 
 #define k 1
@@ -15,6 +15,13 @@
 
 int main()
 {
+	//printf("const char *fibos[] = {");
+
+	for (int i = 0; i <= n; ++i )
+	{
+		printf("%d\n",i);
+	}
+	/*
 	printf("%d %d\n",n,m);
 
 	for (int i = 0; i < n; ++i)

@@ -30,8 +30,10 @@ string suma (string a, string b)
 
 int main()
 {
-	string a = "15";
-	string b = "4";
+	//string a = "15";
+	//string b = "4";
+	string a, b;
+	cin >> a >> b;
 
 	cout << suma(a,b) << '\n';
 }
