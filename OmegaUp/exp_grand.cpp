@@ -1,3 +1,4 @@
+#include <climits>
 #include <iostream>
 #include <string>
 
@@ -50,24 +51,30 @@ string mult(string a, string b) {
    return ((ans=borra_ceros(ans))=="" ? "0":ans);
 }
 
+int mod(string num, int a) 
+{ 
+    int res = 0; 
+
+    for (int i = 0; i < num.length(); i++)
+         res = (res*10 + (int)num[i] - '0') % a;
+
+    return res; 
+}
+
 int main()
 {
-   int n, c_i;
+   int n, m;
 
-   cin >> n;
+   cin >> n >> m;
 
-   for (int i = 0; i < n; ++i)
+   string res = "1",tmp = "2";
+
+   for (int i = 1; i < n; ++i)
    {
-      cin >> c_i;
+      res = mult(res,tmp);
 
-      string res = "1",tmp = "2";
+      tmp = suma(tmp,"1");
 
-      for (int i = 1; i < c_i; ++i)
-      {
-         res = mult(res,tmp);
-         tmp = suma(tmp,"1");
-      }
-
-      cout << res << '\n';
    }
+   cout << res << '\n';
 }

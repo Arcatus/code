@@ -24,8 +24,6 @@ string borra_ceros(string s){
 
 string mult(string a, string b){
 
-   clock_t debug_time;
-
    int n = a.size(), m = b.size();
    int t,k,i; string ans(m+n,'0');
 
