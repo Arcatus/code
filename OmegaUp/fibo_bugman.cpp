@@ -4,7 +4,8 @@ using namespace std;
 
 typedef long long ll;
 
-const long mod = 2017;
+//const long mod = 2017;
+const long mod = 1000000;
 
 void fib(ll n, ll&x, ll&y){
     

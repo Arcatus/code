@@ -4,6 +4,8 @@
 
 typedef unsigned long long llu;
 
+const mod = 1000000
+
 using namespace std;
 
 void multiply(string F[2][2], string M[2][2]);
@@ -87,21 +89,21 @@ llu mod(string num, llu a)
   
 void multiply(string F[2][2],string M[2][2] )
 { 
-  string xLeft  = to_string( mod (mult( to_string(mod(F[0][0], 1000000007 )) , M[0][0] ), 1000000007 ) );
-  string xRight = to_string( mod (mult( to_string(mod(F[0][1], 1000000007 )) , M[1][0] ), 1000000007 ) );
-  string yLeft  = to_string( mod (mult( to_string(mod(F[0][0], 1000000007 )) , M[0][1] ), 1000000007 ) );
-  string yRight = to_string( mod (mult( to_string(mod(F[0][1], 1000000007 )) , M[1][1] ), 1000000007 ) );
-  string zLeft  = to_string( mod (mult( to_string(mod(F[1][0], 1000000007 )) , M[0][0] ), 1000000007 ) );
-  string zRight = to_string( mod (mult( to_string(mod(F[1][1], 1000000007 )) , M[1][0] ), 1000000007 ) );
-  string wLeft  = to_string( mod (mult( to_string(mod(F[1][0], 1000000007 )) , M[0][1] ), 1000000007 ) );
-  string wRight = to_string( mod (mult( to_string(mod(F[1][1], 1000000007 )) , M[1][1] ), 1000000007 ) );
+  string xLeft  = to_string( mod (mult( to_string(mod(F[0][0], mod )) , M[0][0] ), mod ) );
+  string xRight = to_string( mod (mult( to_string(mod(F[0][1], mod )) , M[1][0] ), mod ) );
+  string yLeft  = to_string( mod (mult( to_string(mod(F[0][0], mod )) , M[0][1] ), mod ) );
+  string yRight = to_string( mod (mult( to_string(mod(F[0][1], mod )) , M[1][1] ), mod ) );
+  string zLeft  = to_string( mod (mult( to_string(mod(F[1][0], mod )) , M[0][0] ), mod ) );
+  string zRight = to_string( mod (mult( to_string(mod(F[1][1], mod )) , M[1][0] ), mod ) );
+  string wLeft  = to_string( mod (mult( to_string(mod(F[1][0], mod )) , M[0][1] ), mod ) );
+  string wRight = to_string( mod (mult( to_string(mod(F[1][1], mod )) , M[1][1] ), mod ) );
 
 //************************************************************************************************
 
-  string x = to_string( mod( suma( xLeft, xRight ), 1000000007 ) );
-  string y = to_string( mod( suma( yLeft, yRight ), 1000000007 ) );
-  string z = to_string( mod( suma( zLeft, zRight ), 1000000007 ) );
-  string w = to_string( mod( suma( wLeft, wRight ), 1000000007 ) );
+  string x = to_string( mod( suma( xLeft, xRight ), mod ) );
+  string y = to_string( mod( suma( yLeft, yRight ), mod ) );
+  string z = to_string( mod( suma( zLeft, zRight ), mod ) );
+  string w = to_string( mod( suma( wLeft, wRight ), mod ) );
 
   F[0][0] = x;
   F[0][1] = y;

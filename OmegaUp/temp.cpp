@@ -1,21 +1,27 @@
-//#include <iostream>
-#include <cstdio>
-//#include <string>
-//#include <algorithm>
-//#include <string>
-//#include <cmath>
+#include <iostream>
 
-int main()
+using namespace std;
+
+int velas(int t, int r)
 {
-	int n, m;
-
-	scanf("%d %d",&n,&m);
-
-	for (int i = n; i <= m ; ++i )
+	if (t == 0)
 	{
-		if (i % 2 == 0)
-		{
-			printf("%d\n",i);
-		}
+		return 0;
 	}
+	else
+	{
+		return (t/r) + velas( t/r ,r);
+	}
+}
+
+int main( )
+{
+   int t, r;
+
+   cin >> t >> r;
+
+   if (r==1)
+   	return -1;
+   else
+   	cout << t + velas(t,r) << '\n';
 }

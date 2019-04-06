@@ -1,12 +1,10 @@
-#include <iostream>
+#include <stdio.h>
 
-using namespace std;
-
-typedef unsigned long long ll;
+typedef unsigned long long llu;
 
 const long mod = 1000000007;
 
-void fib(ll n, ll&x, ll&y){
+void fib(llu n, llu&x, llu&y){
     if(n==0){
         x = 0;
         y = 1;
@@ -17,7 +15,7 @@ void fib(ll n, ll&x, ll&y){
         fib(n-1, y, x);
         y=(y+x)%mod;
     }else{
-        ll a, b;
+        llu a, b;
         fib(n>>1, a, b);
         y = (a*a+b*b)%mod;
         x = (a*b + a*(b-a+mod))%mod;
@@ -26,15 +24,22 @@ void fib(ll n, ll&x, ll&y){
 
 int main()
 {
-    ll n, x, y;
-    cin >> n;
+    llu n, x, y;
+    
+    scanf("%llu",&n);
 
-    ll res = 0;
-
-    for (int i = 1; i <= n; ++i)
+    if ( n < 3)
     {
-        fib(i+2,x,y);
-        res += ( x - 1) % mod;
+        printf(( n == 1)?"1":"3");
     }
-    cout << res << '\n';
+    else
+    {
+        fib(n+4,x,y);
+
+        llu neg = -1*((n+1)%mod);
+
+        llu res = x + neg - 2;
+
+        printf("%llu\n",res);
+    }
 }

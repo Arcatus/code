@@ -7,7 +7,7 @@
 #include <ctime>
 
 #define m 999
-#define n 3000
+#define n 53
 #define MAX_AI 1245
 
 #define k 1
@@ -17,8 +17,14 @@ int main()
 {
 	//printf("const char *fibos[] = {");
 
-	for (int i = 0; i <= n; ++i )
+// 65-90
+	//srand (time(NULL));
+
+	printf("%d\n",n);
+
+	for (int i = 0; i < n; ++i )
 	{
+		//int ai = (rand() % 25) + 65;
 		printf("%d\n",i);
 	}
 	/*

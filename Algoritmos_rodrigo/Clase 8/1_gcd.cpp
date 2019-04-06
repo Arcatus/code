@@ -1,4 +1,4 @@
-// gcd es el máximo común divisor (greatest common divisor) y se puede implementar fácilmente de manera recursiva
+   // gcd es el máximo común divisor (greatest common divisor) y se puede implementar fácilmente de manera recursiva
 #include <iostream>
 using namespace std;
 
@@ -31,6 +31,7 @@ int gcd(int a, int b)      // iterativo
 
 int main( )
 {
-   cout << gcd(15, 10) << '\n';
-   cout << gcd(33, 2) << '\n';
+   int a, b;
+   cin >> a >> b;
+   cout << gcd(a, b) << '\n';
 }

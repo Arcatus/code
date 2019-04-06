@@ -27,8 +27,9 @@ string mult(string a, string b){
 
 int main()
 {
-	string a = "3";
-	string b = "4";
+	string a, b;
+
+	cin >> a >> b;
 	
 	cout << mult(a,b) << '\n';
 }

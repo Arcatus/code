@@ -34,5 +34,6 @@ int main( )
    cin >> inicial;
 
    vector<bool> visitados(v, false);
+   
    profundidad(inicial, adyacencia, visitados);
 }
