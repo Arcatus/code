@@ -5,30 +5,27 @@
 
 using namespace std;
 
-void primeFactors(int n) 
+typedef unsigned long long llu;
+
+void primeFactors(llu n) 
 { 
-    while (n%2 == 0) 
-    { 
-        printf("%d ", 2); 
+    while (n%2 == 0) { 
+        printf("%d ", 2);
         n = n/2; 
     }
-    for (int i = 3; i <= sqrt(n); i = i+2) 
-    { 
-        while (n%i == 0) 
-        { 
-            printf("%d ", i); 
+    for (llu i = 3; i <= sqrt(n); i = i+2) { 
+        while (n%i == 0) { 
+            printf("%llu ", i);
             n = n/i; 
         } 
-    } 
-    // This condition is to handle the case when n  
-    // is a prime number greater than 2
-    if (n > 2) 
-        printf ("%d ", n); 
+    }
+    if (n > 2)
+        printf ("%llu ", n);
 } 
 
 int main() 
 { 
-    int n;
+    llu n;
     cin >> n;
     primeFactors(n); 
     return 0; 

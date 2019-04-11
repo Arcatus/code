@@ -1,45 +1,64 @@
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
-#include <set>
-
-typedef unsigned long long llu;
+#include <algorithm>
+#include <vector>
 
 using namespace std;
 
-std::set<llu> factors;
+typedef long long ll;
 
-void primeFactors(llu n)
+typedef vector<ll> vll;
+
+vll ret_a, ret_b;
+
+vll primeFactors(ll n)
 { 
-    while (n%2 == 0)
-    {
-        if (factors.count(2) > 0){
-            cout << "NO\n";
-            exit(0);
-        }
-        else
-            factors.emplace(2);
-        n = n/2;
+    vll ret;
+    while (n%2 == 0) {
+            ret.push_back(2LL);
+            n = n/2;
     }
-    for (llu i = 3; i <= sqrt(n); i = i+2) 
+    for (ll i = 3LL; i <= sqrt(n); i = i+=2LL)
     { 
-        while (n%i == 0) 
-        { 
-            printf("%d ", i); 
-            n = n/i; 
+        while (n%i == 0LL) { 
+            ret.push_back(i);
+            n = n/i;
         } 
-    } 
-    // This condition is to handle the case when n  
-    // is a prime number greater than 2
-    if (n > 2) 
-        printf ("%d ", n); 
+    }
+    if (n > 2LL) {
+        ret.push_back(n);
+    }
+    return ret;
 } 
 
 int main() 
 { 
-    llu n;
-    cin >> n;
-    primeFactors(n);
-    cin >> n;
-    primeFactors(n);
-} 
+    int casos;
+    ll a, b;
+
+    cin >> casos;
+
+    for (int i = 0; i < casos; ++i)
+    {        
+        cin >> a >> b;
+
+        ret_a.clear();
+        ret_b.clear();
+
+        ret_a = primeFactors(a);
+        ret_b = primeFactors(b);
+
+        vll ret( max( ret_a.size(), ret_b.size() ) );
+
+        auto it = set_intersection(
+            ret_a.begin(), ret_a.end(), ret_b.begin(), ret_b.end(), ret.begin());
+
+        ret.resize(it-ret.begin());
+
+        if ( ret.size() > 0 )
+            cout << "NO\n";
+        else
+            cout << "SI\n";
+    }
+}
