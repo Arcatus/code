@@ -1,0 +1,397 @@
+class program {
+	void east(){ while (notFacingEast) { turnleft(); } }
+	void west(){ while (notFacingWest) { turnleft(); } }
+	void north(){ while (notFacingNorth) { turnleft(); } }
+	void south(){ while (notFacingSouth) { turnleft(); } }
+	void turnright(){ iterate (3) { turnleft(); }  }
+	void bump(){ while (frontIsClear) { move(); } }
+	void bumpToBeeper(){ while (notNextToABeeper && frontIsClear) { move(); } }
+	void turn(){ turnleft(); turnleft(); }
+	void back(){ turn(); move(); turn(); }
+	void put(n){ iterate(n) { putbeeper(); }; }
+	void pick(n){ iterate(n) { pickbeeper(); }; }
+	void moveN(n){ iterate(n) { move(); }; }
+	void clearCell(){ while (nextToABeeper) { pickbeeper(); } }
+
+	void lessThan(n){
+		if (!iszero(n) && nextToABeeper){
+			pickbeeper();
+			lessThan(pred(n));
+			putbeeper();
+		} else if (iszero(n)){
+			south();
+		} else {
+			north();
+		}
+	}
+
+	void moreThan(n){
+		if (!iszero(n) && nextToABeeper){
+			pickbeeper();
+			moreThan(pred(n));
+			putbeeper();
+		} else if (iszero(n) && nextToABeeper){
+			north();
+		} else {
+			south();
+		}
+	}
+
+	void bringBack(n){
+		if (nextToABeeper){
+			pickbeeper();
+			bringBack(succ(n));
+		} else {
+			back();
+			put(n);
+			if (nextToABeeper) { pickbeeper(); }
+		}
+	}
+
+	void storeNorth(){
+		if (notFacingNorth){
+			turnleft();
+			putbeeper();
+			storeNorth();
+			turnright();
+		}
+	}
+
+	void storeAndGo(){
+		clearCell();
+		put(3);
+		storeNorth();
+		storeInit();
+	}
+
+	void storeInit(){
+		if (notFacingSouth){
+			turnleft();
+			storeInit();
+			turnright();
+		} else if (frontIsClear){
+			move();
+			storeInit();
+			back();
+		} else {
+			turnright();
+			storeInit2();
+			turnleft();
+		}
+	}
+
+	void storeInit2(){
+		if (frontIsClear){
+			move();
+			storeInit2();
+			back();
+		} else {
+			turn();
+			store();
+			turn();
+		}
+	}
+
+	void findMark(){
+		south();
+		bump();
+		west();
+		bump();
+
+		east();
+		while (iszero(0)){
+			moreThan(6);
+			if (facingSouth){ lessThan(3); }
+
+			if (facingSouth){
+				pick(3);
+				north();
+				while (nextToABeeper){
+					pickbeeper();
+					turnright();
+				}
+				return();
+			}
+
+			east();
+
+			if (frontIsClear){
+				move();
+			} else {
+				west();
+				bump();
+				north();
+				move();
+				east();
+			}
+		}
+	}
+
+	void storeBeepersAndMove(n){
+		if (nextToABeeper){
+			pickbeeper();
+			storeBeepersAndMove(succ(n));
+		} else {
+			put(n);
+			move();
+			store();
+			back();
+			if (notNextToABeeper){ put(n); }
+		}
+	}
+
+	void storeBeepersAndNextRow(n){
+		if (nextToABeeper){
+			pickbeeper();
+			storeBeepersAndNextRow(succ(n));
+		} else {
+			put(n);
+			west();
+			bump();
+			north();
+
+			if (frontIsClear){
+				move();
+				east();
+				store();
+				south();
+				move();
+			} else {
+				findMark();
+				go();
+				west();
+				bump();
+				north();
+				bump();
+			}
+
+			east();
+			bump();
+
+			if (notNextToABeeper){ put(n); }
+		}
+	}
+
+	void store(){
+		if (frontIsClear){
+			storeBeepersAndMove(0);
+		} else {
+			storeBeepersAndNextRow(0);
+		}
+	}
+
+	void moveAndBringBack(){
+		move();
+		if (nextToABeeper){
+			pickbeeper();
+			if (nextToABeeper){
+				putbeeper();
+				back();
+
+				turnleft();
+				if (frontIsClear){
+					move();
+					if (nextToABeeper){
+						pickbeeper();
+						if (nextToABeeper){
+							putbeeper();
+							back();
+							turnright();
+							return();
+						}
+						putbeeper();
+					}
+					go();
+					bringBack(0);
+				}
+				turnright();
+			} else {
+				putbeeper();
+				go();
+				bringBack(0);
+			}
+		} else {
+			go();
+			bringBack(0);
+		}
+	}
+
+	void go(){
+		if (notNextToABeeper){
+			put(2);
+			if (frontIsClear){
+				moveAndBringBack();
+			} else {
+				turnleft();
+				if (frontIsClear){
+					moveAndBringBack();
+				}
+				turnright();
+			}
+		} else {
+			pickbeeper();
+			if (notNextToABeeper){
+				put(2);
+				turnleft();
+				if (frontIsClear){
+					moveAndBringBack();
+				}
+				turnright();
+			} else {
+				turnoff(); (* dafuq *)
+			}
+		}
+	}
+
+	void tryLine(n){
+		if (notNextToABeeper){
+			turnleft();
+			storeAndGo();
+			turnright();
+			put(6);
+
+			if (frontIsClear){
+				move();
+				tryLine(succ(n));
+			} else {
+				turn();
+				getMax(n);
+				cleanup(n);
+			}
+		} else {
+			pickbeeper();
+			if (notNextToABeeper){
+				turnleft();
+				storeAndGo();
+				turnright();
+				put(6);
+				turn();
+				getMax(n);
+				putbeeper();
+				if (!iszero(pred(n))) { move(); }
+				if (!iszero(n)) { cleanup(pred(n)); }
+			} else {
+				putbeeper();
+				turn();
+				move();
+				if (!iszero(n)) { getMax(pred(n)); }
+				if (!iszero(n)) { cleanup(pred(n)); }
+			}
+		}
+	}
+
+	void cleanup(n){
+		if (!iszero(n)) { moveN(pred(n)); }
+		turn();
+		while (notNextToABeeper){
+			putbeeper();
+			putbeeper();
+			move();
+		}
+		clearCell();
+		putbeeper();
+		turnleft();
+	}
+
+	void getMaximum(n){
+		if (nextToABeeper){
+			pickbeeper();
+			getMaximum(succ(n));
+		} else {
+			put(n);
+			move();
+			bumpToBeeperAndReturn(n);
+			back();
+		}
+	}
+
+	void bumpToBeeperAndReturn(n){
+		if (notNextToABeeper){
+			move();
+			bumpToBeeperAndReturn(n);
+			back();
+		} else {
+			iterate (n){ if (nextToABeeper) { pickbeeper(); } }
+			if (nextToABeeper){
+				put(n);
+				turn();
+				move();
+				bumpToBeeper();
+				clearCell();
+				turn();
+				bumpToBeeper();
+			}
+		}
+	}
+
+	void getMax(n){
+		normalize(n);
+		findMax(n);
+	}
+
+	void normalize(n){
+		put(n);
+		if (!iszero(pred(n))){
+			move();
+			normalize(pred(n));
+			back();
+		}
+	}
+
+	void findMax(n){
+		if (!iszero(pred(n))){
+			move();
+			findMax(pred(n));
+			back();
+			getMaximum(0);
+		}
+	}
+
+	void tidyup(){
+		south();
+		bump();
+		west();
+		bump();
+
+		east();
+
+		while (iszero(0)){
+			moreThan(1);
+			if (facingNorth){ clearCell(); }
+			east();
+
+			if (frontIsClear){
+				move();
+			} else {
+				west();
+				bump();
+				north();
+				if (frontIsClear){
+					move();
+					east();
+				} else { turnoff(); }
+			}
+		}
+	}
+
+	program(){
+		(* dies if there's a 4x4 block where Karel starts. *)
+		while (iszero(0)){
+			tryLine(1);
+
+			if (frontIsClear){ move(); }
+
+			if (nextToABeeper){
+				pickbeeper();
+				if (notNextToABeeper){ 
+					putbeeper();
+				} else {
+					putbeeper();
+					tidyup();
+				}
+			}
+
+			(* if (frontIsBlocked && notNextToABeeper){ tidyup(); } *)
+		}
+	}
+}

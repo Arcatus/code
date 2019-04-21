@@ -1,0 +1,7 @@
+#/usr/bin/env zsh
+for f in {0..9}; {
+	cp cases/mundo$f.in data.in;
+	echo mundo$f:;
+	./validator.py mundo$f < $1/mundo$f.out;
+	sleep 1
+}

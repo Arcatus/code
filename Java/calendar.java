@@ -1,16 +1,25 @@
 
 import java.io.*;
-
 import java.util.*;
+import java.lang.*;
 
-class calendar
+class Main
 {
-
-	public static void main ( String args[] ) throws IOException
+	public static void main ( String args[] )
 	{
-		GregorianCalendar cal = new GregorianCalendar(110,8,9);
+		Scanner reader = new Scanner(System.in);
 
-		System.out.println (cal.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY);
-	}
-	
+		int day = reader.nextInt();
+		int month = reader.nextInt();
+		int year = reader.nextInt();
+
+		String[] names = new String[]
+		{"","DOMINGO","LUNES","MARTES","MIERCOLES","JUEVES","VIERNES","SABADO"};
+
+		
+		Calendar calendar = new GregorianCalendar(year,month-1,day);
+		calendar.set(Calendar.ERA, GregorianCalendar.BC);
+		System.out.println( names[calendar.get(Calendar.DAY_OF_WEEK)] );
+		
+	}	
 }

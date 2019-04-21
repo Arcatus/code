@@ -1,0 +1,172 @@
+class program {
+	void east(){
+		while (notFacingEast)
+			turnleft();
+	}
+
+	void west(){
+		while (notFacingWest)
+			turnleft();
+	}
+
+	void north(){
+		while (notFacingNorth)
+			turnleft();
+	}
+
+	void south(){
+		while (notFacingSouth)
+			turnleft();
+	}
+	
+	void turnright(){
+		iterate (3)
+			turnleft();
+	}
+
+	void pickAll(){
+		while (nextToABeeper)
+			pickbeeper();
+	}
+
+	void putAll(){
+		while (anyBeepersInBeeperBag)
+			putbeeper();
+	}
+
+	void pickN(n){
+		iterate(n) pickbeeper();
+	}
+
+	void swapBeeperBag(){
+		if (anyBeepersInBeeperBag){
+			putbeeper();
+			swapBeeperBag();
+			putbeeper();
+		} else pickAll();
+	}
+
+	void compare(n){
+		if (anyBeepersInBeeperBag){
+			putbeeper();
+			compare(succ(n));
+		} else {
+			pickN(n);
+
+			iterate (n){
+				if (nextToABeeper)
+					pickbeeper();
+				else
+					south();
+			}
+
+			if (nextToABeeper || facingSouth)
+				south();
+			else
+				north();
+
+			putAll();
+			pickN(n);
+		}
+	}
+
+	void continueCandidate(){
+		while (frontIsClear){
+			move();
+
+			compare(0);
+
+			if (facingNorth){
+				east();
+				continueCandidate();
+			} else {
+				east();
+				return();
+			}
+		}
+	}
+
+	void findCandidate(){
+		while (iszero(0)){
+			compare(0);
+
+			if (facingSouth)
+				swapBeeperBag();
+			east();
+
+			continueCandidate();
+
+			if (frontIsClear)
+				move();
+			else return();
+		}
+	}
+
+	void checkCandidatePositive(d){
+		west();
+		if (frontIsBlocked){
+			if (iszero(d)){
+				putAll();
+				turnoff();
+			} else {
+				turnoff();
+			}
+		}
+		move();
+
+		compare(0);
+
+		if (notNextToABeeper)
+			north();
+
+		if (facingNorth) {
+			checkCandidatePositive(succ(d));
+		} else {
+			if (iszero(d)){
+				checkCandidateNegative(1);
+			} else {
+				checkCandidatePositive(pred(d));
+			}
+		}
+	}
+
+	void checkCandidateNegative(d){
+		west();
+		if (frontIsBlocked){
+			putAll();
+			turnoff();
+		}
+		move();
+
+		compare(0);
+
+		if (notNextToABeeper)
+			north();
+
+		if (facingNorth){
+			if (iszero(d)){
+				checkCandidatePositive(1);
+			} else {
+				checkCandidateNegative(pred(d));
+			}
+		} else {
+			checkCandidateNegative(succ(d));
+		}
+	}
+
+	program(){
+		east();
+		findCandidate();
+
+		compare(0);
+
+		if (notNextToABeeper)
+			north();
+
+		if (facingNorth){
+			checkCandidatePositive(1);
+		} else {
+			checkCandidateNegative(1);
+		}
+	}
+}
