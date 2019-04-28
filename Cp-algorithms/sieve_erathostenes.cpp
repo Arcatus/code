@@ -34,7 +34,7 @@ void sieve(ll upperbound)
 
 bool isPrime(ll N) 
 {
-	if (N <= _sieve_size) 
+	if (N <= _sieve_size)
 		return bs[N];
 	for (int i = 0; i < (int)primes.size(); i++)
 	{
