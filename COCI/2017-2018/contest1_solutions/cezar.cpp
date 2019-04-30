@@ -1,7 +1,7 @@
 #include <cstdio>
 using namespace std;
 
-const int MAXN = 60;
+const int MAXN = 12;
 
 int n, imam[MAXN], karta;
 int suma, x;

@@ -1,29 +1,31 @@
 #include <iostream>
-#include <cstdio>
+//#include <cstdio>
 //#include <string>
 //#include <algorithm>
 //#include <string>
 
-#include <map>
+#include <unordered_map>
 
 using namespace std;
-
+int n,m, a, b,i;
 int main()
 {
-	int n,m, a, b;
-	scanf("%d %d",&n,&m);
+	ios::sync_with_stdio(false);
+	cin.tie(0);
 
-	map<int,int> dic;
+	cin >> n >> m;
 
-	for (int i = 0; i < n; ++i)
+	unordered_map<int,int> dic;
+
+	for (i = 0; i < n; ++i)
 	{	
-		scanf("%d %d",&a,&b);
-		dic.emplace( a, b);
+		cin >> a >> b;
+		dic.emplace(a, b);
 	}
 
-	for (int i = 0; i < m; ++i)
+	for (i = 0; i < m; ++i)
 	{	
-		scanf("%d",&a);
+		cin >> a;
 		if (dic.count(a) > 0) 
 		{
 			cout << dic[a] << '\n';

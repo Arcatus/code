@@ -6,16 +6,25 @@
 
 int main()
 {
-	int temp = 0;
-
 	int n;
 
 	scanf("%d",&n);
 
-	for(int i = 8 ; i <= n; ++i)
+	int a[n];
+	for(int i=0; i<n; ++i)
 	{
-		temp+=i;
-	}					
+		scanf("%d",&a[i]);
+	}		
+	int k;			
+	scanf("%d",&k);
 
-	printf("%d\n",temp);
+	for (int j=0;j<n;++j)
+	{
+		if (a[j]==k) {
+			printf("%d\n",j);
+			return 0;
+		}
+	}
+	printf("NO\n");
+	return 0;
 }

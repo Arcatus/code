@@ -1,7 +1,17 @@
 #include <iostream>
+//#include <cstdio>
+//#include <fstream>
+//#include <unordered_map>
+//#include <map>
+//#include <set>
 #include <algorithm>
+//#include <vector>
+//#include <string>
 
 using namespace std;
+
+//typedef unsigned long long llu;
+//typedef vector<int> vi;
 
 int main()
 {
@@ -28,30 +38,29 @@ int main()
 	sort(arr,arr+n);
 	sort(brr,brr+n);
 
-	int index0=n-1, index1=n-1;
+	int index0=0, index1=0;
 
 	int res = 0;
 	for (int i = 0; i < n; ++i)
 	{
-		while( arr[index0] <= brr[index1] && index1>0)
+		if (arr[index0]==brr[index1])
 		{
-			index1--;
+			index0++;
 		}
-
-		if ( index1==0 && index0==n-1 ){ 
-			if ( arr[index0] > arr[0])
-			{
-				res += arr[index0];
-			}
-			break;
+		else if ( arr[index0] > brr[index1])
+		{
+			res += arr[index0];
+			index0++;
+			index1++;
 		}
-		
-		res += arr[index0];
-		if (index1==0) break;
-		index0--;
+		else
+		{
+			index0++;
+		}
 	}
 
 	cout << res << '\n';
+
 	
 	return 0;
 }

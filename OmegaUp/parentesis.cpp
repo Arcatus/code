@@ -13,28 +13,20 @@ int ptr = 0;
 
 int main()
 {
-        ptr = 0;
-
-        std::cin >> s;
-
-        s+="$";
-        
-        P();
-
-        if( s.compare("Error") == 0)
-        {
-            printf("NO\n");
-        } 
-        else if ( s[ptr] == '$' )
-        {
-            printf("SI\n");
-        }
-        else
-        {
-            printf("NO\n");
-        }
-    }
+    ptr = 0;
+    std::cin >> s;
+    s+="$";
     
+    P();
+    if( s.compare("Error") == 0) {
+        printf("NO\n");
+    } 
+    else if ( s[ptr] == '$' ) {
+        printf("SI\n");
+    }
+    else {
+        printf("NO\n");
+    }
     return 0;
 }
 

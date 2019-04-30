@@ -1,24 +1,24 @@
 #include<iostream> 
 
 using namespace std;
+
+typedef long long ll;
   
-int binomialCoeff(int n, int k) 
+ll binomialCoeff(ll n, ll k) 
 { 
-  if (k==0 || k==n) 
+  if (k==0LL || k==n) 
     return 1; 
  
-  return  binomialCoeff(n-1, k-1) + binomialCoeff(n-1, k); 
+  return  binomialCoeff(n-1LL, k-1LL) + binomialCoeff(n-1LL, k); 
 } 
 
 int main() 
 { 
-	int n, cases;
+	  ll n;
+    
+    cin >> n;
 
-    cin >> cases;
+    cout << binomialCoeff(n+1LL,2LL) << '\n';
 
-    for (int i = 0; i < cases; ++i)
-    {
-    	cin >> n;
-    	cout << binomialCoeff(n+1,2) << '\n';
-    }
-} 
+    return 0;
+}
