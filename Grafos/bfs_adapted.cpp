@@ -12,7 +12,7 @@ int main()
 	queue<int> q;
 	vector<int> AdjList[v];
 
-	vector<int> d(v, -1);
+	vector<int> visited(v, -1);
 
 	for(int i = 0; i < e; ++i)
 	{
@@ -25,12 +25,14 @@ int main()
 	int inicial;	
 	cin >> inicial;
 
-	d[inicial] = 0;
+	visited[inicial] = 0;
+
 	q.push(inicial);
 
 	while (!q.empty()) {
 
-		int u = q.front(); q.pop();
+		int u = q.front();
+		q.pop();
 
 		cout << u << ' ';
 
@@ -38,9 +40,9 @@ int main()
 			
 			int v = AdjList[u][j];
 
-			if (d[v] == -1) {
+			if (visited[v] == -1) {
 				
-				d[v] = d[u] + 1;
+				visited[v] = visited[u] + 1;
 				q.push(v);
 			}
 		}
@@ -50,5 +52,5 @@ int main()
 	int distancia_minima;
 	cin >> distancia_minima;
 
-	cout << d[distancia_minima] << '\n';
+	cout << visited[distancia_minima] << '\n';
 }
