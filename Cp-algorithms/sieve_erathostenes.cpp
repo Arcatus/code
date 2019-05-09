@@ -12,8 +12,6 @@ ll _sieve_size;
 bitset<10000010> bs;
 vi primes;
 
-// note: only work for N <= (last prime in vi "primes")^2
-
 void sieve(ll upperbound)
 {
 	_sieve_size = upperbound + 1;

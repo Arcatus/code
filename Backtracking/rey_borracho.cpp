@@ -5,7 +5,7 @@ using namespace std;
 typedef long long ll;
 
 int n;
-ll contador=0LL;
+int contador=0;
 int turno;
 
 bool tablero[6+1][6+1];
@@ -25,29 +25,21 @@ void recorrido( int i, int j )
 	if (turno & 1) {
 		for (int k=0;k<4;k++) {
 			r = i+impI[k];
-			c = j+impJ[k];	
-			if ( c < 0 || r == n || r < 0 || c == n) {
-				continue;
-			}
-			if ( ! tablero[r][c] ) {
-				recorrido(r, c);
-			}
+			c = j+impJ[k];
+			if ( c < 0 || r == n || r < 0 || c == n) continue;
+			if ( ! tablero[r][c] ) recorrido(r, c);
 		}
 	} 
 	else { 
 		for (int k=0;k<4;k++) {
 			r = i+parDiagI[k];
 			c = j+parDiagJ[k];
-			if ( c < 0 || r == n || r < 0 || c == n) {
-				continue;
-			}
-			if ( ! tablero[r][c] ) {
-				recorrido(r, c);
-			}
+			if ( c < 0 || r == n || r < 0 || c == n) continue;
+			if ( ! tablero[r][c] ) recorrido(r, c);
 		}
 	}
 
-	if (n*n == turno) contador++;
+	if (turno == n*n) contador++;
 
 	tablero[i][j] = false;
 	turno-=1;
