@@ -6,7 +6,7 @@
 //#include <set>
 //#include <algorithm>
 //#include <vector>
-#include <string>
+//#include <string>
 
 using namespace std;
 
@@ -14,22 +14,19 @@ using namespace std;
 //typedef vector<int> vi;
 
 int main()
-{	
+{
 	ios::sync_with_stdio(false);
-	cin.tie(0);	
-	
-	int n, k, t;
-	cin >> n >> k;
-	int contador=0;
-	for (int i=0; i<n;++i)
+	cin.tie(0);
+
+	int a, b;
+	cin >> a >> b;
+
+	if (a >= 18 && b >= 60 )
 	{
-		cin >> t;
-		if (t >= k)
-		{
-			contador+=1;
-		}
+		cout << "Si puede manejar";
 	}
-	printf("%d\n",contador);
+	else 
+		cout << "No puede manejar";
 
 	return 0;
 }

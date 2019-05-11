@@ -7,6 +7,7 @@
 //#include <algorithm>
 //#include <vector>
 //#include <string>
+#include <queue>
 
 using namespace std;
 
@@ -15,10 +16,25 @@ using namespace std;
 
 int main()
 {
-	//ios::sync_with_stdio(false);
-	//cin.tie(0);
+	ios::sync_with_stdio(false);
+	cin.tie(0);
 
 	int n;
 	cin >> n;
+	priority_queue<int> heap;
+
+	int t;
+	for(int i=0;i<n;++i)
+	{
+		cin >> t;
+		heap.push(t);
+	}
+
+	while(!heap.empty())
+	{
+		cout << heap.top()<< '\n';
+		heap.pop();
+	}	
+
 	return 0;
 }
