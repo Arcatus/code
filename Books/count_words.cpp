@@ -67,7 +67,7 @@ int main(int argc, const char** argv)
 
 	std::cout << wordCounts.size() << " words found. Most common:\n" ;
 
-	const std::size_t maxWordsToShow = 20;
+	const std::size_t maxWordsToShow = 50;
 	
 	showCommonWords(
 		wordCounts.begin(), wordCounts.end(), std::min(wordCounts.size(), maxWordsToShow));

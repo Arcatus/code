@@ -261,15 +261,12 @@ void Matrix4x4MakeRotationZ(float angle, Matrix4x4* result)
 void Matrix4x4MakeView(Vector3* position, Vector3* target, Vector3* up, Matrix4x4* view)
 {
     Vector3 f = *target - *position;
-
-    Vector3Normalize(&f);
-
     Vector3 s = { };
-    Vector3CrossProduct(&f,up,&s);
-    Vector3Normalize(&s);
-
-    f = -1 * f;
     Vector3 v = { };
+    Vector3CrossProduct(&f,up,&s);
+    Vector3Normalize(&f); 
+    f = -1 * f;
+    Vector3Normalize(&s);
     Vector3CrossProduct(&s,&f,&v);
     view->m[0][0] = s.x;
     view->m[0][1] = s.y;
@@ -294,8 +291,6 @@ void Matrix4x4MakePerspective(float fov, float aspect, float near, float far, Ma
      for (int i = 0; i < 4; ++i)
      for (int j = 0; j < 4; ++j)
           perspective->m[i][j] = 0.0f;
-
-     fov = fov * M_PI / 180;
 
      perspective->m[0][0] = (1/aspect) * (1/tan(fov/2));
      perspective->m[1][1] =  1/tan(fov/2);

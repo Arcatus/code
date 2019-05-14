@@ -22,7 +22,9 @@ int main()
 
 	queue<int> q; q.push(inicial);
 
-	vector<int> color(v, -1); color[inicial] = 0;
+	vector<int> color(v, -1); 
+
+	color[inicial] = 0;
 
 	bool isBipartite = true; // addition of one boolean flag, initially true
 
