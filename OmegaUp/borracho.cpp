@@ -16,21 +16,11 @@ int parDiagI[] = { -1, 1, 1, -1 };
 int parDiagJ[] = { 1, 1, -1, -1 };
 int r, c;
 
-int check()
-{
-	for (int y=0;y<n;++y) 
-	for (int x=0;x<n;++x) 
-		if (!tablero[x][y]) return 0;
-	return 1;
-}
-
 void recorrido( int i, int j )
 {
 	turno+=1;
 
 	tablero[i][j] = true;
-
-	//print();
 
 	if (turno & 1) {
 		for (int k=0;k<4;k++) {
@@ -57,7 +47,7 @@ void recorrido( int i, int j )
 		}
 	}
 
-	contador += check();
+	if (n*n == turno) contador++;
 
 	tablero[i][j] = false;
 	turno-=1;

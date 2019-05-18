@@ -1,17 +1,6 @@
-#include <iostream>
-//#include <cstdio>
-//#include <fstream>
-//#include <unordered_map>
-//#include <map>
-//#include <set>
-//#include <algorithm>
-//#include <vector>
-//#include <string>
+#include <iostream>	
 
 using namespace std;
-
-//typedef unsigned long long llu;
-//typedef vector<int> vi;
 
 int main()
 {

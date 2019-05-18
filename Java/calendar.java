@@ -17,9 +17,16 @@ class Main
 		{"","DOMINGO","LUNES","MARTES","MIERCOLES","JUEVES","VIERNES","SABADO"};
 
 		
-		Calendar calendar = new GregorianCalendar(year,month-1,day);
-		calendar.set(Calendar.ERA, GregorianCalendar.BC);
+		GregorianCalendar calendar = new GregorianCalendar();
+
+		calendar.set(year,month-1,day);
+
+		if (year > 0)
+			calendar.set(Calendar.ERA, GregorianCalendar.AD);
+		else
+			calendar.set(Calendar.ERA, GregorianCalendar.BC);
+
 		System.out.println( names[calendar.get(Calendar.DAY_OF_WEEK)] );
 		
-	}	
+	}
 }

@@ -7,8 +7,8 @@
 #include <ctime>
 #include <climits>
 
-#define m 999
-#define n 100
+#define m 1000
+#define n 100000
 #define MAX_AI 1245
 
 #define k 1
@@ -26,9 +26,11 @@ int main()
 
 	for (int i = 0; i < n; ++i )
 	{
-		//int ai = (rand() % 25) + 65;
-		cout << ((unsigned long long)rand()*rand()) % ULLONG_MAX << '\n';
+		int I = rand() % 2;
+		cout << I+1 << ' ';
+		cout << 
 	}
+	cout << '\n';
 	/*
 	printf("%d %d\n",n,m);
 
