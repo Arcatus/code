@@ -12,4 +12,7 @@ int main( )
    int horas = t + t/r;
 
    cout << horas << '\n';
+
+   
+
 }
