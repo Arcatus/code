@@ -68,7 +68,7 @@ int main()
 
 		tie(w, x, y) = edges[i];
 
-		if ( ! isSameSet(x, y) ) { 
+		if ( ! isSameSet(x, y) ) {
 			costo += w;
 			unionSetBySize(x, y);
 			num_subsets-=1;

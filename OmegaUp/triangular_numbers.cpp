@@ -12,13 +12,11 @@ ll binomialCoeff(ll n, ll k)
   return  binomialCoeff(n-1LL, k-1LL) + binomialCoeff(n-1LL, k); 
 } 
 
-int main() 
+int main(int argc, char **argv) 
 { 
-	  ll n;
-    
-    cin >> n;
-
-    cout << binomialCoeff(n+1LL,2LL) << '\n';
-
+	int n = stoi(argv[1]);
+    for (int i=0;i<=n;++i) {
+    	cout << binomialCoeff(n,i) << '\n';
+    }
     return 0;
 }
