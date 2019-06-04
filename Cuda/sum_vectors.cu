@@ -7,7 +7,7 @@ using namespace std;
 
 #define N 10
 
-__global__ void  addKernel(int *a, int *b, int *c)
+__global__ void addKernel(int *a, int *b, int *c)
 {
 	int tid = blockIdx.x;
 

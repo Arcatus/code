@@ -43,7 +43,7 @@ string divide(string num, string den)
 			it = lower_bound(tabla.begin(),tabla.end(),res,menor);
 			int dig = it-tabla.begin();
 			if( dig<9 && tabla[dig]==res ) coc+=(dig+1+'0');
-			else	coc+=(dig+0), dig--;
+			else	coc+=(dig+'0'), dig--;
 			res = borra_ceros( resta(res,tabla[dig]) );
 		}
 
