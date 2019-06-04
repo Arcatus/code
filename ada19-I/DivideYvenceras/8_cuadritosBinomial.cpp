@@ -9,7 +9,7 @@ unsigned long long colorea(int columna, int k)
 {	
 	if (columna == n) {
 		return 1;
-	} 
+	}
 	else
 	{
 		unsigned long long res = 0LL;

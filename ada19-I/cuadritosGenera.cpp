@@ -17,11 +17,11 @@ long long colorea(int fila, int columna)
 		for (int i=0; i<n; ++i) {
 			for (int j=0; j<n; ++j) {
 				if (mat[i][j]==1) contador+=1;
-				//cerr << mat[i][j] << ' ';
-			}// cerr << '\n';
+				cout << mat[i][j] << ' ';
+			} cout << '\n';
 		}
 		varianza[contador]+=1;
-		//cerr << "...........\n";
+		cout << "...........\n";
 		return 1;
 	}
 	long long res = 0;
