@@ -49,6 +49,7 @@ int oponente(int j) {
 }
 
 tablero pon_jugada(tablero t, int f, int c, int j) {
+   // marcamos en el tablero
    t.mem[f][c] = j;
    return t;
 }
