@@ -9,7 +9,7 @@ int main()
 	ios::sync_with_stdio(false);
 	cin.tie(0);
 
-	ll a, b, n, k, res, last;
+	int a, b, n, k, res, last;
 
 	cin >> n;
 
@@ -19,7 +19,7 @@ int main()
 
 		res = 0;
 
-		for (ll i=a;i<=b;++i)
+		for (int i=a;i<=b;++i)
 		{
 			k = i;
 			while(k)
