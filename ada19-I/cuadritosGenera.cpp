@@ -20,8 +20,7 @@ long long colorea(int fila, int columna)
 				cout << mat[i][j] << ' ';
 			} cout << '\n';
 		}
-		varianza[contador]+=1;
-		cout << "...........\n";
+		varianza[contador]+=1;		
 		return 1;
 	}
 	long long res = 0;
