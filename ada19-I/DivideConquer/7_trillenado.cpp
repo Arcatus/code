@@ -11,7 +11,8 @@ int a(int n)
         return 1;
     } else if (n == 1){
         return 0;
-    } else 
+    } 
+    else 
     {
         return a(n-2) + 2*b(n-1);
     }
@@ -23,7 +24,8 @@ int b(int n)
         return 0;
     } else if (n == 1){
         return 1;
-    } else 
+    } 
+    else 
     {
         return a(n-1) + b(n-2);
     }

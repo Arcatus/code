@@ -1,27 +1,44 @@
 #include <iostream>
-//#include <cstdio>
-//#include <fstream>
-//#include <unordered_map>
-//#include <map>
-//#include <set>
-//#include <algorithm>
-//#include <vector>
-//#include <string>
+#include <cstdlib>
 
 using namespace std;
 
+int n;
+int arr[25+1];
+
+int vivora(int i)
+{
+	if ( n == i ) {
+		if ( arr[0] == arr[n-1] ) {
+			return 1;
+		}
+		return 0;
+	}
+	else 
+	{
+		int res = 0;
+
+		if ( abs( arr[0] - arr[i-1] ) > n-i ) return 0;
+
+		for (int d=0; d<=9; ++d) {
+			arr[i] = d;
+			if (i == 0 || abs( arr[i] - arr[i-1] ) == 1 )
+			{
+				res += vivora(i+1);
+			}
+		}
+		return res;
+	}
+}
+
 int main()
 {
-	int n;
-	cin >> n;	
+	ios::sync_with_stdio(false);
+	cin.tie(0);
 
-	int arr[] = 
-	{
-		1,1,2,4,8,16,32,64,128,256,511
-		,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
-	};
+	cin >> n;
 
-	cout << arr[n] << '\n';
+	cout << vivora(0) << '\n';
 
 	return 0;
 }
