@@ -1,17 +1,10 @@
 #include <iostream>
-//#include <cstdio>
-//#include <fstream>
-//#include <unordered_map>
-//#include <map>
-//#include <set>
-//#include <algorithm>
-//#include <vector>
-//#include <string>
+#include <algorithm>
+#include <cstring>
+#include <vector>
 
 using namespace std;
 
-//typedef unsigned long long llu;
-//typedef vector<int> vi;
 
 int main()
 {
@@ -21,10 +14,56 @@ int main()
 	int n;
 	cin >> n;
 
-	for (int i=0;i<n;++i)
-	{
-		
+	int fila[n];
+	int columna[n];
+
+	bool mat[n][n];
+
+	memset( mat, false, sizeof mat );
+
+	for (int i=0;i<n;++i) cin >> fila[i];
+	for (int i=0;i<n;++i) cin >> columna[i];
+
+	sort(columna,columna+n);
+	sort(fila,fila+n);
+
+	for (int i=n-1, k = 0 ;i>=0; --i, ++k) {
+		for (int j=n-1;j>=0; --j) {
+
+			if ( fila[i] > columna[j] )
+			{				
+				mat[k][j] = true;
+			}
+		}
 	}
+
+	int res = 0;
+
+	int i, j;
+
+	for (i=0;i<n;++i) {
+		for (j=n-1;j>=0;--j) {
+			if ( mat[i][j] )
+			{
+				vector<int> posibilities;
+
+				for (int inc = i; inc<n; ++inc)
+				{
+					if (mat[inc][j]) {
+						posibilities.push_back(fila[n-inc-1]);
+					}
+					else break;
+				}
+			 	res += *max_element(posibilities.begin(),posibilities.end());
+
+				for (int z=j; z>=0; --z) mat[i][z] = false;
+				for (int z=i; z <n; ++z) mat[z][j] = false;
+				
+			}
+		}
+	}
+
+	cout << res << '\n';
 
 	return 0;
 }
