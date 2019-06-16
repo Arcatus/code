@@ -1,24 +1,28 @@
 #include <iostream>
+#include <set>
 #include <cmath> 
 
 using namespace std;
 
 typedef unsigned long long llu;
 
+set<llu> primes;
+
 void primeFactors(llu n) 
 { 
-    while (n%2 == 0) {
-        cout << "2 ";
+    while (n%2 == 0) {        
+        primes.insert(2LL);
         n = n/2;
     }
     for (llu i = 3; i <= sqrt(n); i+=2) {
         while (n%i == 0) { 
-            cout << i << ' ';
+            primes.insert(i);
             n = n/i; 
         } 
     }
-    if (n > 2)
-        cout << n;
+    if (n > 2){
+        primes.insert(n);
+    }
 } 
 
 int main() 
@@ -27,12 +31,14 @@ int main()
     cin.tie(0);
 
     llu n, t;
-    cin >> n;
-
-    for (llu i=0;i<n;++i)
-    {
-        cin >> t;
+    
+    while(cin >> t) {
+        primes.clear();
         primeFactors(t);
+        for (auto i: primes)
+        {   
+            cout << i << ' ';
+        }
         cout << '\n';
     }
     return 0; 

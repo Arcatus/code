@@ -4,6 +4,7 @@
 #include <numeric>
 #include <cstring>
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 
@@ -13,10 +14,7 @@ int lider[vertices];
 int   tam[vertices];
 	
 int findSet(int x) {	
-	if (lider[x] != x) {
-      lider[x] = findSet(lider[x]);
-   }
-   return lider[x];
+   return (lider[x] == x)?lider[x]:lider[x] = findSet(lider[x]);
 }
 
 bool isSameSet(int i, int j) { 

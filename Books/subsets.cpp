@@ -7,7 +7,7 @@ int n;
 vector<int> subset;
 
 void search(int k) {
-	if (k == n) {
+	if (k == n+1) {
 		cout << "{ ";
 		for (auto& i: subset) cout << i << ' ';
 		cout << "}\n";
@@ -22,7 +22,7 @@ void search(int k) {
 int main()
 {
 	cin >> n;
-	search(0);
+	search(1);
 
 	return 0;
 }
