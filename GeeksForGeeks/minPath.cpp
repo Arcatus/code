@@ -4,8 +4,8 @@
 
 using namespace std; 
   
-#define ROW 5 
-#define COL 5 
+#define ROW 2
+#define COL 2
 
 struct cell 
 { 
@@ -83,8 +83,9 @@ int shortest(int grid[ROW][COL], int row, int col)
             { 
                 // If cell is already there in set, then 
                 // remove its previous entry 
-                if (dis[x][y] != INT_MAX) 
-                    st.erase(st.find(cell(x, y, dis[x][y]))); 
+                if (dis[x][y] != INT_MAX){
+                    if (!st.empty()) st.erase(st.find(cell(x, y, dis[x][y])));
+                }
   
                 // update the distance and insert new updated 
                 // cell in set 
@@ -110,13 +111,11 @@ int main()
 { 
     int grid[ROW][COL] = 
     { 
-        31, 100, 65, 12, 18, 
-        10, 13, 47, 157, 6, 
-        100, 113, 174, 11, 33, 
-        88, 124, 41, 20, 140, 
-        99, 32, 111, 41, 20 
-    }; 
+        1, 2,
+        3, 1
+    };
   
-    cout << shortest(grid, ROW, COL) << endl; 
+    cout << shortest(grid, ROW, COL) << '\n'; 
+
     return 0; 
 } 

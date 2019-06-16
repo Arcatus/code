@@ -18,18 +18,18 @@ int main()
 	ios::sync_with_stdio(false);
 	cin.tie(0);	
 	
-	int n, k, t;
-	cin >> n >> k;
-	int contador=0;
-	for (int i=0; i<n;++i)
+	float n;
+	cin >> n;
+	
+	if (n >= 8.0f)
 	{
-		cin >> t;
-		if (t >= k)
-		{
-			contador+=1;
-		}
+		printf("NO CAFE\n");
 	}
-	printf("%d\n",contador);
+	else 
+	{
+		//printf("%.2f\n",(8.0f - n)*1.5f);
+		cout << (8.0f - n)*1.5f << '\n';
+	}
 
 	return 0;
 }

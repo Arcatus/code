@@ -116,8 +116,13 @@ int main()
 	std::ios::sync_with_stdio(false);
 	cin.tie(0);
 
+     /*
 	for (int i = 0; i <= 100; ++i)
 	{
 		cout << i<<"! = "<<a[i] << '\n';
 	}
+     */
+     int n;
+     cin >> n;
+     cout << a[n] << '\n';
 }
