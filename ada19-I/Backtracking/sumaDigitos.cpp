@@ -1,41 +1,31 @@
 #include <iostream>
-#include <string>
-#include <unordered_set>
 
 using namespace std;
 
-int k;
+int n;
 
-int formas(int n)
+int contador, restante;
+
+void genera(int k)
 {
-	if (n == 0) {
-		return 1;
+	if (k == n) {
+		contador+=1;
+		return; 
 	}
-	else
-	{
-		int res = 0;
-
-		for (int i=1; i<=n;++i)
-		{
-			if (i > 9) continue;
-			res += formas(n-i);
+	for (int i=1;i<=9;++i) {
+		if (k + i <= n && ) {
+			genera(k+i);
 		}
-		return res;
 	}
 }
 
-int main(int argc, char **argv)
+int main()
 {
-	ios::sync_with_stdio(false);
-	cin.tie(0);
+	cin >> n;
 
-	//k = stoi(argv[1]);
+	genera(0);
 
-	cin >> k;
-
-	int ans = formas(k);
-
-	cout << ans << '\n';
+	cout << contador << '\n';
 
 	return 0;
 }
