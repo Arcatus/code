@@ -11,24 +11,16 @@ int costo_global = INT_MAX, costo_local = 0;
 
 void genera(int i) {
    if (i == n) {
-      //actualizamos el costo global en caso de que el costo local sea menor
-      //cerr << costo_local << '\n';
       costo_global = min(costo_global, costo_local);
       return;
    }
 
    for (int j = i; j < n; ++j) {
-      //inicio sin costo sin importar el vertice todos tienen su inicio 0
-      //Despues se calcula a partir de la matriz
-      int arista = (i == 0 ? 0 : matriz[arr[i - 1]][arr[j]]);
 
-      //cerr << "tomando de la matriz: " << arr[i-1] << " " << arr[j] << '\n';
+      int arista = (i == 0 ? 0 : matriz[arr[i - 1]][arr[j]]);      
 
-      swap(arr[i], arr[j]);
-      //hacemos backtrack en el costo local
+      swap(arr[i], arr[j]);      
       costo_local += arista;
-      //hacemos prunning para optimizar el arbol recursivo
-      //genera(i + 1);
       if ( costo_local < costo_global ) {
          genera(i + 1);
       }

@@ -28,6 +28,7 @@ int cuenta(int f, int c) {
       if (0 <= destinos[i][0] && destinos[i][0] < n &&
           0 <= destinos[i][1] && destinos[i][1] < n &&
           !visitado[destinos[i][0]][destinos[i][1]]) {
+         
          visitado[destinos[i][0]][destinos[i][1]] = true;
          faltan -= 1;
          res += cuenta(destinos[i][0], destinos[i][1]);
