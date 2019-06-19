@@ -13,7 +13,7 @@ void genera(int k)
 		return; 
 	}
 	for (int i=1;i<=9;++i) {
-		if (k + i <= n && ) {
+		if (k + i <= n) {
 			genera(k+i);
 		}
 	}
