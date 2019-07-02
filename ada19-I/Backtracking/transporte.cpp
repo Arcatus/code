@@ -45,9 +45,13 @@ void transporte(int k)
 				}
 
 				ganancia_posible -= pedidos[k].g;
+				
 				ganancia_local += pedidos[k].g;
+				
 				transporte(k+1);
+
 				ganancia_local -= pedidos[k].g;
+
 				ganancia_posible += pedidos[k].g;
 		
 				for (int i=pedidos[k].a; i < pedidos[k].b; ++i )
