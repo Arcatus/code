@@ -8,8 +8,8 @@ struct nodo {
 
 struct apuntaNodo {
    nodo* posicion;
-   nodo* ant;
-   nodo* sig;
+   apuntaNodo* ant;
+   apuntaNodo* sig;
 };
 
 int main( ) {
@@ -24,6 +24,13 @@ int main( ) {
 
    char opc[13];
 
+   apuntaNodo* posIni[10];
+   apuntaNodo* posFin[10];
+
+   for (int i=0;i<10;++i) {
+      posIni[i] = posFin[i] = nullptr;
+   }
+
    for (int i = 0; i < n; ++i) {
 
       int valor;
@@ -32,7 +39,7 @@ int main( ) {
 
       if (opc[7] == 'I')
       {
-         nodo* p = new nodo{valor, nullptr, nullptr};
+         nodo* p = new nodo{ valor, nullptr, nullptr };
 
          if (ini == nullptr) {
             ini = p;
@@ -42,9 +49,16 @@ int main( ) {
             p->sig = ini;
             ini = p;
          }
-         if ( localizadorIzq[valor] == nullptr )
-         {
-            
+
+         apuntaNodo* ap = new apuntaNodo{ p, nullptr, nullptr };
+
+         if ( posIni[valor] == nullptr ) {
+            posIni[valor] = ap;
+            posFin[valor] = ap;
+         } else {
+            posIni[valor]->ant = ap;
+            ap->sig = posIni[valor];
+            posIni[valor] = ap;
          }
       }
       else if (opc[7] == 'D')
@@ -59,47 +73,72 @@ int main( ) {
             p->ant = ult;
             ult = p;
          }
+
+         apuntaNodo* ap = new apuntaNodo{ p, nullptr, nullptr };
+
+         if ( posFin[valor] == nullptr ) {
+            posIni[valor] = ap;
+            posFin[valor] = ap;
+         } else {
+            posFin[valor]->sig = ap;
+            ap->ant = posFin[valor];
+            posFin[valor] = ap;
+         }
       }
       else if (opc[6] == 'P')
       {
-            for (nodo* p = ini; p != nullptr; p = p->sig) {
-               if (p->valor == valor ) {
-                  if (p->ant != nullptr) {
-                     p->ant->sig = p->sig;
-                  }
-                  if (p->sig != nullptr) {
-                     p->sig->ant = p->ant;
-                  }
-                  if (ini == p) {
-                     ini = p->sig;
-                  }
-                  if (ult == p) {
-                     ult = p->ant;
-                  }
-                  delete p;
-                  break;
-               }
+            if (posIni[valor]->posicion->ant != nullptr) {
+               posIni[valor]->posicion->ant->sig = posIni[valor]->posicion->sig;
+            }
+            if (posIni[valor]->posicion->sig != nullptr) {
+               posIni[valor]->posicion->sig->ant = posIni[valor]->posicion->ant;
+            }
+            if (ini == posIni[valor]->posicion) {
+               ini = posIni[valor]->posicion->sig;
+            }
+            if (ult == posIni[valor]->posicion) {
+               ult = posIni[valor]->posicion->ant;
+            }
+
+            delete posIni[valor]->posicion;
+
+            if ( posIni[valor] == posFin[valor] )
+            {
+               posIni[valor] = nullptr;
+               posFin[valor] = nullptr;
+            }
+            else 
+            {
+               posIni[valor] = posIni[valor]->sig;
+               delete posIni[valor]->ant;
             }
       } 
       else 
       {
-            for (nodo* p = ult; p != nullptr; p = p->ant) {
-               if ( p->valor == valor ) {
-                  if (p->ant != nullptr) {
-                     p->ant->sig = p->sig;
-                  }
-                  if (p->sig != nullptr) {
-                     p->sig->ant = p->ant;
-                  }
-                  if (ini == p) {
-                     ini = p->sig;
-                  }
-                  if (ult == p) {
-                     ult = p->ant;
-                  }
-                  delete p;
-                  break;
-               }
+            if (posFin[valor]->posicion->ant != nullptr) {
+               posFin[valor]->posicion->ant->sig = posFin[valor]->posicion->sig;
+            }
+            if (posFin[valor]->posicion->sig != nullptr) {
+               posFin[valor]->posicion->sig->ant = posFin[valor]->posicion->ant;
+            }
+            if (ini == posFin[valor]->posicion) {
+               ini = posFin[valor]->posicion->sig;
+            }
+            if (ult == posFin[valor]->posicion) {
+               ult = posFin[valor]->posicion->ant;
+            }
+
+            delete posFin[valor]->posicion;
+            
+            if (  posIni[valor] == posFin[valor] )
+            {
+               posIni[valor] = nullptr;
+               posFin[valor] = nullptr;
+            }
+            else 
+            {
+               posFin[valor] = posFin[valor]->ant;
+               delete posFin[valor]->sig;
             }
       }
    }
