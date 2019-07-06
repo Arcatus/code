@@ -27,6 +27,4 @@ int main()
 	}
 
 	 cout << best << '\n';
-
-	return 0;
 }
