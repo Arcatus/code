@@ -33,6 +33,8 @@ int main()
 
 	q.push(inicial);
 
+	int dias[1010] = { };
+
 	while (!q.empty()) {
 
 		int u = q.front();
@@ -42,17 +44,14 @@ int main()
 
 			if (visited[v] == -1) {
 				visited[v] = visited[u] + 1;
+				dias[visited[v]]+=1;
 				q.push(v);
 			}
 		}
 	}
-	
 	int ans = 0;
-
 	for (int i=1; i<=n; ++i) {
-		int times = count(visited.begin(), visited.end(), i);
-		
-		ans = max(ans, times);
+		ans = max( ans, dias[i] );
 	}
 	cout << ans << '\n';
 }

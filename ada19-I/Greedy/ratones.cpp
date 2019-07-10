@@ -5,6 +5,11 @@ using namespace std;
 
 int main()
 {
-    cout << "Hola mundo\n";
+    int n;
+
+    cin >> n;
+
+    
+
 	return 0;
 }

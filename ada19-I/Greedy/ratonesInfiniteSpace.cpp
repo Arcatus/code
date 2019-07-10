@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <algorithm>
 #include <climits>
@@ -41,7 +40,7 @@ int main()
 		madriguera[p] = true;
 		max_mad += c;
 		//capacidad[p] = c;
-		capacidad[p] = INT_MAX;
+		capacidad[p] = 1000;
 		tope = max( tope, p );
 	}
 	
@@ -143,7 +142,7 @@ int main()
 		}
 		for ( int i = 0; i <= tope; ++i ) {
 			if ( madriguera[i] == true ) {
-			 	cout << i << " usados: " << INT_MAX - capacidad[i] << '\n';
+			 	cout << i << " usados: " << 1000 - capacidad[i] << '\n';
 			}
 		}
 		cout << "Optimal " << ans << '\n';
