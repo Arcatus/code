@@ -1,0 +1,9 @@
+3 8
++a +b +c
++a +b !c
++a !b +c
++a !b !c
+!a +b +c
+!a +b !c
+!a !b +c
+!a !b !c

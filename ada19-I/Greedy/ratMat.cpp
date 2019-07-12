@@ -71,7 +71,7 @@ int main()
 	sort( ratones, ratones + n, [](const raton& a, const raton& b){
 		return a.worst > b.worst;
 	} );
-	/*
+	
 	for (int i=0; i<n; ++i) {
 		cout << ratones[i].posicion << ' ';
 		for (int j=0;j<m;++j)
@@ -80,7 +80,7 @@ int main()
 		}
 		cout << ratones[i].worst << '\n';
 	}
-	*/
+	
 	auto oraculo = [&](const int& time)
 	{
 		int indice, minimo;
@@ -103,7 +103,7 @@ int main()
 				}
 			}
 			if ( indice == -1)  {
-				//cerr << "IMPOSIBLE en tiempo " << time << '\n';
+				cerr << "IMPOSIBLE en tiempo " << time << '\n';
 				/*
 				for ( auto v: capacidades)
 				{
@@ -112,24 +112,11 @@ int main()
 				cout << '\n';*/
 				return false;
 			}
-			//cout << "raton " << ratones[i].posicion << " a " << mad[indice].posicion << '\n';
+			cout << "raton " << ratones[i].posicion << " a " << mad[indice].posicion << '\n';
 			capacidades[indice] -= 1;
 		}
-		//cerr << "POSIBLE en tiempo " << time << '\n';
+		cerr << "POSIBLE en tiempo " << time << '\n';
 		return true;
-	};
-	int partition = 1000000;
-
-	bool exit = false;
-	while( partition > 0 && ( oraculo(partition) || oraculo(partition>>1) ) ) {
-		partition = partition >> 1;
-	}
-	partition = partition >> 1;
-	while(true) {
-		if (oraculo(partition)) {
-			cout << partition << '\n';
-			return 0;
-		}
-		partition+=1;
-	}
+	};	
+	oraculo(24);
 }
