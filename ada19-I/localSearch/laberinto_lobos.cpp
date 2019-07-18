@@ -29,11 +29,13 @@ int main( ) {
    }
 
    int registro[n][n];
+   
    for (int i = 0; i < n; ++i) {
       for (int j = 0; j < n; ++j) {
          registro[i][j] = INT_MAX;
       }
    }
+
    std::vector<posicion_anotada> actual = {
       { entrada.f, entrada.c, 0 }
    };

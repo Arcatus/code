@@ -21,7 +21,7 @@ int main()
 		for (int k=0;k<3;++k) {
 			scanf("%s",opc);
 			used[opc[1]-'a'] = true;
-			guardar[i].push_back( {opc[0],opc[1]-'a'});
+			guardar[i].push_back({opc[0],opc[1]-'a'});
 		}
 	}
 

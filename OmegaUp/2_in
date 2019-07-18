@@ -1,7 +1,3 @@
-INC A
-VAR A
-INC A
-REF B A
-INC B
-PRINT A
-PRINT B
+1
+6
+0 1 2 3 4 5
