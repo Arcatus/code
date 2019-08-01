@@ -5,7 +5,7 @@
 
 using namespace std;
 
-const int INF = 100;
+const int INF = INT_MAX;
 
 int main()
 {
