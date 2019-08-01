@@ -101,6 +101,5 @@ int main()
 		transporte(0);
 
 		cout << ganancia_global << '\n';
-	}
-	return 0;
+	}	
 }

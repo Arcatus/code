@@ -1,4 +1,4 @@
-#include <iostream>
+#include <cstdio>
 #include <algorithm>
 #include <cstdlib>
 
@@ -17,38 +17,34 @@ bool operator<(const madrigueras& a, const madrigueras& b)
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	cin.tie(0);
-	
     int n;
 
-    cin >> n;
+    scanf("%d",&n);
 
     int ratones[n];
 
     for (int i=0; i<n; ++i) {
-    	cin >> ratones[i];
+    	scanf("%d",&ratones[i]);
     }
 
-    sort(ratones, ratones+n);
-
     int m; 
-    cin >> m;
+    scanf("%d",&m);
 
     madrigueras mad[m];
 
     int max_c=0;
 
     for (int i=0; i<m; ++i) {
-    	cin >> mad[i].posicion >> mad[i].capacidad;
+        scanf("%d %d",&mad[i].posicion,&mad[i].capacidad);
     	max_c += mad[i].capacidad;
     }
 
     if ( n > max_c ) {
-    	cout << -1 << '\n';
+    	printf("-1\n");
     	return 0;
     }
 
+    sort(ratones, ratones+n);
     sort(mad, mad+m);
 
     auto oraculo = [&](const int& t)
@@ -93,5 +89,5 @@ int main()
     	}
     } while( begin != end );
 
-    cout << time << '\n';
+    printf("%d\n",time);
 }
