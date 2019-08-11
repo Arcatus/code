@@ -16,7 +16,9 @@ int main( ) {
    std::cin >> lobos >> n;
 
    char tablero[n][n];
+   
    posicion entrada, salida;
+
    for (int i = 0; i < n; ++i) {
       for (int j = 0; j < n; ++j) {
          std::cin >> tablero[i][j];
