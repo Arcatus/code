@@ -1,7 +1,4 @@
-//#include <iostream>
 #include <cstdio>
-//#include <string>
-//#include <algorithm>
 
 int n, k;
 
