@@ -1,7 +1,4 @@
 #include <iostream>
-#include <cstdio>
-//#include <string>
-//#include <algorithm>
 #include <string>
 #include <map>
 
@@ -10,7 +7,7 @@ using namespace std;
 int main()
 {
 	int n;
-	scanf("%d",&n);
+	cin >> n;
 
 	std::map<string,int> st;
 
@@ -24,8 +21,7 @@ int main()
 
 	string ent;
 
-	for (int i = 0; i < n; ++i)
-	{
+	for (int i = 0; i < n; ++i) {
 		cin >> ent; 
 		res += st[ent];
 	}
