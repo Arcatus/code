@@ -11,7 +11,7 @@ int main()
 
 	ll l_o, n_i, x;
 
-		
+	
 
 	return 0;
 }

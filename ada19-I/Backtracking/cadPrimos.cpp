@@ -6,14 +6,12 @@ int n, contador;
 
 bool primos[100];
 
-void sieve()
+void sieve() 
 {
     primos[0] = primos[1] = false;
 
-    for (int i=2;i<100;++i)
-    {
-        if (primos[i] != false)
-        {
+    for (int i=2;i<100;++i) {
+        if (primos[i] != false) {
             for (int j=i+i;j<100; j+=i) {
                 primos[j] = false;
             }
@@ -29,10 +27,8 @@ void calcula(int k, int num)
     }
     else
     {
-        for( int i=0; i<=9; ++i)
-        {
-            if ( primos[ num*10 + i ] )
-            {
+        for( int i=0; i<=9; ++i) {
+            if ( primos[ num*10 + i ] ) {
                 calcula(k+1,i);
             }
         }
