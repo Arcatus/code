@@ -24,11 +24,12 @@ int main( ) {
    for (int i = 0; i < m; ++i) {
       int x, y, c;
       std::cin >> x >> y >> c;
-      adyacencia[x].push_back(vecino{y, c});
-      adyacencia[y].push_back(vecino{x, c});
+      adyacencia[x-1].push_back(vecino{y-1, c});
+      adyacencia[y-1].push_back(vecino{x-1, c});
    }
 
-   int costos[n]; std::fill_n(&costos[0], n, -1);
+   int costos[n];
+   std::fill_n(&costos[0], n, -1);
    std::priority_queue<registro> cola;
    cola.push(registro{0, 0});
 

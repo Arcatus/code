@@ -1,35 +1,21 @@
 #include <iostream>
-//#include <cstdio>
-//#include <fstream>
-//#include <unordered_map>
-//#include <map>
-//#include <set>
-//#include <algorithm>
-//#include <vector>
-#include <string>
-
 using namespace std;
 
-//typedef unsigned long long llu;
-//typedef vector<int> vi;
+typedef long long ll;
+
+ll gcd(ll x, ll y) {
+	return y == 0 ? x : gcd(y, x % y);
+}
 
 int main()
-{	
+{
 	ios::sync_with_stdio(false);
-	cin.tie(0);	
-	
-	float n;
-	cin >> n;
-	
-	if (n >= 8.0f)
-	{
-		printf("NO CAFE\n");
-	}
-	else 
-	{
-		//printf("%.2f\n",(8.0f - n)*1.5f);
-		cout << (8.0f - n)*1.5f << '\n';
-	}
+	cin.tie(0);
+	ll x, y;
 
-	return 0;
+	cin >> x >> y;
+
+	ll ans = gcd(x,y);
+
+	cout << ans << '\n';
 }
