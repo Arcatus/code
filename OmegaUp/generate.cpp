@@ -7,31 +7,32 @@
 #include <ctime>
 #include <climits>
 
-#define m 200
-#define n 100
+#define n 50000
 #define MAX_AI 1245
-
-#define k 1
 
 using namespace std;
 
 int main()
 {
-	//printf("const char *fibos[] = {");
+	ios::sync_with_stdio(false);
+	cout.tie(0);
 
-// 65-90
 	srand (time(NULL));
 
-	printf("%d\n",n);
-	printf("%d\n",m);
+	int r = rand() % n;
+
+	long long k = 1000000LL;
+
+	cout << n << " " << r << " " << k << '\n';
+
+	int a_i = INT_MAX;
+
 	for (int i = 0; i < n; ++i )
 	{
-		for (int j=0; j <m; ++j) {
-			int a = rand()%10;
-			cout << a << ' ';
-		}
-		cout << '\n';
+		int a = rand() % a_i;
+		cout << a << ' ';
 	}
+	cout << '\n';
 	/*
 	printf("%d %d\n",n,m);
 

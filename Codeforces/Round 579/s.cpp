@@ -7,6 +7,7 @@ string s, t;
 
 bool posible[200+1];
 int ans = -1;
+
 void subcommon(int i, int j) {
 	if ( i == s.size() || j == t.size() ) {
 		
