@@ -7,8 +7,9 @@
 #include <ctime>
 #include <climits>
 
-#define n 50000
-#define MAX_AI 1245
+#define n 1000
+#define m 1000
+#define MAX_AI 1000
 
 using namespace std;
 
@@ -17,22 +18,21 @@ int main()
 	ios::sync_with_stdio(false);
 	cout.tie(0);
 
-	srand (time(NULL));
+	cout << n << '\n';
 
-	int r = rand() % n;
-
-	long long k = 1000000LL;
-
-	cout << n << " " << r << " " << k << '\n';
-
-	int a_i = INT_MAX;
-
-	for (int i = 0; i < n; ++i )
+	for (int i = 1; i <= n; ++i )
 	{
-		int a = rand() % a_i;
+		int a = rand() % MAX_AI;
 		cout << a << ' ';
 	}
 	cout << '\n';
+	cout << m << '\n';
+	for (int i = 0; i < m; ++i ) {
+		int a = rand() % n;
+		int b = rand() % n;
+		if ( a > b ) swap(a,b);
+		cout << a << " " << b << '\n';
+	}
 	/*
 	printf("%d %d\n",n,m);
 
