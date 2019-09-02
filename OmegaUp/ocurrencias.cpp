@@ -1,4 +1,4 @@
-#pragma ("Ofast")
+#pragma GCC optimize ("Ofast")
 
 #include <iostream>
 #include <algorithm>
