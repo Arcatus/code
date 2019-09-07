@@ -24,9 +24,7 @@ void calcula(int k, int num)
     if (k == n) {
         contador+=1;
         return;
-    }
-    else
-    {
+    } else {
         for( int i=0; i<=9; ++i) {
             if ( primos[ num*10 + i ] ) {
                 calcula(k+1,i);

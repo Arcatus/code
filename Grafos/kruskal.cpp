@@ -13,12 +13,12 @@ const int vertices = 8;
 int lider[vertices];
 int   tam[vertices];
 	
-int findSet(int x) {	
-   return (lider[x] == x)?lider[x]:lider[x] = findSet(lider[x]);
+int findSet(int x) {
+   return lider[x] == x ? lider[x] : lider[x] = findSet(lider[x]);
 }
 
 bool isSameSet(int i, int j) { 
-	return findSet(i) == findSet(j); 
+	return findSet(i) == findSet(j);
 }
 
 void unionSetBySize(int i, int j) {
@@ -29,7 +29,7 @@ void unionSetBySize(int i, int j) {
       if (tam[y] < tam[x]) {
          swap(x, y);
       }
-      lider[x] = y;
+      lider[x] = y;	
       tam[y] += tam[x];
    }
 }
