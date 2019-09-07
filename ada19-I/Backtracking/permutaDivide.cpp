@@ -40,7 +40,5 @@ int main()
 	for (int i=0; i<n; ++i) {
 		arr[i] = i+1;
 	}
-	permutaciones(0);	
-
-	return 0;
+	permutaciones(0);
 }
