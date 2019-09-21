@@ -8,4 +8,5 @@ int main( )
 {
    int t, r;
    cout << "hola mundo" << '\n';
+   cout << "etc";
 }
