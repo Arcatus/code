@@ -1,18 +1,11 @@
 #include <iostream>
 #include <cmath>
+#include <queue>
 
 using namespace std;
 
 int main( )
 {
    int t, r;
-
-   cin >> t >> r;
-
-   int horas = t + t/r;
-
-   cout << horas << '\n';
-
-   
-
+   cout << "hola mundo" << '\n';
 }
