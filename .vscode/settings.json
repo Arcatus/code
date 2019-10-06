@@ -1,3 +1,7 @@
 {
-    "python.pythonPath": "/usr/bin/python2"
+    "python.pythonPath": "/usr/bin/python2",
+    "python.analysis.disabled": [
+        "unused-variable"
+    ],
+    "python.linting.enabled": true
 }

@@ -21,7 +21,7 @@ int main(int argc, char** argv)
         fseek(data, i, SEEK_SET);
         fread(buffer, 1, raw_data, data);
         fwrite(buffer, 1, raw_data, desti);
-    }    
+    }
     fclose(data);
     
     return 0;
