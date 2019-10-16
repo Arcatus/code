@@ -23,6 +23,7 @@ int main(int argc, char** argv)
         fwrite(buffer, 1, raw_data, desti);
     }
     fclose(data);
+    fclose(desti);
     
     return 0;
 }
