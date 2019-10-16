@@ -41,7 +41,6 @@ int main( ) {
          for (auto vecino : adyacencia[procesar.vertice]) {
             cola.push(registro{vecino.vertice, vecino.longitud + procesar.distancia});
          }
-      }
    }
 
    for (int i = 0; i < n; ++i) {
