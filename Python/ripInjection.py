@@ -23,7 +23,7 @@ def genPacketRipV2( _ip, _metric, _mask ):
 def main():
     print 'Starting rip injection PID', os.getpid()
 
-    _ip = '192.168.10.1'
+    _ip = '192.168.5.0'
     _metric = 1
     _mask = '255.255.255.0'
 

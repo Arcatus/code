@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+                function analyzeColor(myColor) {
+                    switch (myColor)
+                    {
+                    case "Blue":
+                        alert("Just like the sky!");
+                        break
+                    case "Red":
+                        alert("Just like shiraz!");
+                        break
+                    default:
+                        alert("Suit yourself then...");
+                    }
+                }
+        </script>
+        <h3>Favorite Color</h3>
+        <label>
+            <input type="radio" name="fav_color" value="Blue" onclick="analyzeColor(this.value);"> Blue 
+        </label>
+        <label>
+            <input type="radio" name="fav_color" value="Red" onclick="analyzeColor(this.value);"> Red 
+        </label>
+        <label>
+            <input type="radio" name="fav_color" value="Green" onclick="analyzeColor(this.value);"> Green 
+        </label>
+        <label>
+            <input type="radio" name="fav_color" value="None" onclick="analyzeColor(this.value);"> None
+        </label>
+</body>
+</html>
