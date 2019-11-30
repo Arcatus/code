@@ -33,6 +33,16 @@ void poll_keyboard(GLFWwindow* window, Camera* camera, GLfloat deltaTime)
             camera->speed * deltaTime * camera->target;
     }
 
+    if(glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS)
+    {
+        camera->position.y = camera->position.y +=0.1f;
+    }
+
+    if(glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS)
+    {
+        camera->position.y = camera->position.y -= 0.1f;     
+    }
+
     if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
     {
         camera->position = camera->position -
