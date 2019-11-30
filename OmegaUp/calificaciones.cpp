@@ -4,17 +4,17 @@ using namespace std;
 
 int main()
 {
-	int a, b, c;
+	float a;
 
-	cin >> a >> b >> c;
+	cin >> a;
 
-	if (a+b+c/3.0f < 6.0f )
+	if ( a < 6.0f )
 	{
-		cout << "0" << '\n';
+		cout << "Reprobatoria" << '\n';
 	}
 	else
 	{
-		cout << "1" << '\n';
+		cout << "Aprobatoria" << '\n';
 	}
 
 	return 0;

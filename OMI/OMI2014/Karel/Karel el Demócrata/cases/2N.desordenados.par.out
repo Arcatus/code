@@ -1,8 +1,0 @@
-<resultados>
-	<programas>
-		<programa nombre="p1" resultadoEjecucion="FIN PROGRAMA">
-			<karel mochila="2"/>
-		</programa>
-	</programas>
-</resultados>
-

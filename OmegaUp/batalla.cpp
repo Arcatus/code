@@ -1,7 +1,10 @@
 #include <iostream>
 #include <algorithm>
+#include <cstring>
+#include <vector>
 
 using namespace std;
+
 
 int main()
 {
@@ -9,30 +12,58 @@ int main()
 	cin.tie(0);
 
 	int n;
-
 	cin >> n;
 
-	int arr[n];
-	int brr[n];
+	int fila[n];
+	int columna[n];
 
-	for (int i = 0; i < n; ++i) {
+	bool mat[n][n];
 
+	memset( mat, false, sizeof mat );
+
+	for (int i=0;i<n;++i) cin >> fila[i];
+	for (int i=0;i<n;++i) cin >> columna[i];
+
+	sort(columna,columna+n);
+	sort(fila,fila+n);
+
+	for (int i=n-1, k = 0 ;i>=0; --i, ++k) {
+		for (int j=n-1;j>=0; --j) {
+
+			if ( fila[i] > columna[j] )
+			{				
+				mat[k][j] = true;
+			}
+		}
 	}
 
-	for (int i = 0; i < n; ++i)
-	{	
-		
+	int res = 0;
+
+	int i, j;
+
+	for (i=0;i<n;++i) {
+		for (j=n-1;j>=0;--j) {
+			if ( mat[i][j] )
+			{
+				vector<int> posibilities;
+
+				for (int inc = i; inc<n; ++inc)
+				{
+					if (mat[inc][j]) {
+						posibilities.push_back(fila[n-inc-1]);
+					}
+					else break;
+				}
+			 	res += *max_element(posibilities.begin(),posibilities.end());
+
+				for (int z=j; z>=0; --z) mat[i][z] = false;
+				for (int z=i; z <n; ++z) mat[z][j] = false;
+				
+			}
+		}
 	}
-
-	sort(arr,arr+n);
-	sort(brr,brr+n);
-
-	int index0=0, index1=0;
-
-	
 
 	cout << res << '\n';
 
-	
 	return 0;
 }

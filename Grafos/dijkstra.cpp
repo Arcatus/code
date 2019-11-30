@@ -1,78 +1,49 @@
+#include <algorithm>
 #include <iostream>
-#include <cstring>
 #include <queue>
-#include <climits>
+#include <vector>
 
-using namespace std;
+struct vecino {
+   int vertice, longitud;
+};
 
-const int INF = 100;
+struct registro {
+   int vertice, distancia;
+};
 
-int main()
-{
-	int v, e;
+bool operator<(const registro& r1, const registro& r2) {
+   return r1.distancia > r2.distancia;
+}
 
-	cin >> v >> e;
+int main( ) {
+   int n, m;
+   std::cin >> n >> m;
 
-	vector< pair<int,int> > AdjList[v+1];
+   std::vector<vecino> adyacencia[n];
 
-	int x, y, w;
+   for (int i = 0; i < m; ++i) {
+      int x, y, c;
+      std::cin >> x >> y >> c;
+      adyacencia[x].push_back(vecino{y-1, c});
+      adyacencia[y].push_back(vecino{x-1, c});
+   }
 
-	for (int i=0;i<e;++i)
-	{
-		cin >> x >> y >> w;
-		AdjList[x].push_back({ y, w });
-		AdjList[y].push_back({ x, w });
-	}
+   int distancias[n]; 
+   std::fill_n(&distancias[0], n, -1);
+   std::priority_queue<registro> cola;
+   cola.push(registro{0, 0});
 
-	int distance[v+1];
-	bool processed[v+1];
+   while (!cola.empty( )) {
+      registro procesar = cola.top( );
+      cola.pop( );
+      if (distancias[procesar.vertice] == -1) {
+         distancias[procesar.vertice] = procesar.distancia;
+         for (auto vecino : adyacencia[procesar.vertice]) {
+            cola.push(registro{vecino.vertice, vecino.longitud + procesar.distancia});
+         }
+   }
 
-	memset( processed, false, sizeof processed );
-
-	for (int i = 1; i <= v; i++) distance[i] = INF;
-
-	cin >> x;
-
-	priority_queue< pair<int,int> > q;
-	distance[x] = 0;
-
-	q.push({0,x});
-
-	while (!q.empty()) {		
-
-		int a = q.top().second; 
-
-		int negdis = q.top().first;	
-		cout << "neg: "<< negdis << ' ';
-
-		q.pop();
-
-		if (processed[a]) {
-			cout << "skipping " << a << '\n';
-			continue;	
-		} 
-
-		processed[a] = true;
-
-		for (auto u : AdjList[a]) {
-			int b = u.first, w = u.second;
-
-			cout << a <<" "<< b << " " << w << '\n';
-			cout << "comparing: \n";
-			cout << distance[a]+w <<" < "<< distance[b] << '\n';
-
-			if (distance[a]+w < distance[b]) {
-				distance[b] = distance[a]+w;
-				cout << "pushing: " << -distance[b] <<" " <<b << '\n';
-				q.push({-distance[b],b});
-			}
-		}
-	}
-
-	for (int i=1; i <= v; ++i)
-	{
-		cout << x << " -> " << i << ":\t" << distance[i] << '\n';
-	}
-
-	return 0;
+   for (int i = 0; i < n; ++i) {
+      std::cout << i << ": " << distancias[i] << "\n";
+   }
 }
