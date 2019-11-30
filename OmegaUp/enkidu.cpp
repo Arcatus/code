@@ -1,92 +1,61 @@
-// Este programa implementa el algoritmo de Prim sobre una gráfica almacenada en listas de adyacencia.
-// El algoritmo de Prim calcula un árbol abarcador de costo mínimo, el cual conecta todos los vértices de la gráfica de modo que la suma de las aristas usadas se minimice.
-// Este algoritmo funciona sin importar desde qué vertice se comience la construcción del árbol (el árbol puede resultar diferente, pero tiene el mismo costo).
-// El algoritmo de Prim mete en una cola de prioridad la información de las aristas que descubre conforme el árbol crece y saca de la cola la información que corresponde a
-// la arista más barata. Si poner la arista sacada crearía un ciclo, entonces la ignora y saca la siguiente.
+//#include <iostream>
+#include <cstdio>
+//#include <string>
+//#include <algorithm>
+//#include <string>
 
-#include <algorithm>
-#include <functional>
-#include <climits>
-#include <iostream>
-#include <queue>
-#include <utility>
-#include <tuple>              // generalización de pair
-#include <vector>
-using namespace std;
-
-template<typename T>
-using min_heap = priority_queue<T, vector<T>, greater<T>>;
-
-vector<int> prim(int i, vector<pair<int, int>> adyacencia[], int v)
+int main()
 {
-   vector<int> predecesores(v, -1);       // el predecesor de un vértice es el vecino al que nos conectamos para incorporarnos al árbol; -1 índica que aún no estamos en el árbol
-   min_heap<tuple<int, int, int>> cola;   // guardaremos tripletas (costo_arista, vértice, predecesor) en la cola, las cuales denotan una posible manera de incorporar un vértice al árbol
-   cola.push(make_tuple(0, i, i));        // de la cola irá saliendo la tripleta con la arista más barata; como caso especial, el vértice inicial puede incorporarse a costo 0 por sí mismo
+	short n;
 
-   do {
-      auto datos = cola.top( );                    // datos es una tripleta (costo_arista, vértice, predecesor)
-      cola.pop( );
+	scanf("%hi",&n);
 
-      cout<< "vertice en top->" << "costo:" <<get<0>(datos) << " vertice:" <<get<1>(datos)+1 << " predecesor:" <<get<2>(datos)+1 <<'\n';
+	short arr[ n*n + 1 ];
 
-      if (predecesores[get<1>(datos)] != -1) {     // si el vértice ya estaba incorporado al árbol, lo ignoramos
-         continue;
-      }
+	for (int i = 0 ; i < n; ++i)
+	{
+		for ( int j = 0; j < n; ++j)
+		{
+			scanf("%hi",&arr[ i*n + j]);
+		}
+	}
 
-      predecesores[get<1>(datos)] = get<2>(datos);       // si el vértice no estaba incorporado al árbol, registramos que lo incorporamos usando el predecesor sugerido
-      for (auto arista : adyacencia[get<1>(datos)]) {    // iterativamente inspeccionamos a sus vecinos
-         cola.push(make_tuple(arista.first, arista.second, get<1>(datos)));   // nuestro vecino podría incorporarse con la arista que estamos viendo en este momento
-      }                                                                       // y el predecesor seríamos nosotros
-   } while (!cola.empty( ));
+	short min = 1001;
 
-   return predecesores;
-}
+	short new_city[n + 1]{};
 
-int main( )
-{
-   int n, c;
+	short visited = 0;
 
-   //cin >> v >> e;
-   cin >> n;
+	short* ptr = arr;
 
-   vector< pair<int, int> > adyacencia[n];
+	new_city[visited] = 0;
 
-   for(int i = 0; i < n; i++)
-   {
-      for(int j = 0; j < n; j++)
-      {
-         cin >> c;
-         if ( i == j )
-         {
-            continue;
-         }
-         adyacencia[i].push_back({ c, j });
-         adyacencia[j].push_back({ c, i });
-      }
-   }
+	while ( visited < n )
+	{
+		for (int i = 0; i < n; ++i)
+		{
+			arr[ i*n + new_city[visited] ] = 0;
+		}
 
-/*
-   for (int i = 0; i < e; ++i) {
-      int x, y, c;
-      cin >> x >> y >> c;
-      adyacencia[x].push_back({ c, y });
-      adyacencia[y].push_back({ c, x });
-   }*/
+		visited++;
 
-   int inicial = 0;
-   //cin >> inicial;
+		min = 1001;
+		for (int i = 0; i < n ; ++i)
+		{
+			if ( *(ptr + i) < min && *(ptr + i) > 0)
+			{
+				min = *(ptr+i);
+				new_city[visited] = i;
+			}
+		}
 
-   auto predecesores = prim(inicial, adyacencia, n);
+		ptr = arr;
 
-   for (int i = 0; i < n; ++i) {
-      cout << i+1 << ": se conecta con " << predecesores[i]+1 << "\n";
-   }
+		ptr += n*new_city[visited];
+	}
 
-   int costo = 0;
-   for (int i = 0; i < n; ++i) {
-      costo += (i == inicial ? 0 : find_if(adyacencia[i].begin( ), adyacencia[i].end( ), [&](const pair<int, int>& p) {
-         return p.second == predecesores[i];
-      })->first);
-   }
-   cout << "El costo total del arbol es " << costo << "\n";
+	for (int i = 1; i < n; ++i)
+	{
+		printf("%d ",new_city[i] + 1);
+	}printf("\n");
 }

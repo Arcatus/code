@@ -1,24 +1,13 @@
-#include<iostream> 
-
-using namespace std;
+#include<cstdio> 
 
 typedef long long ll;
-  
-ll binomialCoeff(ll n, ll k) 
-{ 
-  if (k==0LL || k==n) 
-    return 1; 
- 
-  return  binomialCoeff(n-1LL, k-1LL) + binomialCoeff(n-1LL, k); 
-} 
 
-int main() 
+int main(int argc, char **argv) 
 { 
-	  ll n;
-    
-    cin >> n;
+	ll n;
+	scanf("%lld",&n);
 
-    cout << binomialCoeff(n+1LL,2LL) << '\n';
+	printf("%lld\n",n*(n+1)/2LL );
 
     return 0;
 }

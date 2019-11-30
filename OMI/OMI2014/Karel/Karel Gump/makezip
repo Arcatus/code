@@ -1,3 +1,0 @@
-#/usr/bin/env zsh
-rm up.zip
-zip -r up cases statements validator.py libkarel.py
