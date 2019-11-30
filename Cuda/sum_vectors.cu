@@ -21,9 +21,9 @@ int main()
 {
 	int *a, *b, *c;
 
-	a = (int*) malloc(sizeof(int) * N);
-	b = (int*) malloc(sizeof(int) * N);
-	c = (int*) malloc(sizeof(int) * N);
+	a = new int[N];
+	b = new int[N];
+	c = new int[N];
 
 	int *dev_a, *dev_b, *dev_c;
 
@@ -51,10 +51,10 @@ int main()
 		b[i]= i;
 	}
 
-	int retA = cudaMemcpy( dev_a, a, N*sizeof(int), cudaMemcpyDefault );
+	int retA = cudaMemcpy( dev_a, a, N*sizeof(int), cudaMemcpyHostToDevice);
 
 	if (retA == cudaSuccess) {
-		printf("A is Ok!\n");
+		printf("Allocated memory ok!\n");
 	} 
 	else if ( retA == cudaErrorInvalidValue )
 	{
