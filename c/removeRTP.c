@@ -11,7 +11,7 @@ int main(int argc, char** argv)
 
     lld _file_size = ftell (data);
 
-    rewind (data);    
+    rewind (data);
 
     int rtp = 12, raw_data = 160;
 
