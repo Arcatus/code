@@ -16,7 +16,7 @@ int main()
 {
     srand(time(nullptr));
 
-    constexpr GLuint WIDTH = 512, HEIGHT = 512;
+    constexpr GLuint WIDTH = 1000, HEIGHT = 728;
     constexpr GLuint PARTICLE_GROUP_SIZE = 512;
     constexpr GLuint PARTICLE_GROUP_COUNT = 4096;
     constexpr GLuint PARTICLE_COUNT = PARTICLE_GROUP_SIZE * PARTICLE_GROUP_COUNT;
