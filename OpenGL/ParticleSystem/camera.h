@@ -9,7 +9,7 @@ struct Camera
     Vector3 target   = { 0.0f, 0.0f, 0.0f };
     Vector3 up       = { 0.0f, 0.0f, 0.0f };
 
-    float  speed     = 5.0f;
+    float  speed     = 10.0f;
     double mouseX    = 0.0;
     double mouseY    = 0.0;
     bool   mouseInit = true;
