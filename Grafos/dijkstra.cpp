@@ -28,7 +28,7 @@ int main( ) {
       adyacencia[y].push_back(vecino{x-1, c});
    }
 
-   int distancias[n]; 
+   int distancias[n];
    std::fill_n(&distancias[0], n, -1);
    std::priority_queue<registro> cola;
    cola.push(registro{0, 0});
