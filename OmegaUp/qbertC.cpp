@@ -5,11 +5,7 @@
 
 using namespace std;
 
-enum { BAJAR, SUBIR };
-
-int MAX_SALTOS = -1;
-
-int global_status = 0, costo_global = 101, n;
+int global_status, costo_global = 101, n;
 
 int numero_salto = 0;
 
@@ -20,7 +16,7 @@ bool validador[ 45+1 ][ 15+1 ];
 vector< vector<int> > desplazamientos(15+1);
 
 vector< vector<int> > hexagono = {
-  	{ -1 },
+	{ -1 },
 	{ 2, 3 },
 	{ 1, 4, 5 },
 	{ 1, 5, 6 },
@@ -43,7 +39,7 @@ int pasos = 0;
 void salta( int nodo_actual )
 {
 	if ( global_status == 0 ) {
-		//cerr << "llegue a una solucion " << numero_salto <<  "\n";
+		//cerr << "llegue a una solucion " << numero_salto << "\n";
 		costo_global = min(numero_salto, costo_global);
 		return;
 	}
@@ -54,7 +50,9 @@ void salta( int nodo_actual )
 
 		numero_salto += 1;
 
-		if ( numero_salto + global_status + (global_status*2)/5 <= costo_global ) {
+		int aristas = ???
+
+		if ( numero_salto + global_status + aristas < costo_global ) {
 
 			validador[ global_status ][ nodo_actual ] = true;
 
@@ -84,9 +82,6 @@ void salta( int nodo_actual )
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	cin.tie(0);
-
 	cin >> n;
 
 	for(int i=1; i <= n*(n+1)/2; ++i) {
@@ -113,9 +108,13 @@ int main()
 		cout << "0\n";
 	} else {
 		for(i=0; i < desplazamientos[1].size(); ++i) {
+
+			if ( validador[ global_status ][ 1 ] ) continue;
+
 			numero_salto += 1;
 
 			bool backtrack=false;
+
 			if ( valores[ desplazamientos[1][i] ] > 0 ) {
 				valores[ desplazamientos[1][i] ]-=1;
 				global_status-=1;
@@ -126,6 +125,7 @@ int main()
 				valores[ desplazamientos[1][i] ]+=1;
 				global_status+=1;
 			}
+
 			numero_salto -= 1;
 
 		}

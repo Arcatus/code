@@ -1,38 +1,21 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <queue>
+#include <cstring>
 
 using namespace std;
 
-struct nodo
-{
-	int nodo_destino;
-	int num_pasos;
-	int avance_local;
-};
+enum { BAJAR, SUBIR };
 
-bool operator<(const nodo& a, const nodo& b)
-{	
-	if ( a.avance_local == b.avance_local ) {
-		return a.num_pasos > b.num_pasos;
-	}
-	return a.avance_local > b.avance_local;
-}
+int MAX_SALTOS = -1;
 
-const int MAX_SALTOS = 45+1;
-
-int global_status = 0, costo_optimo = 10000007;
+int global_status = 0, costo_global = 101, n;
 
 int numero_salto = 0;
 
 int valores[15+1];
 
-int pisos[5+1]; 
-
-int piso_referencia[15+1] = {
-	-1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5
-};
+bool validador[ 45+1 ][ 15+1 ];
 
 vector< vector<int> > desplazamientos(15+1);
 
@@ -55,9 +38,55 @@ vector< vector<int> > hexagono = {
 	{ 10 }
 };
 
+int pasos = 0;
+
+void salta( int nodo_actual )
+{
+	if ( global_status == 0 ) {
+		//cerr << "llegue a una solucion " << numero_salto <<  "\n";
+		costo_global = min(numero_salto, costo_global);
+		return;
+	}
+	
+	for(int i=0; i < desplazamientos[ nodo_actual ].size(); ++i) {
+		
+		if ( validador[ global_status ][ nodo_actual ] ) continue;
+
+		numero_salto += 1;
+
+		if ( numero_salto + global_status < costo_global ) {
+
+			validador[ global_status ][ nodo_actual ] = true;
+
+			bool backtrack = false;
+			if ( valores[ desplazamientos[ nodo_actual ][i] ] > 0 ) {
+			
+				global_status-=1;
+				valores[ desplazamientos[ nodo_actual ][i] ]-=1;
+				backtrack=true;
+
+			}
+
+ 			salta( desplazamientos[ nodo_actual ][i] );
+
+			if ( backtrack ) {
+
+				global_status+=1;
+				valores[ desplazamientos[ nodo_actual ][i] ]+=1;
+			}
+
+			validador[ global_status ][ nodo_actual ] = false;
+		}
+
+		numero_salto -= 1;
+	}
+}
+
 int main()
 {
-	int n;
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
 	cin >> n;
 
 	for(int i=1; i <= n*(n+1)/2; ++i) {
@@ -71,29 +100,35 @@ int main()
 
 	int i, j, k;
 
+	global_status = 0;
+
 	for( i = 1, k = 1; i <= n; ++i) {
 		for(j = 1; j <= i; ++j) {
 			cin >> valores[ k++ ];
-			pisos[i] += valores[k - 1];
+			global_status += valores[ k - 1 ];
 		}
 	}
-
-	priority_queue< nodo > encolador;
 
 	if ( global_status == 0 ) {
 		cout << "0\n";
 	} else {
-
 		for(i=0; i < desplazamientos[1].size(); ++i) {
-			encolador.push( nodo{ 
-				desplazamientos[1][i], 1, 
-					pisos[ piso_referencia[ desplazamientos[1][i] ] ] - valores[ desplazamientos[1][i]] });
-		}
+			numero_salto += 1;
 
+			bool backtrack=false;
+			if ( valores[ desplazamientos[1][i] ] > 0 ) {
+				valores[ desplazamientos[1][i] ]-=1;
+				global_status-=1;
+				backtrack=true;
+			}
+			salta( desplazamientos[1][i] );
+			if ( backtrack ) {
+				valores[ desplazamientos[1][i] ]+=1;
+				global_status+=1;
+			}
+			numero_salto -= 1;
 
-		while (  && !encolador.empty()  )
-		{
 		}
-		cout << costo_optimo << '\n';
+		cout << costo_global << '\n';
 	}
 }
