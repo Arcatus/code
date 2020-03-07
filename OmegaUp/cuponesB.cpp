@@ -2,6 +2,8 @@
 #include <algorithm>
 #include <queue>
 #include <vector>
+#include <limits>
+#include <set>
 
 using namespace std;
 
@@ -11,11 +13,18 @@ struct vecino {
 
 struct registro {
    int vertice, distancia;
-   bool cupon_valido;
+};
+
+struct arista {
+   int origen, destino, costo;
 };
 
 bool operator<(const registro& r1, const registro& r2) {
    return r1.distancia > r2.distancia;
+}
+
+bool operator<(const arista& a, const arista& b) {
+   return a.costo > b.costo;
 }
 
 int main( ) 
@@ -27,24 +36,30 @@ int main( )
 
 	vector< vecino > adyacencia[n];
 
+   set< arista > aristas;
+
 	for (int i = 0; i < m; ++i) {
       int x, y, c;
       std::cin >> x >> y >> c;
       adyacencia[x].push_back(vecino{y, c});
       adyacencia[y].push_back(vecino{x, c});
-   	}
-   	int distancias[n];
+      aristas.insert( arista{ min(x,y),max(x,y), c} );
+   }
 
-   	fill( distancias, distancias + n, -1);
+   for(auto i: aristas) {
+      cout << i.origen << " " << i.destino << " " << i.costo << '\n';
+   }
 
-   	priority_queue<registro> cola;
+   int distancias[n];
+  	
+   fill( distancias, distancias + n, -1);
 
-   	cola.push( registro{ 0, 0, true } );
+  	priority_queue<registro> cola;
 
-   	while ( !cola.empty() ) {
+  	cola.push( registro{ 0, 0} );
 
+  	while ( !cola.empty() ) {
       registro procesar = cola.top();
-      
       cola.pop( );
       
       if (distancias[procesar.vertice] == -1) {
@@ -52,12 +67,10 @@ int main( )
          distancias[procesar.vertice] = procesar.distancia;
 
          for (auto vecino : adyacencia[procesar.vertice]) {
-            cola.push( registro{vecino.vertice, vecino.longitud + procesar.distancia, procesar.cupon_valido } );
-            if ( procesar.cupon_valido ) {
-            	cola.push( registro{vecino.vertice, procesar.distancia, false } );
-            }
+            cola.push( registro{vecino.vertice, vecino.longitud + procesar.distancia} );
          }
       }
     }
+
     cout << distancias[ n - 1 ] << '\n';
 }

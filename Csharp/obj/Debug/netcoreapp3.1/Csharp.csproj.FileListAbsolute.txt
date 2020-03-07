@@ -1,0 +1,11 @@
+/home/carlos/Documentos/code/Csharp/obj/Debug/netcoreapp3.1/Csharp.csprojAssemblyReference.cache
+/home/carlos/Documentos/code/Csharp/obj/Debug/netcoreapp3.1/Csharp.AssemblyInfoInputs.cache
+/home/carlos/Documentos/code/Csharp/obj/Debug/netcoreapp3.1/Csharp.AssemblyInfo.cs
+/home/carlos/Documentos/code/Csharp/bin/Debug/netcoreapp3.1/Csharp
+/home/carlos/Documentos/code/Csharp/bin/Debug/netcoreapp3.1/Csharp.deps.json
+/home/carlos/Documentos/code/Csharp/bin/Debug/netcoreapp3.1/Csharp.runtimeconfig.json
+/home/carlos/Documentos/code/Csharp/bin/Debug/netcoreapp3.1/Csharp.runtimeconfig.dev.json
+/home/carlos/Documentos/code/Csharp/bin/Debug/netcoreapp3.1/Csharp.dll
+/home/carlos/Documentos/code/Csharp/bin/Debug/netcoreapp3.1/Csharp.pdb
+/home/carlos/Documentos/code/Csharp/obj/Debug/netcoreapp3.1/Csharp.dll
+/home/carlos/Documentos/code/Csharp/obj/Debug/netcoreapp3.1/Csharp.pdb
