@@ -1,30 +1,26 @@
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
-
-typedef long long ll;
 
 int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-
+	
 	int n;
 	cin >> n;
 
-	int best = 0, sum = 0;
+	long long best = -100000000000LL;
+	long long  sum = -100000000000LL;
 
-	int array[n];
-
-	for (int i=0;i<n;++i){
-		cin >> array[i];
-	}
-
+	long long actual;
 	for (int k = 0; k < n; k++)
 	{
-		sum = max( array[k], sum + array[k]);
+		cin >> actual;
+		sum = max( actual, sum + actual);
 		best = max(best,sum);
 	}
 
-	 cout << best << '\n';
+	cout << best << '\n';
 }

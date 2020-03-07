@@ -23,6 +23,7 @@ int main()
 	}	
 
 	queue<int> bfs;
+
 	int distance[v];
 
 	bool visited[v];
@@ -37,8 +38,8 @@ int main()
 
 	while( !bfs.empty() )
 	{
-		int s = bfs.front(); bfs.pop();
-
+		int s = bfs.front();
+		bfs.pop();
 		cout << s << ' ';
 
 		for (auto u : AdjList[s] )

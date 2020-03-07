@@ -5,10 +5,6 @@
 
 using namespace std;
 
-enum { BAJAR, SUBIR };
-
-int MAX_SALTOS = -1;
-
 int global_status = 0, costo_global = 101, n;
 
 int numero_salto = 0;
@@ -19,8 +15,10 @@ bool validador[ 45+1 ][ 15+1 ];
 
 vector< vector<int> > desplazamientos(15+1);
 
+long long limit = 50000LL, probability = 0LL;
+
 vector< vector<int> > hexagono = {
-  	{ -1 },
+	{ -1 },
 	{ 2, 3 },
 	{ 1, 4, 5 },
 	{ 1, 5, 6 },
@@ -38,47 +36,53 @@ vector< vector<int> > hexagono = {
 	{ 10 }
 };
 
-int pasos = 0;
-
 void salta( int nodo_actual )
 {
 	if ( global_status == 0 ) {
-		//cerr << "llegue a una solucion " << numero_salto <<  "\n";
 		costo_global = min(numero_salto, costo_global);
 		return;
 	}
-	
-	for(int i=0; i < desplazamientos[ nodo_actual ].size(); ++i) {
+
+	vector<int> movs = desplazamientos[nodo_actual];
+
+	sort(movs.begin(), movs.end(), [](int a, int b)
+	{	
+		return valores[a]>valores[b];
+	} );
+
+	for(int i=0; i < movs.size(); ++i) {
 		
 		if ( validador[ global_status ][ nodo_actual ] ) continue;
 
-		numero_salto += 1;
-
-		if ( numero_salto + global_status + (global_status*2)/5 <= costo_global ) {
+		if ( numero_salto + global_status  < costo_global && probability < limit ) {
+			
+			numero_salto += 1;
 
 			validador[ global_status ][ nodo_actual ] = true;
 
 			bool backtrack = false;
-			if ( valores[ desplazamientos[ nodo_actual ][i] ] > 0 ) {
+			if ( valores[ movs[i] ] > 0 ) {
 			
 				global_status-=1;
-				valores[ desplazamientos[ nodo_actual ][i] ]-=1;
+				valores[ movs[i] ]-=1;
 				backtrack=true;
-
 			}
 
- 			salta( desplazamientos[ nodo_actual ][i] );
+			probability += 1LL;
+
+ 			salta( movs[i] );
 
 			if ( backtrack ) {
 
 				global_status+=1;
-				valores[ desplazamientos[ nodo_actual ][i] ]+=1;
+				valores[ movs[i] ]+=1;
 			}
 
 			validador[ global_status ][ nodo_actual ] = false;
+			
+			numero_salto -= 1;
 		}
 
-		numero_salto -= 1;
 	}
 }
 
