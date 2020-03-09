@@ -11,7 +11,7 @@ struct posicion
 {
 	int k;
 	pair<int,int> ubicacion;
-	float distancia;
+	int distancia;
 };
 
 bool operator<(const posicion& a, const posicion& b)
