@@ -2,8 +2,9 @@
 #include <algorithm>
 #include <queue>
 #include <vector>
-#include <limits>
+#include <climits>
 #include <set>
+#include <map>
 
 using namespace std;
 
@@ -23,8 +24,8 @@ bool operator<(const registro& r1, const registro& r2) {
    return r1.distancia > r2.distancia;
 }
 
-bool operator<(const arista& a, const arista& b) {
-   return a.costo > b.costo;
+bool operator<(const arista& r1, const arista& r2) {
+   return r1.costo > r2.costo;
 }
 
 int main( ) 
@@ -36,41 +37,52 @@ int main( )
 
 	vector< vecino > adyacencia[n];
 
-   set< arista > aristas;
+   priority_queue< arista > aristas;
 
 	for (int i = 0; i < m; ++i) {
       int x, y, c;
       std::cin >> x >> y >> c;
       adyacencia[x].push_back(vecino{y, c});
       adyacencia[y].push_back(vecino{x, c});
-      aristas.insert( arista{ min(x,y),max(x,y), c} );
-   }
-
-   for(auto i: aristas) {
-      cout << i.origen << " " << i.destino << " " << i.costo << '\n';
+      aristas.push( arista{ min(x,y),max(x,y), c });
    }
 
    int distancias[n];
-  	
-   fill( distancias, distancias + n, -1);
 
-  	priority_queue<registro> cola;
+   int ans = INT_MAX;
 
-  	cola.push( registro{ 0, 0} );
+   while ( aristas.size() > 0 ) {
+   
+     	priority_queue<registro> cola;
 
-  	while ( !cola.empty() ) {
-      registro procesar = cola.top();
-      cola.pop( );
-      
-      if (distancias[procesar.vertice] == -1) {
+      cola.push( registro{ 0, 0 } );
+
+      fill( distancias, distancias + n, -1);
+
+      arista toDelete = aristas.top();
+      aristas.pop();
+
+     	while ( !cola.empty() ) {
          
-         distancias[procesar.vertice] = procesar.distancia;
+         registro procesar = cola.top();
+         cola.pop();
+         
+         if (distancias[procesar.vertice] == -1) {
+            
+            distancias[procesar.vertice] = procesar.distancia;
 
-         for (auto vecino : adyacencia[procesar.vertice]) {
-            cola.push( registro{vecino.vertice, vecino.longitud + procesar.distancia} );
+            for (auto vecino : adyacencia[procesar.vertice]) {
+               if ( toDelete.origen == procesar.vertice && toDelete.destino == vecino.vertice ) {
+                  cola.push(
+                     registro{ vecino.vertice, 0 + procesar.distancia });
+               } else {
+                  cola.push(
+                     registro{ vecino.vertice, vecino.longitud + procesar.distancia });
+               }
+            }
          }
-      }
-    }
-
-    cout << distancias[ n - 1 ] << '\n';
+       }
+       ans = min( ans, distancias[n-1] );
+   }
+   cout << ans << '\n';
 }

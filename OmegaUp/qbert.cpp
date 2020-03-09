@@ -15,7 +15,7 @@ bool validador[ 45+1 ][ 15+1 ];
 
 vector< vector<int> > desplazamientos(15+1);
 
-long long limit = 50000LL, probability = 0LL;
+long long limit = 150000LL, probability = 0LL;
 
 vector< vector<int> > hexagono = {
 	{ -1 },
@@ -131,7 +131,6 @@ int main()
 				global_status+=1;
 			}
 			numero_salto -= 1;
-
 		}
 		cout << costo_global << '\n';
 	}

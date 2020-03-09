@@ -10,21 +10,16 @@ int main()
 
 	dom = a;
 
-	while( (scanf("%d",&a)) == 1 )
-	{	
-		if(cdom==0)
-		{
+	while( (scanf("%d",&a)) == 1 ) {
+		if( cdom == 0 ) {
 			dom=a;
 		}
-		if(dom==a)
-		{
+		if( dom == a ) {
 			cdom++;
-		}
-		else{
+		} else {
 			cdom--;
 		}
 	}
-
 	printf("%d\n", dom);
 	return 0;
 }
