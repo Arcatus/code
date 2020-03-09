@@ -6,6 +6,7 @@
 #include <vector>
 #include <cstring>
 #include <limits>
+#include <unordered_map>
 
 using namespace std;
 
@@ -53,7 +54,7 @@ int main()
 			cin >> matady[i][j], shortestPaths[i][j] = -1;
 		}
 	}
-
+	
 	int parents[n][n];
 	
 	for(int i=0; i<n; ++i) {
@@ -114,9 +115,11 @@ int main()
 
 			if ( aristas.count( { v_ini, v_fin } ) == 0  ) {
 				if ( distancias[v_ini] == distancias[v_fin] ) {
-					aristas[ { v_ini, v_fin } ] = (float) distancias[v_ini] + matady[v_ini][v_fin]/2.0f;
+					aristas[ { v_ini, v_fin } ] 
+						= (float) distancias[v_ini] + matady[v_ini][v_fin]/2.0f;
 				} else if ( distancias[v_ini] + matady[v_ini][v_fin] == distancias[v_fin] ) {
-					aristas[ { v_ini, v_fin } ] = (float) distancias[v_fin];
+					aristas[ { v_ini, v_fin } ] 
+						= (float) distancias[v_fin];
 				} else if ( distancias[v_ini] + matady[v_ini][v_fin] > distancias[v_fin] ) {
 					aristas[ { v_ini, v_fin } ] 
 						= (float)((distancias[v_ini] + matady[v_ini][v_fin])+distancias[v_fin])/2.0f;
@@ -139,7 +142,7 @@ int main()
 			toReach = robots[i].vertice;
 		}
 	}
-
+	
 	bomba mibomba{ 0.0f, false, {-1,-1}, 0};
 
 	for(int i=0; i<R; ++i) {
