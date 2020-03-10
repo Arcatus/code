@@ -3,64 +3,78 @@
 #include <vector>
 #include <utility>
 #include <cmath>
+#include <limits.h>
 
 using namespace std;
 
 
 struct posicion
 {
-	int k;
-	pair<int,int> ubicacion;
-	int distancia;
+    int k;
+    pair<int,int> ubicacion;
+    int distancia;
 };
 
 bool operator<(const posicion& a, const posicion& b)
-{	
-	return a.distancia > b.distancia;
+{   
+    return a.distancia > b.distancia;
 }
 
 int main()
-{	
-	int n, k;
+{   
+    int n, k;
 
-	cin >> n >> k;
+    cin >> n >> k;
 
-	vector< vector< pair< int, int> > >  reach (n*n+1);
+    vector< vector< pair< int, int> > >  reach (n*n+1);
 
-	priority_queue < posicion > cola;
+    priority_queue < posicion > cola;
 
-	int val;
+    int val;
 
-	for( int i=0; i<n; ++i  ) {
-		for( int j=0; j<n; ++j  ) {
-			cin >> val;
-			reach[ val ].push_back( {i, j} );
-			if ( val == 1 ) {
-				cola.push( posicion{ 1, {i, j}, 0 } );
-			}
-		}
-	}
+    for( int i=0; i<n; ++i  ) {
+        for( int j=0; j<n; ++j  ) {
+            cin >> val;
+            reach[ val ].push_back( {i, j} );
+            if ( val == 1 ) {
+                cola.push( posicion{ 1, {i, j}, 0 } );
+            }
+        }
+    }
 
-	int ans = -1;
+    int ans = INT_MAX;
 
-	while( !cola.empty() ) {
-		int size = cola.size();
+    int distancias[k+1];
 
-		for(int i=0; i<size; ++i) {
-			posicion v = cola.top();
-			cola.pop();
-			if ( v.k == k ) {
-				cout << v.distancia << '\n';
-				return 0;
-			}
+    fill(distancias, distancias+k+1, INT_MAX );
 
-			for(int j=0; j<reach[v.k + 1].size(); ++j) {
-				cola.push( posicion{ v.k + 1, reach[v.k+1][j] ,
-					v.distancia + abs( v.ubicacion.first - reach[ v.k+1 ][j].first ) +
-					 abs( v.ubicacion.second - reach[ v.k+1 ][j].second ) } );
-			}
-		}
-	}
+    while( !cola.empty() ) {
 
-	cout << ans << '\n';
+        posicion v = cola.top();
+        cola.pop();
+
+        if ( v.k == k ) {
+            //cout << v.distancia << '\n';            
+            ans = min( v.distancia, ans );
+            continue;
+        }
+
+        {
+            int mindis = INT_MAX;
+            pair<int,int> posnew;
+            for(int j=0; j < reach[v.k + 1].size(); ++j) {
+                int dist = v.distancia + abs( v.ubicacion.first - reach[ v.k+1 ][j].first )
+                    + abs( v.ubicacion.second - reach[ v.k+1 ][j].second );
+                if ( dist < mindis ) {
+                    posnew = reach[v.k+1][j];
+                    mindis = dist;
+                }
+            }
+
+            if( reach[v.k+1].size() > 0 )
+                cola.push( posicion{ v.k + 1, posnew, mindis } );
+        }
+    }
+    if ( ans == INT_MAX ) cout << -1 << '\n';
+    else cout << ans << '\n';
 }
