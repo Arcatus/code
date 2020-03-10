@@ -8,10 +8,10 @@
 #include <climits>
 
 #define q 100
-#define n 10000000
+#define n 50
 #define MAX_AI 1245
 
-#define k 1
+#define k 15
 
 using namespace std;
 
@@ -19,17 +19,14 @@ int main()
 {
 	srand (time(NULL));
 
-	printf("%d\n",q);
+	printf("%d ",n);
+	printf("%d\n",k);
 
-	for (int i = 0; i < q; ++i )
+	for (int i = 1; i <= n*n; ++i )
 	{
-		int a = (rand() % n)+3;
-
-		while( a%2 == 1)
-		{
-			a+=1;
-		}
-		cout << a << '\n';
+		int a = (rand() % k)+1;
+		cout << a << ' ';
+		if ( i%n == 0 ) cout << '\n';
 	}
 	cout << '\n';
 }
