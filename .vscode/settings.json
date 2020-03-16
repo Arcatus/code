@@ -3,5 +3,9 @@
     "python.analysis.disabled": [
         "unused-variable"
     ],
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "valarray": "cpp"
+    }
 }
