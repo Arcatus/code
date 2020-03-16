@@ -2,18 +2,6 @@
 #include <cstring>
 #include <algorithm>
 
-/*
-int lcs(int i, int j) {
-   if (i == a.size( ) || j == b.size( )) {
-      return 0;
-   } else if (a[i] == b[j]) {
-      return 1 + lcs(i + 1, j + 1);
-   } else {
-      return std::max(lcs(i, j + 1), lcs(i + 1, j));
-   }
-}
-*/
-
 char a[5000+1];
 char b[5000+1];
 

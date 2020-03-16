@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <queue>
 #include <vector>
-#include <limits.h>
+#include <climits>
 #include <set>
 
 using namespace std;
@@ -14,7 +14,6 @@ struct vecino {
 struct registro {
    int vertice, distancia;
    bool cupon_valido;
-   set<int> path;
 };
 
 bool operator<(const registro& r1, const registro& r2) {
@@ -36,40 +35,45 @@ int main( )
       adyacencia[x].push_back(vecino{y, c});
       adyacencia[y].push_back(vecino{x, c});
    }
-   	int distancias[n];
 
-   	fill( distancias, distancias + n, -1);
+   int distancias[n];
+   fill(distancias, distancias+n, INT_MAX);
 
-   	priority_queue<registro> cola;
-      set<int> p;
-   	cola.push( registro{ 0, 0, true, p } );
+   bool reached[n];
+   fill(reached, reached+n, false);
 
-      int pass[n];
-      fill( pass, pass + n, 0);   
+   priority_queue< registro > micola;
 
-   	while ( !cola.empty() ) {
+   micola.push( registro{ 0, 0, true } );
 
-      registro procesar = cola.top();
+   while( !micola.empty() ) {
+      registro v = micola.top();
+      micola.pop();
 
-      cola.pop();
-      
-      if ( distancias[procesar.vertice] == -1  ||
-             (procesar.distancia > distancias[procesar.vertice]) && procesar.cupon_valido ) {
-         //cerr << "procesar vertice: " << procesar.vertice << " procesar distancia: "<< procesar.distancia << '\n';
-         
-         if ( distancias[procesar.vertice] != -1 )
-            distancias[procesar.vertice] = min(procesar.distancia,distancias[procesar.vertice]);
-         else 
-            distancias[procesar.vertice] = procesar.distancia;
-
-         for (auto vecino : adyacencia[procesar.vertice]) {
-            cola.push( registro{vecino.vertice, vecino.longitud + procesar.distancia, procesar.cupon_valido } );
-            if ( procesar.cupon_valido ) {
-            	cola.push( registro{vecino.vertice, procesar.distancia, false } );
-            }
-         }
+      if ( v.vertice == n - 1 ) {
+         cout << v.distancia << '\n';
+         return 0;
       }
-    }
 
-   cout << distancias[ n - 1 ] << '\n';
+      if ( distancias[v.vertice] == INT_MAX  || (v.cupon_valido && !reached[v.vertice] ) ) {
+         
+         if ( v.cupon_valido ) {
+            reached[v.vertice] = true;
+         }
+
+         distancias[v.vertice] = min(v.distancia,distancias[v.vertice]);
+
+         for( vecino p : adyacencia[v.vertice] ) {
+            if ( v.cupon_valido ) {
+               micola.push( registro{ p.vertice, v.distancia, false} );
+            }
+            if ( !v.cupon_valido && v.distancia + p.longitud > distancias[p.vertice] ) {
+               continue;
+            }
+            micola.push( registro{ p.vertice, v.distancia + p.longitud, v.cupon_valido } );
+
+         } 
+      }
+   }
+   cout << -1 << '\n';
 }
