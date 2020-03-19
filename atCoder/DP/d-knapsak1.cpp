@@ -22,7 +22,7 @@ int main()
         for(ll j=n; j>=0; --j ) {
             if ( j == n ) {
                 dp[i][j] = 0;
-            } else if ( i + p[j] <= w) {
+            } else if ( i + p[j] <= w )  {
                 dp[i][j] = max( v[j]+dp[ i+p[j] ][j+1], dp[i][j+1] );
             } else {
                 dp[i][j] = dp[i][j+1];
