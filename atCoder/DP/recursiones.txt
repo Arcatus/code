@@ -1,6 +1,0 @@
-
-
-int mochila(int i, int v)
-{
-    
-}

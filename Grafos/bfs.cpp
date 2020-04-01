@@ -44,13 +44,11 @@ int main()
 
 		for (auto u : AdjList[s] )
 		{
-			if ( visited[u] ) continue;
-
-			visited[u] = true;
-
-			distance[u] = distance[s] + 1;
-
-			bfs.push(u);
+			if ( !visited[u] ) {
+				visited[u] = true;
+				distance[u] = distance[s] + 1;
+				bfs.push(u);
+			}
 		}
 	}
 	return 0;
