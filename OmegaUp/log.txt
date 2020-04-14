@@ -1,0 +1,1407 @@
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h: In instantiation of ‘constexpr bool std::equal_to<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = tup]’:
+/usr/include/c++/9.3.0/bits/hashtable_policy.h:1450:46:   required from ‘static bool std::__detail::_Equal_helper<_Key, _Value, _ExtractKey, _Equal, _HashCodeType, true>::_S_equals(const _Equal&, const _ExtractKey&, const _Key&, _HashCodeType, std::__detail::_Hash_node<_Value, true>*) [with _Key = tup; _Value = tup; _ExtractKey = std::__detail::_Identity; _Equal = std::equal_to<tup>; _HashCodeType = long unsigned int]’
+/usr/include/c++/9.3.0/bits/hashtable_policy.h:1834:37:   required from ‘bool std::__detail::_Hashtable_base<_Key, _Value, _ExtractKey, _Equal, _H1, _H2, _Hash, _Traits>::_M_equals(const _Key&, std::__detail::_Hashtable_base<_Key, _Value, _ExtractKey, _Equal, _H1, _H2, _Hash, _Traits>::__hash_code, std::__detail::_Hashtable_base<_Key, _Value, _ExtractKey, _Equal, _H1, _H2, _Hash, _Traits>::__node_type*) const [with _Key = tup; _Value = tup; _ExtractKey = std::__detail::_Identity; _Equal = std::equal_to<tup>; _H1 = tup; _H2 = std::__detail::_Mod_range_hashing; _Hash = std::__detail::_Default_ranged_hash; _Traits = std::__detail::_Hashtable_traits<true, true, true>; std::__detail::_Hashtable_base<_Key, _Value, _ExtractKey, _Equal, _H1, _H2, _Hash, _Traits>::__hash_code = long unsigned int; std::__detail::_Hashtable_base<_Key, _Value, _ExtractKey, _Equal, _H1, _H2, _Hash, _Traits>::__node_type = std::__detail::_Hash_node<tup, true>]’
+/usr/include/c++/9.3.0/bits/hashtable.h:1458:4:   required from ‘std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _H1, _H2, _Hash, _RehashPolicy, _Traits>::size_type std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _H1, _H2, _Hash, _RehashPolicy, _Traits>::count(const key_type&) const [with _Key = tup; _Value = tup; _Alloc = std::allocator<tup>; _ExtractKey = std::__detail::_Identity; _Equal = std::equal_to<tup>; _H1 = tup; _H2 = std::__detail::_Mod_range_hashing; _Hash = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _H1, _H2, _Hash, _RehashPolicy, _Traits>::size_type = long unsigned int; std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _H1, _H2, _Hash, _RehashPolicy, _Traits>::key_type = tup]’
+/usr/include/c++/9.3.0/bits/unordered_set.h:668:30:   required from ‘std::unordered_set<_Value, _Hash, _Pred, _Alloc>::size_type std::unordered_set<_Value, _Hash, _Pred, _Alloc>::count(const key_type&) const [with _Value = tup; _Hash = tup; _Pred = std::equal_to<tup>; _Alloc = std::allocator<tup>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::size_type = long unsigned int; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::key_type = tup]’
+tramposo.cpp:49:40:   required from here
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: error: no match for ‘operator==’ (operand types are ‘const tup’ and ‘const tup’)
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+tramposo.cpp:7:10: note: candidate: ‘bool tup::operator==(const tup&)’ <near match>
+    7 |     bool operator==(const tup& a) {
+      |          ^~~~~~~~
+tramposo.cpp:7:10: note:   passing ‘const tup*’ as ‘this’ argument discards qualifiers
+In file included from /usr/include/c++/9.3.0/iosfwd:40,
+                 from /usr/include/c++/9.3.0/ios:38,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/postypes.h:222:5: note: candidate: ‘template<class _StateT> bool std::operator==(const std::fpos<_StateT>&, const std::fpos<_StateT>&)’
+  222 |     operator==(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/postypes.h:222:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::fpos<_StateT>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/bits/stl_algobase.h:64,
+                 from /usr/include/c++/9.3.0/bits/char_traits.h:39,
+                 from /usr/include/c++/9.3.0/ios:40,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_pair.h:448:5: note: candidate: ‘template<class _T1, class _T2> constexpr bool std::operator==(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)’
+  448 |     operator==(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_pair.h:448:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::pair<_T1, _T2>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/bits/stl_algobase.h:67,
+                 from /usr/include/c++/9.3.0/bits/char_traits.h:39,
+                 from /usr/include/c++/9.3.0/ios:40,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_iterator.h:325:5: note: candidate: ‘template<class _Iterator> bool std::operator==(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)’
+  325 |     operator==(const reverse_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_iterator.h:325:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/bits/stl_algobase.h:67,
+                 from /usr/include/c++/9.3.0/bits/char_traits.h:39,
+                 from /usr/include/c++/9.3.0/ios:40,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_iterator.h:363:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> bool std::operator==(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)’
+  363 |     operator==(const reverse_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_iterator.h:363:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/bits/stl_algobase.h:67,
+                 from /usr/include/c++/9.3.0/bits/char_traits.h:39,
+                 from /usr/include/c++/9.3.0/ios:40,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_iterator.h:1139:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> bool std::operator==(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)’
+ 1139 |     operator==(const move_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_iterator.h:1139:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::move_iterator<_IteratorL>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/bits/stl_algobase.h:67,
+                 from /usr/include/c++/9.3.0/bits/char_traits.h:39,
+                 from /usr/include/c++/9.3.0/ios:40,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_iterator.h:1145:5: note: candidate: ‘template<class _Iterator> bool std::operator==(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorL>&)’
+ 1145 |     operator==(const move_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_iterator.h:1145:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::move_iterator<_IteratorL>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/string:41,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/allocator.h:168:5: note: candidate: ‘template<class _T1, class _T2> bool std::operator==(const std::allocator<_CharT>&, const std::allocator<_T2>&)’
+  168 |     operator==(const allocator<_T1>&, const allocator<_T2>&)
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/allocator.h:168:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::allocator<_CharT>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/string:55,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/basic_string.h:6141:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 6141 |     operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/basic_string.h:6141:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/string:55,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/basic_string.h:6149:5: note: candidate: ‘template<class _CharT> typename __gnu_cxx::__enable_if<std::__is_char<_Tp>::__value, bool>::__type std::operator==(const std::__cxx11::basic_string<_CharT>&, const std::__cxx11::basic_string<_CharT>&)’
+ 6149 |     operator==(const basic_string<_CharT>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/basic_string.h:6149:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::__cxx11::basic_string<_CharT>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/string:55,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/basic_string.h:6163:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 6163 |     operator==(const _CharT* __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/basic_string.h:6163:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   mismatched types ‘const _CharT*’ and ‘tup’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/string:55,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/basic_string.h:6175:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)’
+ 6175 |     operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/basic_string.h:6175:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/bits/ios_base.h:46,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/system_error:292:3: note: candidate: ‘bool std::operator==(const std::error_code&, const std::error_code&)’
+  292 |   operator==(const error_code& __lhs, const error_code& __rhs) noexcept
+      |   ^~~~~~~~
+/usr/include/c++/9.3.0/system_error:292:32: note:   no known conversion for argument 1 from ‘const tup’ to ‘const std::error_code&’
+  292 |   operator==(const error_code& __lhs, const error_code& __rhs) noexcept
+      |              ~~~~~~~~~~~~~~~~~~^~~~~
+/usr/include/c++/9.3.0/system_error:297:3: note: candidate: ‘bool std::operator==(const std::error_code&, const std::error_condition&)’
+  297 |   operator==(const error_code& __lhs, const error_condition& __rhs) noexcept
+      |   ^~~~~~~~
+/usr/include/c++/9.3.0/system_error:297:32: note:   no known conversion for argument 1 from ‘const tup’ to ‘const std::error_code&’
+  297 |   operator==(const error_code& __lhs, const error_condition& __rhs) noexcept
+      |              ~~~~~~~~~~~~~~~~~~^~~~~
+/usr/include/c++/9.3.0/system_error:304:3: note: candidate: ‘bool std::operator==(const std::error_condition&, const std::error_code&)’
+  304 |   operator==(const error_condition& __lhs, const error_code& __rhs) noexcept
+      |   ^~~~~~~~
+/usr/include/c++/9.3.0/system_error:304:37: note:   no known conversion for argument 1 from ‘const tup’ to ‘const std::error_condition&’
+  304 |   operator==(const error_condition& __lhs, const error_code& __rhs) noexcept
+      |              ~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+/usr/include/c++/9.3.0/system_error:311:3: note: candidate: ‘bool std::operator==(const std::error_condition&, const std::error_condition&)’
+  311 |   operator==(const error_condition& __lhs,
+      |   ^~~~~~~~
+/usr/include/c++/9.3.0/system_error:311:37: note:   no known conversion for argument 1 from ‘const tup’ to ‘const std::error_condition&’
+  311 |   operator==(const error_condition& __lhs,
+      |              ~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from /usr/include/c++/9.3.0/bits/locale_facets.h:48,
+                 from /usr/include/c++/9.3.0/bits/basic_ios.h:37,
+                 from /usr/include/c++/9.3.0/ios:44,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/streambuf_iterator.h:208:5: note: candidate: ‘template<class _CharT, class _Traits> bool std::operator==(const std::istreambuf_iterator<_CharT, _Traits>&, const std::istreambuf_iterator<_CharT, _Traits>&)’
+  208 |     operator==(const istreambuf_iterator<_CharT, _Traits>& __a,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/streambuf_iterator.h:208:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::istreambuf_iterator<_CharT, _Traits>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/complex:459:5: note: candidate: ‘template<class _Tp> constexpr bool std::operator==(const std::complex<_Tp>&, const std::complex<_Tp>&)’
+  459 |     operator==(const complex<_Tp>& __x, const complex<_Tp>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/complex:459:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::complex<_Tp>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/complex:464:5: note: candidate: ‘template<class _Tp> constexpr bool std::operator==(const std::complex<_Tp>&, const _Tp&)’
+  464 |     operator==(const complex<_Tp>& __x, const _Tp& __y)
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/complex:464:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::complex<_Tp>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/complex:469:5: note: candidate: ‘template<class _Tp> constexpr bool std::operator==(const _Tp&, const std::complex<_Tp>&)’
+  469 |     operator==(const _Tp& __x, const complex<_Tp>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/complex:469:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::complex<_Tp>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/deque:67,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:68,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_deque.h:286:5: note: candidate: ‘template<class _Tp, class _Ref, class _Ptr> bool std::operator==(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _Ref, _Ptr>&)’
+  286 |     operator==(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_deque.h:286:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/deque:67,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:68,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_deque.h:293:5: note: candidate: ‘template<class _Tp, class _RefL, class _PtrL, class _RefR, class _PtrR> bool std::operator==(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _RefR, _PtrR>&)’
+  293 |     operator==(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_deque.h:293:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/deque:67,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:68,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_deque.h:2312:5: note: candidate: ‘template<class _Tp, class _Alloc> bool std::operator==(const std::deque<_Tp, _Alloc>&, const std::deque<_Tp, _Alloc>&)’
+ 2312 |     operator==(const deque<_Tp, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_deque.h:2312:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::deque<_Tp, _Alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/tuple:39,
+                 from /usr/include/c++/9.3.0/functional:54,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:71,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/array:252:5: note: candidate: ‘template<class _Tp, long unsigned int _Nm> bool std::operator==(const std::array<_Tp, _Nm>&, const std::array<_Tp, _Nm>&)’
+  252 |     operator==(const array<_Tp, _Nm>& __one, const array<_Tp, _Nm>& __two)
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/array:252:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::array<_Tp, _Nm>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/functional:54,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:71,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/tuple:1419:5: note: candidate: ‘template<class ... _TElements, class ... _UElements> constexpr bool std::operator==(const std::tuple<_Tps ...>&, const std::tuple<_Elements ...>&)’
+ 1419 |     operator==(const tuple<_TElements...>& __t,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/tuple:1419:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::tuple<_Tps ...>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/functional:59,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:71,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/std_function.h:746:5: note: candidate: ‘template<class _Res, class ... _Args> bool std::operator==(const std::function<_Res(_ArgTypes ...)>&, std::nullptr_t)’
+  746 |     operator==(const function<_Res(_Args...)>& __f, nullptr_t) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/std_function.h:746:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::function<_Res(_ArgTypes ...)>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/functional:59,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:71,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/std_function.h:752:5: note: candidate: ‘template<class _Res, class ... _Args> bool std::operator==(std::nullptr_t, const std::function<_Res(_ArgTypes ...)>&)’
+  752 |     operator==(nullptr_t, const function<_Res(_Args...)>& __f) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/std_function.h:752:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::function<_Res(_ArgTypes ...)>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/bits/locale_conv.h:41,
+                 from /usr/include/c++/9.3.0/locale:43,
+                 from /usr/include/c++/9.3.0/iomanip:43,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:72,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/unique_ptr.h:715:5: note: candidate: ‘template<class _Tp, class _Dp, class _Up, class _Ep> bool std::operator==(const std::unique_ptr<_Tp, _Dp>&, const std::unique_ptr<_Up, _Ep>&)’
+  715 |     operator==(const unique_ptr<_Tp, _Dp>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/unique_ptr.h:715:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/bits/locale_conv.h:41,
+                 from /usr/include/c++/9.3.0/locale:43,
+                 from /usr/include/c++/9.3.0/iomanip:43,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:72,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/unique_ptr.h:721:5: note: candidate: ‘template<class _Tp, class _Dp> bool std::operator==(const std::unique_ptr<_Tp, _Dp>&, std::nullptr_t)’
+  721 |     operator==(const unique_ptr<_Tp, _Dp>& __x, nullptr_t) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/unique_ptr.h:721:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/bits/locale_conv.h:41,
+                 from /usr/include/c++/9.3.0/locale:43,
+                 from /usr/include/c++/9.3.0/iomanip:43,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:72,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/unique_ptr.h:726:5: note: candidate: ‘template<class _Tp, class _Dp> bool std::operator==(std::nullptr_t, const std::unique_ptr<_Tp, _Dp>&)’
+  726 |     operator==(nullptr_t, const unique_ptr<_Tp, _Dp>& __x) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/unique_ptr.h:726:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/iterator:66,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:77,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stream_iterator.h:134:5: note: candidate: ‘template<class _Tp, class _CharT, class _Traits, class _Dist> bool std::operator==(const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&, const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&)’
+  134 |     operator==(const istream_iterator<_Tp, _CharT, _Traits, _Dist>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stream_iterator.h:134:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/list:63,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:79,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_list.h:1991:5: note: candidate: ‘template<class _Tp, class _Alloc> bool std::operator==(const std::__cxx11::list<_Tp, _Alloc>&, const std::__cxx11::list<_Tp, _Alloc>&)’
+ 1991 |     operator==(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_list.h:1991:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::__cxx11::list<_Tp, _Alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/map:61,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:81,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_map.h:1455:5: note: candidate: ‘template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator==(const std::map<_Key, _Tp, _Compare, _Alloc>&, const std::map<_Key, _Tp, _Compare, _Alloc>&)’
+ 1455 |     operator==(const map<_Key, _Tp, _Compare, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_map.h:1455:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::map<_Key, _Tp, _Compare, _Alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/map:62,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:81,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_multimap.h:1119:5: note: candidate: ‘template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator==(const std::multimap<_Key, _Tp, _Compare, _Alloc>&, const std::multimap<_Key, _Tp, _Compare, _Alloc>&)’
+ 1119 |     operator==(const multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_multimap.h:1119:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::multimap<_Key, _Tp, _Compare, _Alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/bits/shared_ptr.h:52,
+                 from /usr/include/c++/9.3.0/memory:81,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:82,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/shared_ptr_base.h:1412:5: note: candidate: ‘template<class _Tp1, class _Tp2, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(const std::__shared_ptr<_Tp1, _Lp>&, const std::__shared_ptr<_Tp2, _Lp>&)’
+ 1412 |     operator==(const __shared_ptr<_Tp1, _Lp>& __a,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/shared_ptr_base.h:1412:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::__shared_ptr<_Tp1, _Lp>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/bits/shared_ptr.h:52,
+                 from /usr/include/c++/9.3.0/memory:81,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:82,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/shared_ptr_base.h:1418:5: note: candidate: ‘template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(const std::__shared_ptr<_Tp, _Lp>&, std::nullptr_t)’
+ 1418 |     operator==(const __shared_ptr<_Tp, _Lp>& __a, nullptr_t) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/shared_ptr_base.h:1418:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/bits/shared_ptr.h:52,
+                 from /usr/include/c++/9.3.0/memory:81,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:82,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/shared_ptr_base.h:1423:5: note: candidate: ‘template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(std::nullptr_t, const std::__shared_ptr<_Tp, _Lp>&)’
+ 1423 |     operator==(nullptr_t, const __shared_ptr<_Tp, _Lp>& __a) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/shared_ptr_base.h:1423:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/memory:81,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:82,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/shared_ptr.h:383:5: note: candidate: ‘template<class _Tp, class _Up> bool std::operator==(const std::shared_ptr<_Tp>&, const std::shared_ptr<_Tp>&)’
+  383 |     operator==(const shared_ptr<_Tp>& __a, const shared_ptr<_Up>& __b) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/shared_ptr.h:383:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::shared_ptr<_Tp>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/memory:81,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:82,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/shared_ptr.h:388:5: note: candidate: ‘template<class _Tp> bool std::operator==(const std::shared_ptr<_Tp>&, std::nullptr_t)’
+  388 |     operator==(const shared_ptr<_Tp>& __a, nullptr_t) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/shared_ptr.h:388:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::shared_ptr<_Tp>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/memory:81,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:82,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/shared_ptr.h:393:5: note: candidate: ‘template<class _Tp> bool std::operator==(std::nullptr_t, const std::shared_ptr<_Tp>&)’
+  393 |     operator==(nullptr_t, const shared_ptr<_Tp>& __a) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/shared_ptr.h:393:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::shared_ptr<_Tp>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/vector:67,
+                 from /usr/include/c++/9.3.0/queue:61,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:86,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_vector.h:1888:5: note: candidate: ‘template<class _Tp, class _Alloc> bool std::operator==(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)’
+ 1888 |     operator==(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_vector.h:1888:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::vector<_Tp, _Alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/queue:64,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:86,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_queue.h:338:5: note: candidate: ‘template<class _Tp, class _Seq> bool std::operator==(const std::queue<_Tp, _Seq>&, const std::queue<_Tp, _Seq>&)’
+  338 |     operator==(const queue<_Tp, _Seq>& __x, const queue<_Tp, _Seq>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_queue.h:338:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::queue<_Tp, _Seq>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/set:61,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:87,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_set.h:979:5: note: candidate: ‘template<class _Key, class _Compare, class _Alloc> bool std::operator==(const std::set<_Key, _Compare, _Alloc>&, const std::set<_Key, _Compare, _Alloc>&)’
+  979 |     operator==(const set<_Key, _Compare, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_set.h:979:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::set<_Key, _Compare, _Alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/set:62,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:87,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_multiset.h:964:5: note: candidate: ‘template<class _Key, class _Compare, class _Alloc> bool std::operator==(const std::multiset<_Key, _Compare, _Alloc>&, const std::multiset<_Key, _Compare, _Alloc>&)’
+  964 |     operator==(const multiset<_Key, _Compare, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_multiset.h:964:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::multiset<_Key, _Compare, _Alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/stack:61,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:89,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_stack.h:313:5: note: candidate: ‘template<class _Tp, class _Seq> bool std::operator==(const std::stack<_Tp, _Seq>&, const std::stack<_Tp, _Seq>&)’
+  313 |     operator==(const stack<_Tp, _Seq>& __x, const stack<_Tp, _Seq>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/stl_stack.h:313:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::stack<_Tp, _Seq>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/valarray:603,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:95,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/valarray_after.h:417:5: note: candidate: ‘template<class _Dom1, class _Dom2> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_Expr, std::_Expr, _Dom1, _Dom2>, typename std::__fun<std::__equal_to, typename _Dom1::value_type>::result_type> std::operator==(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const std::_Expr<_Dom2, typename _Dom2::value_type>&)’
+  417 |     _DEFINE_EXPR_BINARY_OPERATOR(==, __equal_to)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9.3.0/bits/valarray_after.h:417:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/valarray:603,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:95,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/valarray_after.h:417:5: note: candidate: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_Expr, std::_Constant, _Dom, typename _Dom::value_type>, typename std::__fun<std::__equal_to, typename _Dom1::value_type>::result_type> std::operator==(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const typename _Dom::value_type&)’
+  417 |     _DEFINE_EXPR_BINARY_OPERATOR(==, __equal_to)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9.3.0/bits/valarray_after.h:417:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/valarray:603,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:95,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/valarray_after.h:417:5: note: candidate: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_Constant, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__equal_to, typename _Dom1::value_type>::result_type> std::operator==(const typename _Dom::value_type&, const std::_Expr<_Dom1, typename _Dom1::value_type>&)’
+  417 |     _DEFINE_EXPR_BINARY_OPERATOR(==, __equal_to)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9.3.0/bits/valarray_after.h:417:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/valarray:603,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:95,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/valarray_after.h:417:5: note: candidate: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_Expr, std::_ValArray, _Dom, typename _Dom::value_type>, typename std::__fun<std::__equal_to, typename _Dom1::value_type>::result_type> std::operator==(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const std::valarray<typename _Dom::value_type>&)’
+  417 |     _DEFINE_EXPR_BINARY_OPERATOR(==, __equal_to)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9.3.0/bits/valarray_after.h:417:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/valarray:603,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:95,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/valarray_after.h:417:5: note: candidate: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_ValArray, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__equal_to, typename _Dom1::value_type>::result_type> std::operator==(const std::valarray<typename _Dom::value_type>&, const std::_Expr<_Dom1, typename _Dom1::value_type>&)’
+  417 |     _DEFINE_EXPR_BINARY_OPERATOR(==, __equal_to)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9.3.0/bits/valarray_after.h:417:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:95,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/valarray:1197:1: note: candidate: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_ValArray, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__equal_to, _Tp>::result_type> std::operator==(const std::valarray<_Tp>&, const std::valarray<_Tp>&)’
+ 1197 | _DEFINE_BINARY_OPERATOR(==, __equal_to)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9.3.0/valarray:1197:1: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::valarray<_Tp>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:95,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/valarray:1197:1: note: candidate: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_ValArray, std::_Constant, _Tp, _Tp>, typename std::__fun<std::__equal_to, _Tp>::result_type> std::operator==(const std::valarray<_Tp>&, const typename std::valarray<_Tp>::value_type&)’
+ 1197 | _DEFINE_BINARY_OPERATOR(==, __equal_to)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9.3.0/valarray:1197:1: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::valarray<_Tp>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:95,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/valarray:1197:1: note: candidate: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_Constant, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__equal_to, _Tp>::result_type> std::operator==(const typename std::valarray<_Tp>::value_type&, const std::valarray<_Tp>&)’
+ 1197 | _DEFINE_BINARY_OPERATOR(==, __equal_to)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9.3.0/valarray:1197:1: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::valarray<_Tp>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/forward_list:40,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:104,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/forward_list.tcc:393:5: note: candidate: ‘template<class _Tp, class _Alloc> bool std::operator==(const std::forward_list<_Tp, _Alloc>&, const std::forward_list<_Tp, _Alloc>&)’
+  393 |     operator==(const forward_list<_Tp, _Alloc>& __lx,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/forward_list.tcc:393:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::forward_list<_Tp, _Alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/future:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:105,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/thread:276:3: note: candidate: ‘bool std::operator==(std::thread::id, std::thread::id)’
+  276 |   operator==(thread::id __x, thread::id __y) noexcept
+      |   ^~~~~~~~
+/usr/include/c++/9.3.0/thread:276:25: note:   no known conversion for argument 1 from ‘const tup’ to ‘std::thread::id’
+  276 |   operator==(thread::id __x, thread::id __y) noexcept
+      |              ~~~~~~~~~~~^~~
+In file included from /usr/include/c++/9.3.0/random:51,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:108,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/random.tcc:1884:5: note: candidate: ‘template<class _RealType1> bool std::operator==(const std::normal_distribution<_RealType>&, const std::normal_distribution<_RealType>&)’
+ 1884 |     operator==(const std::normal_distribution<_RealType>& __d1,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/random.tcc:1884:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::normal_distribution<_RealType>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:111,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/scoped_allocator:489:5: note: candidate: ‘template<class _OutA1, class _OutA2, class ... _InA> bool std::operator==(const std::scoped_allocator_adaptor<_OutA1, _InA ...>&, const std::scoped_allocator_adaptor<_InnerHead, _InnerTail ...>&)’
+  489 |     operator==(const scoped_allocator_adaptor<_OutA1, _InA...>& __a,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/scoped_allocator:489:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::scoped_allocator_adaptor<_OutA1, _InA ...>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/unordered_map:47,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:117,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/unordered_map.h:2091:5: note: candidate: ‘template<class _Key, class _Tp, class _Hash, class _Pred, class _Alloc> bool std::operator==(const std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>&, const std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>&)’
+ 2091 |     operator==(const unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/unordered_map.h:2091:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/unordered_map:47,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:117,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/unordered_map.h:2103:5: note: candidate: ‘template<class _Key, class _Tp, class _Hash, class _Pred, class _Alloc> bool std::operator==(const std::unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>&, const std::unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>&)’
+ 2103 |     operator==(const unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/unordered_map.h:2103:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/unordered_set:47,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:118,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/unordered_set.h:1703:5: note: candidate: ‘template<class _Value, class _Hash, class _Pred, class _Alloc> bool std::operator==(const std::unordered_set<_Value, _Hash, _Pred, _Alloc>&, const std::unordered_set<_Value, _Hash, _Pred, _Alloc>&)’
+ 1703 |     operator==(const unordered_set<_Value, _Hash, _Pred, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/unordered_set.h:1703:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::unordered_set<_Value, _Hash, _Pred, _Alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/unordered_set:47,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:118,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/unordered_set.h:1715:5: note: candidate: ‘template<class _Value, class _Hash, class _Pred, class _Alloc> bool std::operator==(const std::unordered_multiset<_Value, _Hash, _Pred, _Alloc>&, const std::unordered_multiset<_Value, _Hash, _Pred, _Alloc>&)’
+ 1715 |     operator==(const unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/unordered_set.h:1715:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::unordered_multiset<_Value, _Hash, _Pred, _Alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/regex:62,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:110,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/regex.h:1026:5: note: candidate: ‘template<class _BiIter> bool std::__cxx11::operator==(const std::__cxx11::sub_match<_BiIter>&, const std::__cxx11::sub_match<_BiIter>&)’
+ 1026 |     operator==(const sub_match<_BiIter>& __lhs, const sub_match<_BiIter>& __rhs)
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/regex.h:1026:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::__cxx11::sub_match<_BiIter>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/regex:62,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:110,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/regex.h:1099:5: note: candidate: ‘template<class _Bi_iter, class _Ch_traits, class _Ch_alloc> bool std::__cxx11::operator==(std::__cxx11::__sub_match_string<_Bi_iter, _Ch_traits, _Ch_alloc>&, const std::__cxx11::sub_match<_BiIter>&)’
+ 1099 |     operator==(const __sub_match_string<_Bi_iter, _Ch_traits, _Ch_alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/regex.h:1099:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘std::__cxx11::__sub_match_string<_Bi_iter, _Ch_traits, _Ch_alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/regex:62,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:110,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/regex.h:1173:5: note: candidate: ‘template<class _Bi_iter, class _Ch_traits, class _Ch_alloc> bool std::__cxx11::operator==(const std::__cxx11::sub_match<_BiIter>&, std::__cxx11::__sub_match_string<_Bi_iter, _Ch_traits, _Ch_alloc>&)’
+ 1173 |     operator==(const sub_match<_Bi_iter>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/regex.h:1173:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::__cxx11::sub_match<_BiIter>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/regex:62,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:110,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/regex.h:1247:5: note: candidate: ‘template<class _Bi_iter> bool std::__cxx11::operator==(const typename std::iterator_traits<_Iter>::value_type*, const std::__cxx11::sub_match<_BiIter>&)’
+ 1247 |     operator==(typename iterator_traits<_Bi_iter>::value_type const* __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/regex.h:1247:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::__cxx11::sub_match<_BiIter>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/regex:62,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:110,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/regex.h:1321:5: note: candidate: ‘template<class _Bi_iter> bool std::__cxx11::operator==(const std::__cxx11::sub_match<_BiIter>&, const typename std::iterator_traits<_Iter>::value_type*)’
+ 1321 |     operator==(const sub_match<_Bi_iter>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/regex.h:1321:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::__cxx11::sub_match<_BiIter>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/regex:62,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:110,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/regex.h:1395:5: note: candidate: ‘template<class _Bi_iter> bool std::__cxx11::operator==(const typename std::iterator_traits<_Iter>::value_type&, const std::__cxx11::sub_match<_BiIter>&)’
+ 1395 |     operator==(typename iterator_traits<_Bi_iter>::value_type const& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/regex.h:1395:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::__cxx11::sub_match<_BiIter>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/regex:62,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:110,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/regex.h:1473:5: note: candidate: ‘template<class _Bi_iter> bool std::__cxx11::operator==(const std::__cxx11::sub_match<_BiIter>&, const typename std::iterator_traits<_Iter>::value_type&)’
+ 1473 |     operator==(const sub_match<_Bi_iter>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/regex.h:1473:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::__cxx11::sub_match<_BiIter>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
+In file included from /usr/include/c++/9.3.0/regex:62,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:110,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/regex.h:1991:5: note: candidate: ‘template<class _Bi_iter, class _Alloc> bool std::__cxx11::operator==(const std::__cxx11::match_results<_BiIter, _Alloc>&, const std::__cxx11::match_results<_BiIter, _Alloc>&)’
+ 1991 |     operator==(const match_results<_Bi_iter, _Alloc>& __m1,
+      |     ^~~~~~~~
+/usr/include/c++/9.3.0/bits/regex.h:1991:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/9.3.0/string:48,
+                 from /usr/include/c++/9.3.0/bits/locale_classes.h:40,
+                 from /usr/include/c++/9.3.0/bits/ios_base.h:41,
+                 from /usr/include/c++/9.3.0/ios:42,
+                 from /usr/include/c++/9.3.0/istream:38,
+                 from /usr/include/c++/9.3.0/sstream:38,
+                 from /usr/include/c++/9.3.0/complex:45,
+                 from /usr/include/c++/9.3.0/ccomplex:39,
+                 from /usr/include/c++/9.3.0/x86_64-pc-linux-gnu/bits/stdc++.h:54,
+                 from tramposo.cpp:1:
+/usr/include/c++/9.3.0/bits/stl_function.h:356:20: note:   ‘const tup’ is not derived from ‘const std::__cxx11::match_results<_BiIter, _Alloc>’
+  356 |       { return __x == __y; }
+      |                ~~~~^~~~~~
