@@ -1,10 +1,4 @@
-/*
-	GRAN PREMIO DE MEXICO 2018 - Problem E
-	http://coj.uci.cu/24h/problem.xhtml?pid=4241
-*/
-
-#include <cstdio>
-#include <cstring>
+#include <bits/stdc++.h>
 
 using namespace std;
 
