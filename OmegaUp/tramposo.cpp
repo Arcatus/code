@@ -11,24 +11,26 @@ bool operator < (reg a, reg b) {
     return a.b < b.b;
 }
 bool operator < (inter a, inter b) {
-    return a.l == b.l ? ( a.r < b.r ) : ( a.l < b.l );
+    return a.l < b.l;
 }
 vector<vector< inter >> ivals(1001);
-vector<inter> df(int k, int a, int b) {
+pair<int,int> df(int k, int a, int b) {
     if ( ivals[k].size()==0 ) {
-        vector<inter> ans = { {a, b} };
-        return ans;
+        int le = max(1, a), ri = min( b, MAXN );
+        return {le, ri};
     } else {
         vector<inter> ans;
-        int le, ri, x, y;
-        for(int i=0; i<ivals[k].size(); ++i) {
-            le = max(a, ivals[k][i].r+1);
-            ri = min(b, ( i+1 < ivals[k].size() ) ? ivals[k][i+1].l-1 : MAXN );
-            if ( le <= ri ) {
-                ans.push_back({le, ri});
+        int le = 1, ri = ivals[k][0].l - 1, x, y, i;
+        for(i=0; i<ivals[k].size()-1; ++i) {
+            x = max(a,le);
+            y = min(b,ri);
+            if ( x <= y ) {
+                return {x, y};
             }
+            le = ivals[k][i].r + 1;
+            ri = ivals[k][i+1].l - 1;
         }
-        return ans;
+        return {-1,-1};
     }
 }
 
@@ -65,34 +67,45 @@ int main() {
         adj[x].push_back({y, l1, r1 });
         adj[y].push_back({x, l1, r1 });
     }
-    for(int i=1; i<=n; ++i) {
-        sort(adj[i].begin(), adj[i].end(), []( tup a, tup b ) {
-            return (a.r - a.l) > (b.r - b.l);
-        } );
-    }
     priority_queue< reg > q;
     q.push( reg{ 1, MAXN, 1, MAXN } );
     int ans = 0;
     while (!q.empty()) {
         reg p = q.top();
-        //cerr << "p: " << p.a << " " << p.b << " " << p.ll << " " << p.rr << '\n';
-        //cerr << "Current max " << p.b << '\n';
         q.pop();
         if ( p.a == n ) {
-            //cout << p.b << '\n';
             ans = max(ans, p.b);
-            //return 0;
         } else {
             mergeInt(p.a, p.ll, p.rr);
             for(tup i : adj[p.a]) {
-                vector<inter> ovps = df(i.d, i.l, i.r);
-                if ( ovps.size() > 0 ) {
-                    for(inter g: ovps) {
-                        int le = max(p.ll, g.l);
-                        int ri = min(p.rr, g.r);
-                        if ( le <= ri ) {
-                            q.push( reg{ i.d, min(ri-le+1, p.b), le, ri });
-                        }
+                auto [gl, gr] = df(i.d, i.l, i.r);
+                if ( gl != -1 ) {
+                    int le = max(p.ll, gl);
+                    int ri = min(p.rr, gr);
+                    if ( le <= ri ) {
+                        q.push( reg{ i.d, min(ri-le+1, p.b), le, ri });
+                    }
+                }
+            }
+        }
+    }
+    for(int i=1;i<=n; ++i) ivals[i].clear();
+
+    q.push( reg{ n, MAXN, 1, MAXN } );
+    while (!q.empty()) {
+        reg p = q.top();
+        q.pop();
+        if ( p.a == 1 ) {
+            ans = max(ans, p.b);
+        } else {
+            mergeInt(p.a, p.ll, p.rr);
+            for(tup i : adj[p.a]) {
+                auto [gl, gr] = df(i.d, i.l, i.r);
+                if ( gl != -1 ) {
+                    int le = max(p.ll, gl);
+                    int ri = min(p.rr, gr);
+                    if ( le <= ri ) {
+                        q.push( reg{ i.d, min(ri-le+1, p.b), le, ri });
                     }
                 }
             }
