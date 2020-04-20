@@ -8,8 +8,8 @@
 #include <climits>
 #include <unordered_set>
 
-#define n 500
-#define m 1500
+#define n 50
+#define m 150
 #define MAX_AI 1000000
 
 using namespace std;
@@ -20,16 +20,11 @@ int main()
 	ios::sync_with_stdio(false);
 	cout.tie(0);
 
-	cout << n << " " << m <<'\n';
+	cout << n << '\n';
 
-	for(int i=0; i<m; ++i) {
-		int a= rand()%n + 1;
-		int b= rand()%n + 1;
-		if ( a > b ) swap(a,b);
-		int l = rand()%MAX_AI +1;
-		int r = rand()%MAX_AI +1;
-		if( l > r ) swap(l,r);
-		cout << a << " "<< b << " "<< l << " "<< r << '\n';
+	for(int i=0; i<n; ++i) {
+		int a= rand()%m + 1;
+		cout << a << ' ';
 	}
-
+	cout <<'\n';
 }
