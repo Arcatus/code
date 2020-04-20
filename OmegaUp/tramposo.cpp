@@ -21,14 +21,18 @@ pair<int,int> df(int k, int a, int b) {
     } else {
         vector<inter> ans;
         int le = 1, ri = ivals[k][0].l - 1, x, y, i;
-        for(i=0; i<ivals[k].size()-1; ++i) {
+        if ( ivals[k][0].l == 1 ) {
+            le = ivals[k][0].r+1;
+            ri = (ivals[k].size()==1) ? MAXN :ivals[k][1].l-1;
+        }
+        for(i=0; i<ivals[k].size(); ++i) {
             x = max(a,le);
             y = min(b,ri);
             if ( x <= y ) {
                 return {x, y};
             }
             le = ivals[k][i].r + 1;
-            ri = ivals[k][i+1].l - 1;
+            ri = (i+1 < ivals[k].size())?ivals[k][i+1].l - 1:MAXN;
         }
         return {-1,-1};
     }
@@ -72,6 +76,7 @@ int main() {
     int ans = 0;
     while (!q.empty()) {
         reg p = q.top();
+        cerr << "From queue: " << p.a << " " << p.b << " " << p.ll << " " << p.rr << '\n';
         q.pop();
         if ( p.a == n ) {
             ans = max(ans, p.b);
@@ -79,37 +84,21 @@ int main() {
             mergeInt(p.a, p.ll, p.rr);
             for(tup i : adj[p.a]) {
                 auto [gl, gr] = df(i.d, i.l, i.r);
+                for(int g=0; g<ivals[i.d].size(); ++g) {
+                    cout << i.d <<" {"<<ivals[i.d][g].l << " " << ivals[i.d][g].r << "} "; cout << ' ' << i.l << " "<< i.r << '\n';
+                }
+                cerr << "Free space: " << gl << " " << gr << " from " << p.a << " to " << i.d << '\n';
                 if ( gl != -1 ) {
                     int le = max(p.ll, gl);
                     int ri = min(p.rr, gr);
                     if ( le <= ri ) {
+                        cerr << "intersection&inserting: " << le << " " << ri << '\n';
                         q.push( reg{ i.d, min(ri-le+1, p.b), le, ri });
                     }
                 }
             }
         }
-    }
-    for(int i=1;i<=n; ++i) ivals[i].clear();
-
-    q.push( reg{ n, MAXN, 1, MAXN } );
-    while (!q.empty()) {
-        reg p = q.top();
-        q.pop();
-        if ( p.a == 1 ) {
-            ans = max(ans, p.b);
-        } else {
-            mergeInt(p.a, p.ll, p.rr);
-            for(tup i : adj[p.a]) {
-                auto [gl, gr] = df(i.d, i.l, i.r);
-                if ( gl != -1 ) {
-                    int le = max(p.ll, gl);
-                    int ri = min(p.rr, gr);
-                    if ( le <= ri ) {
-                        q.push( reg{ i.d, min(ri-le+1, p.b), le, ri });
-                    }
-                }
-            }
-        }
+        for(int i=1;i<=n; ++i) ivals[i].clear();
     }
     if ( ans == 0 ) {
         cout << "Oh, vamos!\n";
