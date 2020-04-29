@@ -1,58 +1,49 @@
-#include <iostream>
-#include <unordered_map>
+#include <cstdio>
+#include <bitset>
+#include <cstring>
 using namespace std;
 
-struct node{
-	bool isLeaf;
-	unordered_map<char,node*> map;
-};
+#define p 255
+#define mod 10000007
 
-void insert(node* root, const char *s) {
-	node* actual = root;
-	for(int i=0; s[i]; ++i) {
-		if ( actual->map.find(s[i]) == actual->map.end() ) {
-			actual->map[s[i]] = new node{false};
-		}
-		actual = actual->map[s[i]];
+bitset< mod > s;
+unsigned int fexp(unsigned int a, unsigned int b) {
+	if (b <= 1) {
+		return b == 1 ? a: 1;
 	}
-	actual->isLeaf = true;
+	unsigned int tmp = fexp(a, b/2);
+	tmp *= tmp;
+	return tmp * (b & 1 ? a : 1);
 }
 
-bool search(node* root, const char* s) {
-	
-	if( root == nullptr ) return false;
-	
-	node* actual = root;
-	for (int i=0; s[i]; ++i) {
-		if ( actual->map[s[i]] == nullptr ) {
-			return false;
-		}
-		actual = actual->map[s[i]];
-	}
-	return actual->isLeaf;
-}
-
-int main()
+unsigned int polyRolling (char *key)
 {
-	ios::sync_with_stdio(false);
-	cin.tie(0);	cout.tie(0);
-
-	node* root = new node{false};
-
-	int n, m;
-	cin >> n;
-	char palabra[16+1];
-	while( n-- ) {
-		cin >> palabra;
-		insert( root, palabra );
+	unsigned int ans = key[0];
+	for(int i=1; i<= strlen(key); ++i ) {
+		ans += key[i] * fexp(p,i);
 	}
-	cin >> m;
-	while ( m-- ) {
-		cin >> palabra;
-		if ( search(root, palabra) ) {
-			cout << 1 << '\n';
-		} else {
-			cout << 0 << '\n';
-		}
-	}
+	return ans % mod;
+}
+
+int main( )
+{
+   int n;
+   scanf("%d",&n);
+   char palabra[16];
+   for(int i=0; i<n; ++i) {
+      scanf("%s",palabra);
+      s[ polyRolling(palabra) ] = 1;
+   }
+   int m;
+   scanf("%d",&m);
+   for(int i=0; i<m; ++i) {
+      scanf("%s",palabra);
+      if ( s[ polyRolling(palabra) ] )
+      {
+         printf("1\n");
+      } else {
+         printf("0\n");
+      }
+   }
+   return 0;
 }
