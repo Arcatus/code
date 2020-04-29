@@ -20,8 +20,6 @@ bool menor(string a, string b)
 	return a.length() < b.length();
 }
 
-
-
 string divide(string num, string den)
 {
 	int k = 0, i = den.length()-1;
