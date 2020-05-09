@@ -10,7 +10,6 @@ int main() {
     int a, b, c, d, k;
     while(t--){
         cin >> a >> b >> c >> d >> k;
-        
     }
     return 0;
 }
