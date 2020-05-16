@@ -6,37 +6,50 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
     char c;
-    stack<int> p; // 1 {}  2 []  3()
+    bool isGood[200];
+    fill(isGood, isGood, false);
+    isGood[123] = true;
+    isGood[125] = true;
+    isGood[91] = true;
+    isGood[93] = true;
+    isGood[40] = true;
+    isGood[41] = true;
+    int cnt1 = 0;
+    int cnt2 = 0;
+    int cnt3 = 0;
     while(scanf("%c",&c) == 1) {
+        if ( isGood[c] ) {
             if ( c == '{' ) {
-                p.push('{');
+                cnt1++;
             } else if ( c == '}' ) {
-                if ( p.top() == '{' ) {
-                    p.pop();
-                } else {
+                cnt1--;
+                if ( cnt1 < 0 ) {
                     cout << "incorrecto\n";
-                    return 0;
-                }
+                    return 0;  
+                } 
             } else if ( c == '[' ) {
-                p.push('[');
+                cnt2++;
             } else if ( c == ']' ) {
-                if ( p.top() == '[' ) {
-                    p.pop();
-                } else {
+                cnt2--;
+                if ( cnt2 < 0 ) {
                     cout << "incorrecto\n";
-                    return 0;
-                }
+                    return 0;  
+                } 
             } else if ( c == '(' ) {
-                p.push('(');
+                cnt3++;
             } else if ( c == ')' ) {
-                if ( p.top() == '(' ) {
-                    p.pop();
-                } else {
+                cnt3--;
+                if ( cnt3 < 0 ) {
                     cout << "incorrecto\n";
-                    return 0;
-                }
+                    return 0;  
+                } 
             }
+        }
     }
-    cout << "correcto\n";
+    if ( cnt1 == 0 && cnt2==0 && cnt3==0 ) {
+        cout << "correcto\n";
+    } else {
+        cout << "incorrecto\n";
+    }
     return 0;
-}
+}   
