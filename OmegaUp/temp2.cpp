@@ -14,11 +14,13 @@ celda solve(int i, int j) {
         return memoria[i][j] = { 0, 0 };
     } else if ( i == j ) {
         return memoria[i][j] = { a[i], 1 };
-    } else if ( s[i] == s[j] ) {
-        auto sub = solve(i+1, j-1);
-        return memoria[i][j] = { a[i] + a[j] + sub.first, 2 + sub.second };
     } else {
-        return memoria[i][j] = std::max(solve(i+1,j), solve(i,j-1));
+        auto r = std::max(solve(i+1,j), solve(i,j-1));
+        if (s[i] == s[j]) {
+           auto t = solve(i+1, j-1);
+           r = std::max(r, { a[i] + a[j] + t.first, 2 + t.second });
+        }
+        return memoria[i][j] = r;
     }
 }
 
