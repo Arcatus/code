@@ -11,17 +11,20 @@ int main()
     mt19937 generator( time(0) );
     srand(time(NULL));
     uniform_int_distribution<int> agen(0,25);
-    uniform_int_distribution<int> bgen(1,32768);
-    cout << m << '\n';
-    for(int i=0; i<m; ++i) {
-        char a = agen(generator)+'a';
-        cout << a;
-    }
-    cout << '\n';
-    cout << n << '\n';
+    uniform_int_distribution<int> bgen(0,1000000000);
+
+    cout << n << " " << m << '\n';
     for(int i=0; i<n; ++i) {
-        char a = agen(generator)+'a';
-        cout << a;
+        long long a = bgen(generator);
+        cout << a << ' ';
+    }
+    /*
+    cout << '\n';
+    cout << m << ' ';
+    int a;
+    for(int i=0; i<m; ++i) {
+        a = bgen(generator);
+        cout << a << ' ';
     }
     cout << '\n';
     int x = rand() % mod;
@@ -30,7 +33,6 @@ int main()
     //cout << negative(generator) << ' ';
     //cout << positive(generator) << ' ';
     //cout << n << " " << k << '\n';
-    /*
     cout << n << " " << m << " " << 1000000 << '\n';
     for(int j=0; j<m; ++j) {
         cout << 0 << ' ';
