@@ -1,25 +1,33 @@
 #include <bits/stdc++.h>
 
-#define n 100000
+const unsigned long long  n = 1000000000000000000LL;
 #define m 100000
 
 using namespace std;
 
-int main()
+int main(int argc, char **argv)
 {
     int mod = 32768;
     mt19937 generator( time(0) );
     srand(time(NULL));
-    uniform_int_distribution<int> agen(0,25);
-    uniform_int_distribution<int> bgen(0,1000000000);
-
-    cout << n << " " << m << '\n';
-    for(int i=0; i<n; ++i) {
-        long long a = bgen(generator);
-        cout << a << ' ';
+    uniform_int_distribution<int> agen(0,3);
+    uniform_int_distribution<unsigned long long> bgen(1,n);
+    cout << n << " " << 200000 << " " << 200000 << '\n';
+    for(int i=0; i<200000; ++i) {
+        unsigned long long a = bgen(generator);
+        unsigned long long b = bgen(generator);
+        if (a>b)swap(a,b);
+        cout << a << " " << b << '\n';
     }
+    for(int i=0; i<200000; ++i) {
+        unsigned long long a = bgen(generator);
+        cout << a << '\n';
+    }
+
     /*
-    cout << '\n';
+    char pos[4] = { 'U','D','L','R' };
+    cout << n << '\n';
+    cout << "D\n";
     cout << m << ' ';
     int a;
     for(int i=0; i<m; ++i) {
