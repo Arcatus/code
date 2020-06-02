@@ -1,51 +1,58 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-
-unsigned int fexp(unsigned int a, unsigned int b) {
-	if (b <= 1) {
-		return b == 1 ? a: 1;
-	}
-	unsigned int tmp = fexp(a, b/2);
-	tmp *= tmp;
-	return tmp * (b & 1 ? a : 1);
+using ll = int;
+ll m, n, x, p;
+string C, S;
+vector<int> z_algorithm(string pattern, string s) {
+    s = pattern+"|"+s;
+    int n = s.size();
+    vector<int> z(n);
+    int l = 0, r = 0;
+    for(int i=1; i<n; ++i) {
+        if ( i > r ) {
+            l = i, r = i;
+            while( r < n && s[r-l] == s[r] ) r++;
+            z[i] = r - l; r--;
+        } else {
+            int k = i - l;
+            if ( z[k] < r - i + 1 ) {
+                z[i] = z[k];
+            } else {
+                l = i;
+                while( r < n && s[r-l] == s[r] ) r++;
+                z[i] = r - l; r--;
+            }
+        }
+    }
+    return z;
 }
-
-int varx[1000001];
-unsigned int polyRolling (string key, int p, int x, int n)
-{
-	unsigned int ans = 0;
-	for(int i=0; i<n; ++i ) {
-		ans += (key[i] * varx[n-i-1]) % p;
-	}
-	return ans % p;
-}
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
-    string C, S, T;
-    int m, n, x, p;
     cin >> m >> C >> n >> S >> x >> p;
-    for(int i=0; i<n; ++i) {
-        varx[i] = fexp(x,i) % p;
+    ll hc = 0, hs = 0;
+    for(int i=0; i<n; i++) {
+        hc = (hc*x + C[i]) % p;
+        hs = (hs*x + S[i]) % p;
     }
-    int sizeC = C.size();
-    int sizeS = S.size();
-    bool memoria[1<<15]; 
-    int cnt = 0;
-    int colisiones = 0;
-    int hs = polyRolling(S,p,x,n);
-    unordered_set<string> cmpp;
-    cmpp.insert(S);
-    for(int i=0; i<=sizeC-sizeS; ++i ) {
-        T = C.substr(i,sizeS);
-        if ( cmpp.count(T) > 0 ) {
-            cnt++;
-        }
-        int hc = polyRolling(T,p,x,n);
+    ll d = 1;
+    for(int i=0; i<n-1; ++i) {
+        d = (d*x)%p;
+    }
+    ll cnt = 0;
+    ll colisiones = 0;
+    for(int i=0; i<=m-n; i++) {
         if ( hc == hs ) {
             colisiones++;
+        }
+        hc = (x*( hc - C[i]*d ) + C[i+n])%p;
+        if (hc < 0) hc = hc + p;
+    }
+    vector<int> positions = z_algorithm(S,C);
+    for(int i=0; i<=m-n; ++i ) {
+        if ( positions[n+i+1] == n ) {
+            cnt++;
         }
     }
     cout << colisiones << " " << cnt << '\n';

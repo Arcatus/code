@@ -11,23 +11,16 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-
 	int na, nb; 
-
 	cin >> na >> nb;
-
 	int n = na + nb;
-
-	num *arr[n+1];
-
-	int *base_pila_A = nullptr, *base_pila_B = nullptr;
-	int *tope_pila_A = nullptr, *tope_pila_B = nullptr;
-
+	num *a = new num[n];
+	/*
 	int x;
 	for(int i=0; i<na; ++i) {
 		cin >> x;
 		arr[x] = new int{x};
-		cout << *arr[x] << '\n';
+		cout << arr[x]->val << '\n';
 		if( i == 0) {
 			base_pila_A = arr[x];
 		}
@@ -47,9 +40,8 @@ int main()
 			tope_pila_B = arr[x];
 		}
 	}
-	/*
 	cout << "base_pila_A " << *base_pila_A << " tope_pila_A " << *tope_pila_A << '\n';
 	cout << "base_pila_B " << *base_pila_B << " tope_pila_B " << *tope_pila_B << '\n';
 	*/
-	
+	return 0;
 }
