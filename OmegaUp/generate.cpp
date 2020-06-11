@@ -13,11 +13,12 @@ int main(int argc, char **argv)
     int mod = 32768;
     mt19937 generator( time(0) );
     srand(time(NULL));
-    uniform_int_distribution<int> agen(0,3);
+    uniform_int_distribution<int> agen(0,2);
     uniform_int_distribution<unsigned long long> bgen(1,n);
-    cout << n << " " << h << " " << b << '\n';
-    for(int i=0; i<n; ++i) {
-        cout << 1 << ' ';
+    //cout << n << " " << h << " " << b << '\n';
+    cout << 1 << '\n';
+    for(int i=0; i<20; ++i) {
+        cout << char( agen(generator) + 'a' );
     }
     /*
     for(int i=0; i<200000; ++i) {

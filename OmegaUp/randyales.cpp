@@ -3,11 +3,18 @@
 using namespace std;
 
 string s;
-bool used[100+1];
+unordered_map<string,int> memoria;
 int solve(string s) {
-    if (s.size() == 1) return 1;
+    if ( memoria.count(s) > 0 ) {
+        return memoria[s];
+    }
+    if (s.size() == 1) {
+        memoria[s] = 1;
+        return memoria[s];
+    }
     else if (s.size() == 2) {
-        return s[0] != s[1] ? 1 : 2;
+        memoria[s] = s[0] != s[1] ? 1 : 2;
+        return memoria[s];
     }
     int ans = 1<<30; char ins;
     for(int i=0; i<s.size()-1; ++i) {
@@ -21,7 +28,8 @@ int solve(string s) {
             ans = min(ans, solve(t));
         }
     }
-    return (ans == 1<<30) ? s.size() : ans;
+    memoria[s] = (ans == 1<<30) ? s.size() : ans;
+    return memoria[s];
 }
 
 int main() {
