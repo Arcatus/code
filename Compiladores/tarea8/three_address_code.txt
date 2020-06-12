@@ -1,2 +1,16 @@
-t0=b+3
-a=t0
+t0=2+3
+t1=t0*b
+a=t1
+i=0
+L3: if i<10 goto L4
+goto L2
+L4: t2=i+1
+i=t2
+goto L3
+L2: j=0
+if i==10 goto L9
+goto L8
+L9: j=true
+goto L7: 
+L8: j=false
+L7: 
