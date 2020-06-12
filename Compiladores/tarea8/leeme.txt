@@ -1,0 +1,6 @@
+Compilacion:
+g++ main.cpp lexer.cpp parser.cpp -std=c++11 -o compiler.out
+
+Uso:
+El programa lee desde la entrada estandar es decir basta con redireccionar
+compiler.out < 1_in
