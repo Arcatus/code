@@ -4,3 +4,6 @@ g++ main.cpp lexer.cpp parser.cpp -std=c++11 -o compiler.out
 Uso:
 El programa lee desde la entrada estandar es decir basta con redireccionar
 compiler.out < 1_in
+
+Si quieres ver algunos ejemplos de programas que puede compilar checa la carpeta cases
+La salida del programa es, three_address_code.txt, el cual tiene codigo de 3 instrucciones, solo faltaria hacer el paso a ensamblador indicando registros a usar, etc.
