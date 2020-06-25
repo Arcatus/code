@@ -1,42 +1,27 @@
-#include <iostream>
-#include <queue>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int main()
-{
+int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-	cout.tie(0);
-
 	int n;
 	cin >> n;
-
-	int anterior;
-	int t, contador=0;
-
-	priority_queue<int> heap;
-
-	anterior=-1;
-	for (int i=0;i<n;++i) {
-		cin >> t;		
-		if ( t < anterior ) {
-			contador+=1;
-		}
-		else {
-			heap.push(contador);
-			contador=0;
-		}
-		anterior=t;
+	int a[n];
+	for(int i=0; i<n; ++i) {
+		cin >> a[i];
 	}
-
-	heap.push(contador);
-	
-	int res = heap.top();
-	if (res==0)
-		cout << "0\n";
-	else
-		cout << res + 1 << '\n';
-
+	int ans = 1;
+	int cnt = 1;
+	for(int i=1; i<n; ++i) {	
+		if (a[i] < a[i-1]) {
+			cnt++;
+		} else {
+			ans = max(ans, cnt);
+			cnt = 1;
+		}
+	}
+	ans = max(ans, cnt);
+	cout << ans << '\n';
 	return 0;
 }

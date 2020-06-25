@@ -33,10 +33,7 @@ int main() {
             cnt[i] = 5;
             
         }
-
-        
         cout << ans << '\n';
     }
-
     return 0;
 }

@@ -14,12 +14,14 @@ int main(int argc, char **argv)
     mt19937 generator( time(0) );
     srand(time(NULL));
     uniform_int_distribution<int> agen(0,2);
-    uniform_int_distribution<unsigned long long> bgen(1,n);
+    uniform_int_distribution<unsigned long long> bgen(1,100);
     //cout << n << " " << h << " " << b << '\n';
-    cout << 1 << '\n';
-    for(int i=0; i<20; ++i) {
-        cout << char( agen(generator) + 'a' );
+    cout << 10 << " " << 10 << '\n';
+    for(int i=0; i<100; ++i) {
+        //cout << char( agen(generator) + 'a' );
+        cout << bgen(generator) << ' ';
     }
+    cout << '\n';
     /*
     for(int i=0; i<200000; ++i) {
         unsigned long long a = bgen(generator);

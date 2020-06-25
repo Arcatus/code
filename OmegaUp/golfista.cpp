@@ -16,9 +16,9 @@ int main() {
     long long arr[n];
     for(long long i=0; i<n; ++i) cin >> arr[i];
     long long dist = (long long) hypot( a.x - b.x, a.y - b.y );
-    long long ans = 0;
+    long long ans = 0, topeA = -1, topeB = -1;
     for(long long i=0; i<n; ++i) {
-        if ( arr[i] == dist ) {
+        if ( topeA <= dist && dist <= topeB ) {
             ans = i+1;
             break;
         }
