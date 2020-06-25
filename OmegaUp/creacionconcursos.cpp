@@ -8,6 +8,7 @@ int main() {
     int n;
     while(cin >> n) {
         for(int i=0; i<n; ++i) cin >> a[i];
+<<<<<<< HEAD
         int cnt = 1;
         int ant = a[0];
         int ans = 0;
@@ -30,6 +31,10 @@ int main() {
         int tmp = 4*(cnt/4 + 1) - cnt;
         if (cnt%4 != 0) ans += tmp;
         cout << ans << '\n';
+=======
+        
+
+>>>>>>> 91348413c0cc0ca2c9e5c245fd09ffa3f89ba80d
     }
     return 0;
 }

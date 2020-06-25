@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Problema                                                                        Solucion
 https://omegaup.com/arena/problem/Las-tareas-de-Briaares#problems               DP ?
 https://omegaup.com/arena/problem/Creacion-de-concursos-de-program#problems     DP
@@ -14,3 +15,22 @@ https://omegaup.com/arena/problem/Randy-y-los-Divisores#problems                
 https://omegaup.com/arena/problem/Sumas_Multiplo#problems                       DP
 https://omegaup.com/arena/problem/Fili-and-Strings#problems                     Busqueda de Subcadenas
 https://omegaup.com/arena/problem/Caminos-cortos#problems                       DP
+=======
+Problema												Solucion
+https://omegaup.com/arena/problem/Las-tareas-de-Briaares#problems					DP
+https://omegaup.com/arena/problem/Creacion-de-concursos-de-program#problems				DP
+https://omegaup.com/arena/problem/Recurrencias-salvajes#problems					DP
+https://omegaup.com/arena/problem/El-peloton-de-soldados-marcianos#problems				Divide y venceras
+https://omegaup.com/arena/problem/Cuban-Challenge#problems						?
+https://omegaup.com/arena/problem/Exquisite-Strings#problems						DP, suffix array?
+https://omegaup.com/arena/problem/cdc#problems								DP
+https://omegaup.com/arena/problem/bits-bits-bits#problems						Divide y venceras
+https://omegaup.com/arena/problem/sumasrapidas#problems							DP
+https://omegaup.com/arena/problem/Drinking-Game#problems						Teoria de numeros
+https://omegaup.com/arena/problem/Greedy-Artisan#problems						?
+https://omegaup.com/arena/problem/Randy-y-los-Divisores#problems					DP
+https://omegaup.com/arena/problem/Sumas_Multiplo#problems						DP
+https://omegaup.com/arena/problem/Arboles-Chistosos#problems						?
+https://omegaup.com/arena/problem/Fili-and-Strings#problems						?
+https://omegaup.com/arena/problem/Caminos-cortos#problems						DP
+>>>>>>> 91348413c0cc0ca2c9e5c245fd09ffa3f89ba80d

@@ -5,6 +5,7 @@ using namespace std;
 class ZigZag {
     private:
     public:
+<<<<<<< HEAD
     static int longestZigZag(vector <int> sequence) {
         int n = sequence.size();
         int memoria[1002][51][2] = { };
@@ -39,5 +40,9 @@ class ZigZag {
         };
         int ans = max( solve(0, 0, 0), solve(1001, 0, 1) );
         return ans;
+=======
+    int longestZigZag(vector <int> sequence) {
+        
+>>>>>>> 91348413c0cc0ca2c9e5c245fd09ffa3f89ba80d
     }
 };

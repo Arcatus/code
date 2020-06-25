@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
         "*.tcc": "cpp",
@@ -6,4 +7,7 @@
         "list": "cpp",
         "regex": "cpp"
     }
+=======
+    "C_Cpp.errorSquiggles": "Disabled"
+>>>>>>> 91348413c0cc0ca2c9e5c245fd09ffa3f89ba80d
 }

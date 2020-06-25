@@ -33,7 +33,15 @@ int main() {
             cnt[i] = 5;
             
         }
+<<<<<<< HEAD
         cout << ans << '\n';
     }
+=======
+
+        
+        cout << ans << '\n';
+    }
+
+>>>>>>> 91348413c0cc0ca2c9e5c245fd09ffa3f89ba80d
     return 0;
 }

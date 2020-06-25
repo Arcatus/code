@@ -14,6 +14,7 @@ int main(int argc, char **argv)
     mt19937 generator( time(0) );
     srand(time(NULL));
     uniform_int_distribution<int> agen(0,2);
+<<<<<<< HEAD
     uniform_int_distribution<unsigned long long> bgen(1,100);
     //cout << n << " " << h << " " << b << '\n';
     cout << 10 << " " << 10 << '\n';
@@ -22,6 +23,14 @@ int main(int argc, char **argv)
         cout << bgen(generator) << ' ';
     }
     cout << '\n';
+=======
+    uniform_int_distribution<unsigned long long> bgen(1,n);
+    //cout << n << " " << h << " " << b << '\n';
+    cout << 1 << '\n';
+    for(int i=0; i<20; ++i) {
+        cout << char( agen(generator) + 'a' );
+    }
+>>>>>>> 91348413c0cc0ca2c9e5c245fd09ffa3f89ba80d
     /*
     for(int i=0; i<200000; ++i) {
         unsigned long long a = bgen(generator);
