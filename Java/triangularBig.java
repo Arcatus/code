@@ -12,7 +12,7 @@ class Main
 
 	    String inputString = input.readLine();
 
-    	BigInteger n = new BigInteger( inputString )
+    	BigInteger n = new BigInteger( inputString );
 
   		BigInteger np = n.add( new BigInteger("1") );
 
