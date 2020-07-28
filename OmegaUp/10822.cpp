@@ -31,18 +31,21 @@ int main() {
             cnt = 0;
             dfs(i);
             v.push_back(cnt);
-            cnt = 0;
         }
     }
     if ( v.size() > 1 ) {
-        int ans=1;
-        for(int x : v ) {
-            ans *= x;
+        long long ans = 0;
+        long long sum = 0;
+        for(int i=0; i<v.size(); ++i) {
+            sum += v[i];
+        }
+        for(int i=0; i<v.size()-1; ++i) {
+            sum -= v[i];
+            ans += v[i] * sum;
         }
         cout << ans << '\n';
     } else {
         cout << 0 << '\n';
     }
-
     return 0;
 }

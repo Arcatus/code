@@ -1,49 +1,29 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-const int nn = 1000000;
-vector<int> p(nn), c(nn);
-vector<pair<int,int>> ord(nn);
-vector<pair<pair<int,int>, int>> a(nn);
+const int MAXN = 1000000;
+vector<int> p(MAXN), c(MAXN);
+vector<pair<int,int>> ord(MAXN);
+vector<pair<pair<int,int>, int>> a(MAXN);
 
-void radix_sort() {
-    int n = a.size();
-    {
-        vector<int> cnt(n);
-        for(auto i: a) {
-            cnt[i.first.second]++;
-        }
-        vector<int> p(n);
-        p[0] = 0;
-        for(int i=1; i<n; ++i) {
-            p[i] = p[i-1] + cnt[i-1];
-        }
-        vector<pair<pair<int,int>, int>> new_a(n);
-        for(int i=0; i<n; ++i) {
-            int x = a[i].first.second;
-            new_a[p[x]] = a[i];
-            p[x]++;
-        }
-        a = new_a;
+void count_sort() {
+    int n = p.size();
+    vector<int> cnt(n);
+    for(auto i: c) {
+        cnt[i]++;
     }
-    {
-        vector<int> cnt(n);
-        for(auto i: a) {
-            cnt[i.first.first]++;
-        }
-        vector<int> p(n);
-        p[0] = 0;
-        for(int i=1; i<n; ++i) {
-            p[i] = p[i-1] + cnt[i-1];
-        }
-        vector<pair<pair<int,int>, int>> new_a(n);
-        for(int i=0; i<n; ++i) {
-            int x = a[i].first.first;
-            new_a[p[x]] = a[i];
-            p[x]++;
-        }
-        a = new_a;
+    vector<int> new_p(n);
+    vector<int> pos(n);
+    pos[0] = 0;
+    for(int i = 1; i < n; ++i) {
+        pos[i] = pos[i - 1] + cnt[i - 1];
     }
+    for(auto x: p) {
+        int i = c[x];
+        new_p[pos[i]] = x;
+        pos[i]++;
+    }
+    p = new_p;
 }
 
 int main() {
@@ -53,33 +33,36 @@ int main() {
     cin >> s;
     s += "$";
     int n = s.size();
-    p.resize(n); c.resize(n); ord.resize(n); a.resize(n);
+    p.resize(n); c.resize(n); ord.resize(n);
     for(int i=0; i<n; ++i) ord[i] = {s[i], i};
     sort(ord.begin(), ord.end());
     for(int i=0; i<n; ++i) p[i] = ord[i].second;
     c[p[0]] = 0;
     for(int i=1; i<n; ++i) {
-        if( s[p[i]] == s[p[i-1]] ) {
-            c[p[i]] = c[p[i-1]];
+        if( s[p[i]] == s[p[i - 1]] ) {
+            c[p[i]] = c[p[i - 1]];
         } else {
-            c[p[i]] = c[p[i-1]] + 1;
+            c[p[i]] = c[p[i - 1]] + 1;
         }
     }
     int k = 0;
-    while((1<<k) < n) {
+    while((1 << k) < n) {
         for(int i=0; i<n; ++i) {
-            a[i] = {{c[i], c[i+(1<<k)%n]}, i};
+            p[i] = (p[i] - (1 << k) + n) % n;
         }
-        radix_sort();
-        for(int i=0; i<n; ++i) p[i] = a[i].second;
-        c[p[0]] = 0;
-        for(int i=1; i<n; ++i) {
-            if( a[i].first == a[i-1].first ) {
-                c[p[i]] = c[p[i-1]];
+        count_sort();
+        vector<int> c_new(n);
+        c_new[p[0]] = 0;
+        for(int i = 1; i < n; ++i) {
+            pair<int, int> prev = { c[p[i - 1]], c[(p[i - 1] + (1 << k)) % n] };
+            pair<int, int> now = { c[p[i]], c[(p[i] + (1 << k)) % n] };
+            if(prev == now) {
+                c_new[p[i]] = c_new[p[i - 1]];
             } else {
-                c[p[i]] = c[p[i-1]] + 1;
+                c_new[p[i]] = c_new[p[i - 1]] + 1;
             }
         }
+        c = c_new;
         k++;
     }
     for(int i=0; i<n; ++i) {

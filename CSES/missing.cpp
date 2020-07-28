@@ -9,7 +9,7 @@ int main() {
     cin >> n;
     bool a[n+1] = { };
     int x;
-    for(int i=0; i<n-1; ++i) {  
+    for(int i=0; i<n-1; ++i) {
         cin >> x;
         a[x] = true;
     }
