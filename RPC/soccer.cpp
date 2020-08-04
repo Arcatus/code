@@ -6,14 +6,6 @@ struct player {
     int x, y;
 };
 
-struct nodo {
-    int v, c;
-};
-
-bool operator <(nodo a, nodo b) {
-    return a.c < b.c;
-};
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
@@ -43,15 +35,6 @@ int main() {
             int loy = min(y1, y2), hiy = max(y1, y2);
             return (lox <= x && x <= hix && loy <= y && y <= hiy);
     };
-    /*
-    if ( dentroLimites(1,1,1,4,1,2) ) {
-        cerr << "dentro limites\n";
-    }
-    if (PuntoSobreRecta(1,1,1,4,1,2)) {
-        cerr << "sobre recta\n";
-    }
-    return 0;
-    */
     bool mat[n][n] = { };
     for(int i = 0; i < n; ++i) {
         for(int j = 0; j < n; ++j ) {
@@ -74,23 +57,23 @@ int main() {
                     adj[i].push_back(j);
                     adj[j].push_back(i);
                     mat[i][j] = mat[j][i] = true;
-                    //cerr << "conection " << i << " " << j << '\n';
                 }
             }
         }
     }
-    priority_queue<nodo> q;
-    q.push(nodo{0, 0});
+    queue<int> q;
+    q.push(0);
     int distancia[n];
     fill(distancia, distancia + n, -1);
-    while(!q.empty()) {
-        nodo p = q.top();
+    distancia[0] = 0;
+    while(!q.empty()) { 
+        int p = q.front();
         q.pop();
-        if (distancia[p.v] == -1) {
-            distancia[p.v] = p.c;
-            for(int i = 0; i < adj[p.v].size(); ++i ) {
-                q.push(nodo{ adj[p.v][i], p.c + 1 });
-            }
+        for(int i = 0; i < adj[p].size(); ++i ) {
+            if (distancia[adj[p][i]] == -1 ) {
+                distancia[adj[p][i]] = distancia[p] + 1;
+                q.push(adj[p][i]);
+            }     
         }
     }
     cout << distancia[n - 1] << '\n';

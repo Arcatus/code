@@ -2,7 +2,6 @@
 
 using namespace std;
 using ll = long long;
-ll no_value = 999999999999LL;
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
