@@ -23,7 +23,7 @@ int main() {
     function<bool(int x1, int y1, int x2, int y2, int x, int y)> 
         PuntoSobreRecta = [](int x1, int y1, int x2, int y2, int x, int y) {
             if (x2 == x1) {
-                return (x1 == x) ? true: false;
+                return x1 == x;
             }
             double pendiente = (double) (y2 - y1) / (x2 - x1);
             double ans = (double) abs( (y - y1) - pendiente*(x - x1) );
