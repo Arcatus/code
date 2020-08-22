@@ -2,6 +2,27 @@
 
 using namespace std;
 
+enum{POSITIVO, NEGATIVO};
+
+struct interval {
+    int x, y;
+    bool signo;
+};
+
+class segmentManager {
+    vector<interval> segments;
+    segmentManager(int x, int y) {
+        segments.push_back({x, y, POSITIVO});
+    }
+    bool addSegment(int x, int y) {
+        vector<interval> tmp;
+        for(int i = 0; i < segments.size(); ++i) {
+            
+        }
+        return false;
+    }
+};
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);

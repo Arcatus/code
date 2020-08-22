@@ -17,7 +17,7 @@ int main(int argc, char** argv)
 
     char buffer[ raw_data ];
     
-    for(int i=rtp; i < _file_size; i+=raw_data+rtp) {
+    for(int i=rtp; i < _file_size; i += raw_data+rtp) {
         fseek(data, i, SEEK_SET);
         fread(buffer, 1, raw_data, data);
         fwrite(buffer, 1, raw_data, desti);
