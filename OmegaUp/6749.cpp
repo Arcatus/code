@@ -20,7 +20,7 @@ int main() {
     for(int i = 1; i <= k; ++i) {
         c[i] = i*(k - i);
     }
-    for(int j = 0; j <= n - k; ++j) {
+    for(int j = 0; j <= n - k; j++) {
         acc = 0;
         for(int i = j + 1, d = 1; i < j + k; ++i, ++d ) {
             acc += c[d]*b[i];
