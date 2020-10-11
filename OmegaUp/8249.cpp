@@ -1,48 +1,17 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-using ull = unsigned long long;
-
-vector<ull> initializeDiffArray(vector<ull>& A) 
-{ 
-    ull n = A.size(); 
-
-    vector<ull> D(n + 1); 
-  
-    D[0] = A[0], D[n] = 0; 
-    for (ull i = 1; i < n; i++) 
-        D[i] = A[i] - A[i - 1]; 
-    return D; 
-} 
-
-void update(vector<ull>& D, ull l, ull r, ull x) 
-{ 
-    D[l] += x; 
-    D[r + 1] -= x; 
-} 
-
-void printArray(vector<ull>& A, vector<ull>& D) 
-{ 
-    for (ull i = 0; i < A.size(); i++) { 
-        if (i == 0) 
-            A[i] = D[i]; 
-        else
-            A[i] = D[i] + A[i - 1]; 
-  
-        cout << A[i] << " "; 
-    } 
-    cout << endl; 
-} 
+using ll = long long;
 
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-    ull k;
+    ll k;
 	int n, r;
 	cin >> n >> r >> k;
-	vector<ull> a(n);
+	vector<ll> a(n);
 	for(auto& i : a) cin >> i;
-    vector<ull> def(n);
+    vector<ll> def(n);
     def[0] = 0;
     for(int i = 0; i <= min(n - 1, r); ++i) {
         def[0] += a[i];
@@ -56,46 +25,25 @@ int main() {
             def[i] -= a[i - r - 1];
         }
     }
-    ull min_global = *min_element(def.begin(), def.end());
 
-	ull lo = min_global, hi = 10000000000000000000ULL;
-    int cnt = 0;
+	ll lo = 0, hi = (ll)(1e9) * (ll)(n) + k + 1ll;
 	while( lo < hi ) {
-        if(cnt == 64) break; cnt++;
-        ull mid = (hi + lo)/2ULL + 1ULL;
-        //cerr << lo << " " << mid << " " << hi << '\n';
-        ull kt = k;
+        ll mid = (hi + lo + 1)/2;
         bool ok = true;
-        if(2*r + 1 >= n) {
-            if(min_global + kt < mid) {
-                ok = false;
-            }
-        } else {
-            vector<ull> b = def;
-            vector<ull> D = initializeDiffArray(b);
-            for(int i = 0; i < n; i++) {
-                ull v = 0;
-                    if (i == 0) 
-                        v = D[i];
-                    else
-                        v = D[i] + b[i - 1]; 
-                
-                if(v < mid) {
-                    ull diff = mid - v;
-                    if(kt >= diff) {
-                        kt -= diff;
-                        update(D, i, min(n - 1, i + 2*r), diff); 
-                        /*
-                        for(int j = i; j <= min(n - 1, i + 2*r); ++j) {
-                            b[j] += diff;
-                        }
-                        */
-                    } else {
-                        ok = false; break;
-                    }
+        ll soldados = 0, necesito = 0;
+        ll e[n] = { };
+        for(int i = 0; i < n && necesito <= k; i++) {
+            soldados += e[i];
+            if(def[i] + soldados < mid) {
+                ll agrega = mid - (def[i] + soldados);
+                necesito += agrega;
+                soldados += agrega;
+                if( i + 2*r + 1 < n) {
+                    e[i + 2*r + 1] -= agrega;
                 }
             }
         }
+        if(necesito > k) ok = false;
         if(ok) {
             lo = mid;
         } else {
