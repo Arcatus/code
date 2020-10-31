@@ -51,11 +51,11 @@ int main() {
     }
     ll i, j, p;
     while(t--) {
-        cin >> i >> j >> p;
-        if(p <= dist[i - 1][j - 1] || dist[i - 1][j - 1] == INT_MAX) {
-            cout << mat[i - 1][j - 1] << '\n';
+        cin >> i >> j >> p; i--; j--;
+        if(p <= dist[i][j] || dist[i][j] == INT_MAX) {
+            cout << mat[i][j] << '\n';
         } else {
-            cout << (p - dist[i - 1][j - 1] + (mat[i - 1][j - 1] == '1')) % 2 << '\n';
+            cout << (p - dist[i][j] + (mat[i][j]-'0')) % 2 << '\n';
         }
     }
     return 0;
